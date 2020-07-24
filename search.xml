@@ -8,7 +8,7 @@
       <link href="/2020/07/24/hexo%E5%87%BA%E7%8E%B0WARN-No-layout%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E5%85%B6%E4%B8%80/"/>
       <url>/2020/07/24/hexo%E5%87%BA%E7%8E%B0WARN-No-layout%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E5%85%B6%E4%B8%80/</url>
       
-        <content type="html"><![CDATA[<h1 id="主题为-icarus-version-3-0-0"><a href="#主题为-icarus-version-3-0-0" class="headerlink" title="主题为 icarus - version 3.0.0"></a>主题为 icarus - version 3.0.0</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-component-inferno@^0.3.0</span><br></pre></td></tr></table></figure><p>即可解决。</p>]]></content>
+        <content type="html"><![CDATA[<p>主题为 icarus - version 3.0.0，运行以下命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-component-inferno@^0.3.0</span><br></pre></td></tr></table></figure><p>即可解决。</p>]]></content>
       
       
       
