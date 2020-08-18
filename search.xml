@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>PCA analysis</title>
+      <link href="/2020/08/18/PCA-analysis/"/>
+      <url>/2020/08/18/PCA-analysis/</url>
+      
+        <content type="html"><![CDATA[<h1 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h1><p>用于数据降维，举例来说，太阳实际是<em>球体<em>，但一般可以说太阳是</em>圆的</em> 。这就是数据降维。</p><h1 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA</span><br><span class="line">X = np.array([[<span class="number">-1</span>, <span class="number">-1</span>], [<span class="number">-2</span>, <span class="number">-1</span>], [<span class="number">-3</span>, <span class="number">-2</span>], [<span class="number">1</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">1</span>], [<span class="number">3</span>, <span class="number">2</span>]])</span><br><span class="line">pca = PCA(n_components=<span class="number">2</span>) <span class="comment"># 数据维数，设置为'mle'是自动保留</span></span><br><span class="line">pca.fit(X)</span><br><span class="line">print(pca.explained_variance_ratio_)</span><br><span class="line">&gt;&gt;&gt;[ <span class="number">0.99244</span>...  <span class="number">0.00755</span>...]</span><br><span class="line">print(pca.transform(X)) <span class="comment"># 做一个每一列到其他列的投影</span></span><br><span class="line">&gt;&gt;&gt;[[ <span class="number">1.38340578</span>]</span><br><span class="line"> [ <span class="number">2.22189802</span>]</span><br><span class="line"> [ <span class="number">3.6053038</span> ]</span><br><span class="line"> [<span class="number">-1.38340578</span>]</span><br><span class="line"> [<span class="number">-2.22189802</span>]</span><br><span class="line"> [<span class="number">-3.6053038</span> ]]</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> ML </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo出现WARN No layout的解决方案其一</title>
       <link href="/2020/07/24/hexo%E5%87%BA%E7%8E%B0WARN-No-layout%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E5%85%B6%E4%B8%80/"/>
       <url>/2020/07/24/hexo%E5%87%BA%E7%8E%B0WARN-No-layout%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E5%85%B6%E4%B8%80/</url>
