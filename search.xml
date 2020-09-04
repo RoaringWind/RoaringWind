@@ -4,6 +4,38 @@
   
     
     <entry>
+      <title>AutoHotKeyhexo g</title>
+      <link href="/2020/09/04/AutoHotKey/"/>
+      <url>/2020/09/04/AutoHotKey/</url>
+      
+        <content type="html"><![CDATA[<p>AutoHotKey真不错，我用它稍微改造了一下俺的键盘哈哈哈，将ScrollLock和Pause键改造成音量加减了。真是便捷！！</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> AHK </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linear Programming</title>
+      <link href="/2020/08/18/Linear-Programming/"/>
+      <url>/2020/08/18/Linear-Programming/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight python"><figcaption><span>线性规划实例</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> scipy.optimize <span class="keyword">import</span> linprog</span><br><span class="line">a = np.array([<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>])</span><br><span class="line">b = np.array([<span class="number">-7.9</span>])</span><br><span class="line">c = np.array([[<span class="number">-3.05</span>, <span class="number">-4.05</span>, <span class="number">-6.1</span>]])</span><br><span class="line">res = linprog(a, A_ub=c, b_ub=b)</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure><p>官方参考:<br><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linprog.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linprog.html</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>PCA analysis</title>
       <link href="/2020/08/18/PCA-analysis/"/>
       <url>/2020/08/18/PCA-analysis/</url>
