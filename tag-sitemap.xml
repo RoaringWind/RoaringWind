@@ -3,120 +3,120 @@
 
 
     <url>
+        <loc>http://yoursite.com/tags/%25E9%25A1%25B9%25E7%259B%25AE/</loc>
+        <lastmod>2020-10-08T14:39:18.609Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yoursite.com/tags/Python/</loc>
-        <lastmod>2020-10-05T07:24:29.048Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/AHK/</loc>
-        <lastmod>2020-09-04T13:56:29.907Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/ML/</loc>
-        <lastmod>2020-08-18T09:08:07.484Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/hexo/</loc>
-        <lastmod>2020-07-24T14:02:09.010Z</lastmod>
+        <lastmod>2020-10-08T14:39:18.609Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/javaClass/</loc>
-        <lastmod>2020-07-16T14:07:05.180Z</lastmod>
+        <lastmod>2020-10-08T14:36:38.683Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/constructor/</loc>
-        <lastmod>2020-07-16T14:07:05.180Z</lastmod>
+        <lastmod>2020-10-08T14:36:38.683Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/Java/</loc>
-        <lastmod>2020-07-16T14:07:05.180Z</lastmod>
+        <lastmod>2020-10-08T14:36:38.683Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/hexo/</loc>
+        <lastmod>2020-10-08T14:35:10.729Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/ML/</loc>
+        <lastmod>2020-10-08T14:04:54.476Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/AHK/</loc>
+        <lastmod>2020-10-05T07:24:29.058Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/%25E6%259D%2582%25E6%2596%2587/</loc>
-        <lastmod>2020-07-16T14:07:05.180Z</lastmod>
+        <lastmod>2020-10-05T07:24:29.056Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/KEGG/</loc>
-        <lastmod>2020-07-16T14:07:05.180Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/NCBI/</loc>
-        <lastmod>2020-07-16T14:07:05.179Z</lastmod>
+        <lastmod>2020-10-05T07:24:29.055Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/bio-paper/</loc>
-        <lastmod>2020-07-16T14:07:05.179Z</lastmod>
+        <lastmod>2020-10-05T07:24:29.055Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/Essential-gene/</loc>
-        <lastmod>2020-07-16T14:07:05.179Z</lastmod>
+        <lastmod>2020-10-05T07:24:29.055Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/E-coli/</loc>
-        <lastmod>2020-07-16T14:07:05.179Z</lastmod>
+        <lastmod>2020-10-05T07:24:29.055Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/L-form/</loc>
-        <lastmod>2020-07-16T14:07:05.179Z</lastmod>
+        <lastmod>2020-10-05T07:24:29.055Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/%25E9%25A1%25B9%25E7%259B%25AE/</loc>
-        <lastmod>2020-07-16T14:07:05.177Z</lastmod>
+        <loc>http://yoursite.com/tags/NCBI/</loc>
+        <lastmod>2020-10-05T07:24:29.054Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/%25E8%25AE%25A1%25E5%2588%2592/</loc>
-        <lastmod>2020-07-16T14:07:05.177Z</lastmod>
+        <lastmod>2020-10-05T07:24:29.053Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/R/</loc>
-        <lastmod>2020-07-16T14:07:05.175Z</lastmod>
+        <lastmod>2020-10-05T07:24:29.051Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
