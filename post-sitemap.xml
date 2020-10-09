@@ -96,7 +96,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2020/01/14/e5-8d-8e-e5-b8-88-e4-b9-8b-e5-90-84-e7-a7-8d-e6-b4-97-e6-be-a1-e6-96-b9-e5-bc-8f-e6-a8-aa-e8-af-84/</loc>
+        <loc>http://yoursite.com/2020/01/12/e6-8a-80-e6-9c-af-e6-80-a7blog-ef-bc-88-e4-bc-aa/</loc>
         <lastmod>2020-10-05T07:24:29.058Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -104,7 +104,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2020/01/12/e6-8a-80-e6-9c-af-e6-80-a7blog-ef-bc-88-e4-bc-aa/</loc>
+        <loc>http://yoursite.com/2020/01/14/e5-8d-8e-e5-b8-88-e4-b9-8b-e5-90-84-e7-a7-8d-e6-b4-97-e6-be-a1-e6-96-b9-e5-bc-8f-e6-a8-aa-e8-af-84/</loc>
         <lastmod>2020-10-05T07:24:29.058Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -120,14 +120,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2020/06/10/notes/</loc>
-        <lastmod>2020-10-05T07:24:29.055Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://yoursite.com/2020/06/12/how-to-download-ortholog-ID-in-KEGG/</loc>
         <lastmod>2020-10-05T07:24:29.055Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -136,8 +128,8 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2020/06/09/notes/</loc>
-        <lastmod>2020-10-05T07:24:29.054Z</lastmod>
+        <loc>http://yoursite.com/2020/06/10/notes/</loc>
+        <lastmod>2020-10-05T07:24:29.055Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -152,8 +144,8 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2020/06/08/Things-to-do-in-this-weekend/</loc>
-        <lastmod>2020-10-05T07:24:29.053Z</lastmod>
+        <loc>http://yoursite.com/2020/06/09/notes/</loc>
+        <lastmod>2020-10-05T07:24:29.054Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -161,6 +153,14 @@
 
     <url>
         <loc>http://yoursite.com/2020/06/08/notes/</loc>
+        <lastmod>2020-10-05T07:24:29.053Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2020/06/08/Things-to-do-in-this-weekend/</loc>
         <lastmod>2020-10-05T07:24:29.053Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -176,7 +176,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2020/04/13/2020-04-13/</loc>
+        <loc>http://yoursite.com/2020/04/18/2020-04-18/</loc>
         <lastmod>2020-10-05T07:24:29.051Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -184,7 +184,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2020/04/18/2020-04-18/</loc>
+        <loc>http://yoursite.com/2020/04/13/2020-04-13/</loc>
         <lastmod>2020-10-05T07:24:29.051Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -240,7 +240,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2020/02/29/2020-02-29/</loc>
+        <loc>http://yoursite.com/2020/03/02/2020-03-02/</loc>
         <lastmod>2020-10-05T07:24:29.047Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -248,7 +248,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2020/03/02/2020-03-02/</loc>
+        <loc>http://yoursite.com/2020/02/29/2020-02-29/</loc>
         <lastmod>2020-10-05T07:24:29.047Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -328,7 +328,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2020/02/07/2020-02-07/</loc>
+        <loc>http://yoursite.com/2020/02/08/2020-02-08/</loc>
         <lastmod>2020-10-05T07:24:29.043Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -336,7 +336,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2020/02/08/2020-02-08/</loc>
+        <loc>http://yoursite.com/2020/02/07/2020-02-07/</loc>
         <lastmod>2020-10-05T07:24:29.043Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -376,7 +376,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2020/02/02/2020-02-02/</loc>
+        <loc>http://yoursite.com/2020/02/03/2020-02-03/</loc>
         <lastmod>2020-10-05T07:24:29.041Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -384,7 +384,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2020/02/03/2020-02-03/</loc>
+        <loc>http://yoursite.com/2020/02/02/2020-02-02/</loc>
         <lastmod>2020-10-05T07:24:29.041Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -536,14 +536,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2020/01/13/diary/</loc>
-        <lastmod>2020-10-05T07:24:29.033Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://yoursite.com/2020/01/14/diary/</loc>
         <lastmod>2020-10-05T07:24:29.033Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -552,8 +544,8 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2020/01/09/diary/</loc>
-        <lastmod>2020-10-05T07:24:29.032Z</lastmod>
+        <loc>http://yoursite.com/2020/01/13/diary/</loc>
+        <lastmod>2020-10-05T07:24:29.033Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -569,6 +561,14 @@
 
     <url>
         <loc>http://yoursite.com/2020/01/11/diary/</loc>
+        <lastmod>2020-10-05T07:24:29.032Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2020/01/09/diary/</loc>
         <lastmod>2020-10-05T07:24:29.032Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -600,7 +600,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2020/01/06/diary/</loc>
+        <loc>http://yoursite.com/2020/01/05/diary/</loc>
         <lastmod>2020-10-05T07:24:29.030Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -608,7 +608,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2020/01/05/diary/</loc>
+        <loc>http://yoursite.com/2020/01/06/diary/</loc>
         <lastmod>2020-10-05T07:24:29.030Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
