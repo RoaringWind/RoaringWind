@@ -3,6 +3,13 @@
 
 
     <url>
+        <loc>http://yoursite.com/tags/Java/</loc>
+        <lastmod>2020-10-27T01:30:06.947Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yoursite.com/tags/%25E9%25A1%25B9%25E7%259B%25AE/</loc>
         <lastmod>2020-10-08T14:39:18.609Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -25,13 +32,6 @@
 
     <url>
         <loc>http://yoursite.com/tags/constructor/</loc>
-        <lastmod>2020-10-08T14:36:38.683Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/Java/</loc>
         <lastmod>2020-10-08T14:36:38.683Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>

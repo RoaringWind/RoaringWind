@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Old Wind">
   <meta name="keywords" content="">
-  <title>notes - Wind&#39;s blog</title>
+  <title>Java笔记 - Wind&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -176,8 +176,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-10-08 11:22" pubdate>
-        2020年10月8日 上午
+      <time datetime="2020-10-26 21:39" pubdate>
+        2020年10月26日 晚上
       </time>
     </span>
   
@@ -188,7 +188,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      185 字
+      331 字
     </span>
   
 
@@ -198,7 +198,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      3
        分钟
     </span>
   
@@ -228,18 +228,27 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">notes</h1>
+            <h1 style="display: none">Java笔记</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="网际层协议"><a href="#网际层协议" class="headerlink" title="网际层协议"></a>网际层协议</h1><p>IP: Internet Protocol<br>  提供网络结点之间的报文传送服务<br>ARP: Address Resolution Protocol<br>  实现IP地址向物理地址的映射</p>
-<h1 id="运输层协议"><a href="#运输层协议" class="headerlink" title="运输层协议"></a>运输层协议</h1><p>TCP: Transmission Control Protocol<br>  提供用户间面向连接的，可靠的报文传输服务<br>UDP: User Datagram Protocol<br>  提供用户间无连接的，不可靠的报文传输服务</p>
-<h1 id="应用层协议"><a href="#应用层协议" class="headerlink" title="应用层协议"></a>应用层协议</h1><p>SMTP: Simple mail transmission protocol<br>  简单的电子邮件发送服务<br>Telnet: Telcommunication network protocol<br>  远程登录服务（明文传输）<br>DNS: Domain Name System<br>  域名和IP地址映射<br>POP: Post Office Protocol<br>  提供对邮箱服务器进行远程存取邮件的服务，类似的还有IMAP<br>HTTP: HyperText Transfer Protocol<br>  浏览服务<br>SSH: Secure Shell<br>  加密的网络传输协议</p>
+              <p><img src="https://i.loli.net/2020/10/26/XGY9vBA5tDTRyuk.png" srcset="/img/loading.gif" alt="JAVA字符流.png"></p>
+<p><strong>接口可以有default、static方法</strong></p>
+<p>原先的jdk7之类的，它们接口中的方法都是抽象方法，没有具体的实现，就相当于定义好了这个接口有哪些功能，却没有具体定义功能是怎么实现的，通常由接口的实现类来做具体功能实现。那么，如果面向接口编程，大家已经根据自己需要通过继承接口的方式来实现了自己的功能，突然有一天，产品提需求了，你需要给所有接口的实现类都添加一个新的功能即一个新的方法实现，而且这个方法可能大家都是一样的，那咋办？</p>
+<p>jdk8以前的做法肯定是现在接口中定义这个抽象方法，然后所有实现类必须实现这个方法（不然接口中多出一个抽象方法，其他类都没有实现，编译是会报错的），如果实现类比较多，那改起来会很麻烦，这种情况下是不利于维护的。</p>
+<p>那么我们在jdk8中就有了好的解决方式，就是在接口中加一个默认方法，这个默认方法有具体实现，这样就不用去修改实现类啦，很省事。</p>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
+                    
+                  </div>
                 
               </div>
               
@@ -250,18 +259,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/10/10/Diary/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Diary</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/10/07/diary/">
-                        <span class="hidden-mobile">diary</span>
+                      <a href="/2020/10/10/Diary/">
+                        <span class="hidden-mobile">Diary</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -442,7 +445,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "notes&nbsp;",
+        "Java笔记&nbsp;",
       ],
       cursorChar: "__w(ﾟДﾟ)w",
       typeSpeed: 70,
