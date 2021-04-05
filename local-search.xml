@@ -1,0 +1,1580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>Java笔记</title>
+    <link href="/2020/10/26/Java%E7%AC%94%E8%AE%B0/"/>
+    <url>/2020/10/26/Java%E7%AC%94%E8%AE%B0/</url>
+    
+    <content type="html"><![CDATA[<p><img src="https://i.loli.net/2020/10/26/XGY9vBA5tDTRyuk.png" srcset="/img/loading.gif" alt="JAVA字符流.png"></p><p><strong>接口可以有default、static方法</strong></p><p>原先的jdk7之类的，它们接口中的方法都是抽象方法，没有具体的实现，就相当于定义好了这个接口有哪些功能，却没有具体定义功能是怎么实现的，通常由接口的实现类来做具体功能实现。那么，如果面向接口编程，大家已经根据自己需要通过继承接口的方式来实现了自己的功能，突然有一天，产品提需求了，你需要给所有接口的实现类都添加一个新的功能即一个新的方法实现，而且这个方法可能大家都是一样的，那咋办？</p><p>jdk8以前的做法肯定是现在接口中定义这个抽象方法，然后所有实现类必须实现这个方法（不然接口中多出一个抽象方法，其他类都没有实现，编译是会报错的），如果实现类比较多，那改起来会很麻烦，这种情况下是不利于维护的。</p><p>那么我们在jdk8中就有了好的解决方式，就是在接口中加一个默认方法，这个默认方法有具体实现，这样就不用去修改实现类啦，很省事。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Diary</title>
+    <link href="/2020/10/10/Diary/"/>
+    <url>/2020/10/10/Diary/</url>
+    
+    <content type="html"><![CDATA[<p>好多梗原来是出自星爷的电影啊。<br>“有钱人的品味有时候很奇怪”，出自喜剧之王;<br>“喊好好味，喊到我满意为止”，可能出自食神。<br>切水果游戏的原型可能也出自食神内唐牛表演的刀工。<br>你这次有麻烦了，方丈为人很小气的。我最讨厌别人在我的背后说我坏话。<br>得罪了方丈，你想走？没那么容易！<br>来人，喂两位公子吃饼–九品芝麻官<br>我玩完了她，不给钱，那就不算卖咯<br>你叫破了喉咙也没有人理你的<br>我跳出来了，我又跳回去了<br>你好大的官威啊，包大人<br>我顶你个肺<br>你拿明朝的剑来斩清朝的官<br>我一进门就看到常威在打来福<br>审死官:<br>不要把我的衣服弄皱了，和美人鱼里的联动</p><p>国产凌凌漆：<br>你以为躲起来就找不到你？没有用的，像你这样的男人，不管在什么地方，就好像漆黑中的萤火虫一样那样的鲜明，那样的出众。你那忧郁的眼神，唏嘘的胡渣，神乎其技的刀法，还有那杯dry Martine，都深深地迷住了我。</p><p><img src="C:%5CUsers%5Cblood%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20201205084905972.png" srcset="/img/loading.gif" alt="image-20201205084905972"></p><p>我希望你叫我全名：达文西。小漆：没问题，文西。文西：多谢。小漆：不客气，文西。</p><p>猪猡公园，侏罗纪公园哈哈哈哈</p><p>最近发明的太阳能电筒，有电的时候会亮，没电的时候绝对不会亮。拿另外一只手电筒照他的时候，就会亮了。</p><p>要你命三千。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>notes</title>
+    <link href="/2020/10/08/notes/"/>
+    <url>/2020/10/08/notes/</url>
+    
+    <content type="html"><![CDATA[<h1 id="网际层协议"><a href="#网际层协议" class="headerlink" title="网际层协议"></a>网际层协议</h1><p>IP: Internet Protocol<br>  提供网络结点之间的报文传送服务</p><p>A类网络：网络号占1个字节，但只有7位可以使用（因为第一位固定为0）。但可指派的网络号是126个。IP 0.0.0.0表示本网络。网络号127保留作为本地软件环回测试本主机的进程之间的通信之用。每一个A类网络中最大主机数量是2^24-2，全1（255）的主机号字段表示该网络上所有主机。全0表示本主机所在的网络地址。</p><p>B类网络：网络号占2个字节，前两位是10。但B类网络128.0.0.0是不指派。B类可指派的网络数量为2^14-1，可指派的最小值是128.1.0.0（因为网络号有2位）。每个网络的主机数为2^16-2=65534（去掉全0和全1，即255.255）。</p><p>C类网络：网络号占3个字节，110开头。同样不指派192.0.0.0。可指派的最小值是192.0.1.0（因为网络号有3位）。可指派的网络书是2^21-1。每个网络主机数是254。</p><p>一个网络是指具有相同网络号的主机的集合。</p><table><thead><tr><th>网络类别</th><th>第一个网络段的开头位（二进制位）</th><th>最大可指派的网络数</th><th>每个网络最大主机数量</th><th>第一个可指派的网络</th><th>最后一个可指派的网络</th><th>不指派的网络</th></tr></thead><tbody><tr><td>A类网络</td><td>0</td><td>2<sup>8-1</sup>-2</td><td>2<sup>21</sup>-2</td><td>1</td><td>126</td><td>0（保留地址，本网络）和127（环回地址，供本地软件测试）</td></tr><tr><td>B类网络</td><td>10</td><td>2<sup>16-2</sup>-1=16383</td><td>2<sup>16</sup>-2=65534</td><td>128.1</td><td>191.255</td><td>128.0</td></tr><tr><td>C类网络</td><td>110</td><td>2<sup>24-3</sup>-1=2097151</td><td>2<sup>8</sup>-2=254</td><td>192.0.1</td><td>223.255.255</td><td>192.0.0</td></tr></tbody></table><p>ARP: Address Resolution Protocol<br>  实现IP地址向物理地址的映射</p><h1 id="运输层协议"><a href="#运输层协议" class="headerlink" title="运输层协议"></a>运输层协议</h1><p>TCP: Transmission Control Protocol<br>  提供用户间面向连接的，可靠的报文传输服务<br>UDP: User Datagram Protocol<br>  提供用户间无连接的，不可靠的报文传输服务</p><h1 id="应用层协议"><a href="#应用层协议" class="headerlink" title="应用层协议"></a>应用层协议</h1><p>SMTP: Simple mail transmission protocol<br>  简单的电子邮件发送服务<br>Telnet: Telcommunication network protocol<br>  远程登录服务（明文传输）<br>DNS: Domain Name System<br>  域名和IP地址映射<br>POP: Post Office Protocol<br>  提供对邮箱服务器进行远程存取邮件的服务，类似的还有IMAP<br>HTTP: HyperText Transfer Protocol<br>  浏览服务<br>SSH: Secure Shell<br>  加密的网络传输协议</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>diary</title>
+    <link href="/2020/10/07/diary/"/>
+    <url>/2020/10/07/diary/</url>
+    
+    <content type="html"><![CDATA[<p>今天和实验室朋友打了球还算开心。晚上看了下本泽直树，日剧在我心中的地位更低了。想我以前是多喜欢日剧来着。果然男人是<del>汇编</del>会变的啊。<br>看剧不如学习（狗头</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>AutoHotKey</title>
+    <link href="/2020/09/04/AutoHotKey/"/>
+    <url>/2020/09/04/AutoHotKey/</url>
+    
+    <content type="html"><![CDATA[<p>AutoHotKey真不错，我用它稍微改造了一下俺的键盘哈哈哈，将ScrollLock和Pause键改造成音量加减了。真是便捷！！</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>AHK</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Linear Programming</title>
+    <link href="/2020/08/18/Linear-Programming/"/>
+    <url>/2020/08/18/Linear-Programming/</url>
+    
+    <content type="html"><![CDATA[<pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<span class="hljs-keyword">from</span> scipy.optimize <span class="hljs-keyword">import</span> linproga = np.array([<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>])b = np.array([<span class="hljs-number">-7.9</span>])c = np.array([[<span class="hljs-number">-3.05</span>, <span class="hljs-number">-4.05</span>, <span class="hljs-number">-6.1</span>]])res = linprog(a, A_ub=c, b_ub=b)print(res)</code></pre><p>官方参考:<br><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linprog.html" target="_blank" rel="noopener">https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linprog.html</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>PCA analysis</title>
+    <link href="/2020/08/18/PCA-analysis/"/>
+    <url>/2020/08/18/PCA-analysis/</url>
+    
+    <content type="html"><![CDATA[<h1 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h1><p>用于数据降维，举例来说，太阳实际是<em>球体<em>，但一般可以说太阳是</em>圆的</em> 。这就是数据降维。</p><h1 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h1><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<span class="hljs-keyword">from</span> sklearn.decomposition <span class="hljs-keyword">import</span> PCAX = np.array([[<span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>], [<span class="hljs-number">-2</span>, <span class="hljs-number">-1</span>], [<span class="hljs-number">-3</span>, <span class="hljs-number">-2</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>], [<span class="hljs-number">2</span>, <span class="hljs-number">1</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">2</span>]])pca = PCA(n_components=<span class="hljs-number">2</span>) <span class="hljs-comment"># 数据维数，设置为'mle'是自动保留</span>pca.fit(X)print(pca.explained_variance_ratio_)&gt;&gt;&gt;[ <span class="hljs-number">0.99244</span>...  <span class="hljs-number">0.00755</span>...]print(pca.transform(X)) <span class="hljs-comment"># 做一个每一列到其他列的投影</span>&gt;&gt;&gt;[[ <span class="hljs-number">1.38340578</span>] [ <span class="hljs-number">2.22189802</span>] [ <span class="hljs-number">3.6053038</span> ] [<span class="hljs-number">-1.38340578</span>] [<span class="hljs-number">-2.22189802</span>] [<span class="hljs-number">-3.6053038</span> ]]</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+      <tag>ML</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>hexo出现WARN No layout的解决方案其一</title>
+    <link href="/2020/07/24/hexo%E5%87%BA%E7%8E%B0WARN-No-layout%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E5%85%B6%E4%B8%80/"/>
+    <url>/2020/07/24/hexo%E5%87%BA%E7%8E%B0WARN-No-layout%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E5%85%B6%E4%B8%80/</url>
+    
+    <content type="html"><![CDATA[<p>主题为 icarus - version 3.0.0，运行以下命令：</p><pre><code class="hljs Bash">npm install --save hexo-component-inferno@^0.3.0</code></pre><p>即可解决。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>纪念室友第一次冷水澡</title>
+    <link href="/2020/07/09/%E7%BA%AA%E5%BF%B5%E5%AE%A4%E5%8F%8B%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%86%B7%E6%B0%B4%E6%BE%A1/"/>
+    <url>/2020/07/09/%E7%BA%AA%E5%BF%B5%E5%AE%A4%E5%8F%8B%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%86%B7%E6%B0%B4%E6%BE%A1/</url>
+    
+    <content type="html"><![CDATA[<h1 id="2020年7月9日"><a href="#2020年7月9日" class="headerlink" title="2020年7月9日"></a>2020年7月9日</h1><p>今天，田老板在我鼓励下洗了冷水澡，浴室里回响着他的鬼哭狼嚎。纪念纪念hiahia</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>杂文</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>JavaConstructor</title>
+    <link href="/2020/06/15/JavaConstructor/"/>
+    <url>/2020/06/15/JavaConstructor/</url>
+    
+    <content type="html"><![CDATA[<pre><code class="hljs java"><span class="hljs-comment">//SubCat.java</span><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span>  </span>&#123;    Cat (<span class="hljs-keyword">int</span> c)  &#123;        System.out.print (<span class="hljs-string">"cat"</span>+c+<span class="hljs-string">" "</span>);      &#125; &#125;<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SubCat</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Cat</span>  </span>&#123;    SubCat (<span class="hljs-keyword">int</span> c)&#123;        <span class="hljs-keyword">super</span> (<span class="hljs-number">5</span>); <span class="hljs-comment">//work here.Specifies the superclass constructor,and must be at first line!!!</span>        System.out.print (<span class="hljs-string">"cable"</span>);    &#125;    SubCat()  &#123;          <span class="hljs-keyword">this</span> (<span class="hljs-number">4</span>);    &#125;    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String  []  args)</span>  </span>&#123;        SubCat s= <span class="hljs-keyword">new</span> SubCat();    &#125;&#125;</code></pre><pre><code class="hljs java"><span class="hljs-comment">//CB.java</span><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Ca</span></span>&#123;    <span class="hljs-keyword">int</span> num = <span class="hljs-number">1</span>;    <span class="hljs-comment">//Ca()&#123;&#125;; not worked,because CB calls the default parameterless constructor of the parent class by default</span>    Ca(<span class="hljs-keyword">int</span> num)&#123;            <span class="hljs-keyword">this</span>.num = num;            System.out.print(<span class="hljs-keyword">this</span>.num);    &#125;&#125;<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cb</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Ca</span></span>&#123;    <span class="hljs-keyword">int</span> num = <span class="hljs-number">2</span>;    Cb(<span class="hljs-keyword">int</span> num)&#123;        <span class="hljs-keyword">this</span>.num = num;        System.out.print(num);    &#125;    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;            Ca a = <span class="hljs-keyword">new</span> Cb(<span class="hljs-number">5</span>);    &#125;&#125;</code></pre><pre><code class="hljs java"><span class="hljs-comment">//C.java</span><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>&#123;    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">func1</span><span class="hljs-params">()</span> </span>&#123;        System.out.println(<span class="hljs-string">"A func1 is calling"</span>);    &#125;    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">func2</span><span class="hljs-params">()</span> </span>&#123;        func1();    &#125;&#125;<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">A</span> </span>&#123;    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">func1</span><span class="hljs-params">()</span> </span>&#123;        System.out.println(<span class="hljs-string">"B func1 is calling"</span>);    &#125;    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">func3</span><span class="hljs-params">()</span> </span>&#123;        System.out.println(<span class="hljs-string">"B func3 is calling"</span>);    &#125;&#125;<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">C</span> </span>&#123;    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;        <span class="hljs-comment">//B a = new B();</span>        A a = <span class="hljs-keyword">new</span> B();        System.out.println(a.getClass());        a.func1();        a.func2();<span class="hljs-comment">//类型是B的类型，函数是B的函数</span>        <span class="hljs-comment">//a.func3(); not work,because Method func3 in undefined in class A</span>    &#125;&#125;</code></pre><ul><li>内部类可以向上转型。</li><li>内部类作为父类时不能向下转型。</li><li>如果有一个带形参的构造函数，编译器不会自动添加无参的构造函数。</li></ul><pre><code class="hljs java"><span class="hljs-comment">//Pen.java</span><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Pencil</span></span>&#123;    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">write</span> <span class="hljs-params">(String content)</span></span>&#123;        System.out.println( <span class="hljs-string">"Write"</span>+content);    &#125;&#125;<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RubberPencil</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Pencil</span></span>&#123;    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">write</span> <span class="hljs-params">(String content)</span></span>&#123;        System.out.println(<span class="hljs-string">"Rubber Write"</span>+content);    &#125;  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">erase</span> <span class="hljs-params">(String content)</span></span>&#123;      System.out.println( <span class="hljs-string">"Erase "</span>+content);  &#125;&#125;<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Pen</span> </span>&#123;    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;        Pencil p=<span class="hljs-keyword">new</span> Pencil();        (( RubberPencil) p).write(<span class="hljs-string">"Hello"</span>);<span class="hljs-comment">//Runtime error</span>    &#125;&#125;</code></pre><p>​    </p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>constructor</tag>
+      
+      <tag>javaClass</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>how to download ortholog ID in KEGG</title>
+    <link href="/2020/06/12/how-to-download-ortholog-ID-in-KEGG/"/>
+    <url>/2020/06/12/how-to-download-ortholog-ID-in-KEGG/</url>
+    
+    <content type="html"><![CDATA[<ol><li>Go to <a href="https://www.genome.jp/dbget-bin/get_linkdb?-t+brite+gn:T00007" target="_blank" rel="noopener">LinkDB Search</a></li><li>Click <a href="https://www.genome.jp/kegg-bin/get_htext?eco00001" target="_blank" rel="noopener">eco00001</a></li><li>Select your species in drop-down list(Manually) &amp; Click the button “go”</li><li>Download “htext”</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>KEGG</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>how to find the genome list of E.coli</title>
+    <link href="/2020/06/10/how-to-find-the-genome-list-of-E-coli/"/>
+    <url>/2020/06/10/how-to-find-the-genome-list-of-E-coli/</url>
+    
+    <content type="html"><![CDATA[<p>1.Search on Google with keyword “e coli mg1655 genomesGroup”</p><p>2.Click the link showed on the top.</p><p>3.Click the link on new page called <a href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?lvl=0&id=511145" target="_blank" rel="noopener">Escherichia coli str. K-12 substr. MG1655</a> </p><p>4.Click the “Genome|1” showed on the right of the page.</p><p>5.Find “Download genome annotation in <a href="https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2/GCF_000005845.2_ASM584v2_genomic.gff.gz" target="_blank" rel="noopener">GFF</a>, <a href="https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2/GCF_000005845.2_ASM584v2_genomic.gbff.gz" target="_blank" rel="noopener">GenBank</a> or [tabular](<a href="https://www.ncbi.nlm.nih.gov/genome/browse/#!/proteins/167/161521|Escherichia" target="_blank" rel="noopener">https://www.ncbi.nlm.nih.gov/genome/browse/#!/proteins/167/161521|Escherichia</a> coli str. K-12 substr. MG1655/) format”, and choose “tabular format”.</p><p>6.Find “Download” button, download .csv format file.</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>E.coli</tag>
+      
+      <tag>NCBI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>notes</title>
+    <link href="/2020/06/10/notes/"/>
+    <url>/2020/06/10/notes/</url>
+    
+    <content type="html"><![CDATA[<ol start="5"><li><p>l型细菌不需要细胞分裂机制和细胞壁生物合成通路</p><p> 细胞壁是细菌细胞周围的层状结构。细胞壁的主要成分是肽聚糖(PG)，它是由短肽交联的长聚糖链组成的简单网状结构(Typas et al.， 2012)。肽聚糖壁是细菌王国的定义结构之一，合成肽聚糖壁所需的基因或通路通常对所有已知的主要细菌谱系的细胞生长都至关重要。肽聚糖壁是抗生素的靶点，如b-内酰胺和糖肽，而我们的先天免疫系统识别肽聚糖壁的碎片，帮助触发免疫反应.虽然有些细菌不具有细胞壁合成基因(如支原体和植物原体)，这很可能是因为他们失去了现代细菌祖先的细胞壁结构。因此，细胞壁可能出现在细菌进化的开始，也可能出现在细菌的最后共同祖先。</p><p> 尽管细胞壁在细菌生命中至关重要，但令人惊讶的是，在某些条件下(即在存在渗透保护剂如蔗糖的情况下)，人们已经知道细菌细胞能够恢复其祖先的壁缺失状态，即L-form(Allan et al.， 2009)。L-form被传统地分离为与多种传染病相关的抗生素耐药变异(Domingue和Woody, 1997)，自1935年被发现以来，人们已经对其进行了几十年的研究。</p><p> 通常情况下，几乎所有的细菌细胞都以二分裂的方式分裂。中央蛋白质在细胞分裂中是像微管蛋白FtsZ一样,在细胞中央形成一个环形结构，吸收其他与细胞分裂的相关的蛋白质,FtsZ分裂装置驱动了新细胞壁合成，促进子细胞产生(亚当斯和埃林顿,2009)。相反，L-form细胞通过一系列不受完全调控的机制分裂，包括膜挤压、起泡、小管化和囊泡化，随后自发分解成更小的子代(Kandler和Kandler, 1954年;Dell Era等，2009;Leaver等人，2009年;Briers等，2012)。值得注意的是，在几种细菌的L-form中，包括革兰氏阳性B. subtlis和革兰氏阴性大肠杆菌，这种所谓必要的FtsZ分裂机制和PG合成酶变得完全可有可无(Leaver et al.， 2009;Mercier等，2013,2014;Kawai等，2014)。相反，L-form的增殖主要是由生物物理效应驱动的，这种生物物理效应依赖于过量的膜合成，导致细胞表面积与体积比的增加(Mercier等，2013)。可以通过激活脂肪酸膜合成途径直接诱导膜合成的上调，也可以通过不明机制抑制PG前体通路间接诱导.</p><p> 最近试图了解生命的起源的体外实验和理论研究已经表明,脂肪酸分子自发融入简单的囊泡,导致增加表面积与体积比,足以驱动囊泡进行没有蛋白质基础机制的干预的复制(Hanczyc et al ., 2003;Peterlin等人，2009年;朱和绍斯塔克，2009年;布丁和绍斯塔克，2010年;Terasawa等，2012)。引人注目的是，各种L-form细胞分裂模式，包括膜挤压、起泡、小管化和囊泡化，似乎可以在体外简单的囊泡复制中实现。L-form的增殖模式可能在很多细菌中都是保守的(Mercier et al.， 2014)，因此，包括膜动力学在内的简单生物物理效应可能支持细胞的高效增殖。</p></li></ol><p>6.祖先脂肪酸的合成通路</p><p>​    如上所述，激活脂肪酸合成引起的过量磷脂膜合成可以促进原始细胞的增殖.这个模型中的一个难点是古细菌磷脂膜是与sn-甘油-1-磷酸连接的异戊二烯醚,而细菌膜磷脂是与sn-甘油-3-磷酸连接的脂肪酸酯. 细菌和古菌在膜特征上的巨大差异导致人们认为原始生命没有磷脂膜.然而，最近的研究表明，原始细胞膜的组成有另一种可能。系统基因组学分析表明，除了缺乏酰基载体蛋白(ACP)加工系统外，古菌的脂肪酸合成通路与细菌相似，说明原始细胞可能具有脂肪酸合成系统.Moreira和他的同事还讨论了原始细胞可能具有合成磷脂脂肪酸所需的其他酶活性，如snglycerol-3-磷酸氢化酶和胞苷二磷酸醇磷脂转移酶的活性.此外，在古菌细胞中实际检测到磷脂脂肪酸(Gattinger et al.， 2002;Pereto等，2004)。因此，磷脂脂肪酸的合成途径是原始的，磷脂膜可能已经在原始细胞中合成.</p><p>7.原始细胞增殖所需的基本模块:来源于L-form细胞分裂的概念</p><p>​    图2总结了估计的支持原始细胞像L-form增殖的基本模块;糖酵解是将遗传信息(基因组)传递给后代并读出基因组信息的过程，糖酵解提供能量化合物和乙酰辅酶a作为底物进行脂肪酸合成.f0f1 atp酶的质子在膜上的运输是维持pH恒定和质子动力所必需的.通过脂肪酸合成通路产生细胞膜，足以驱动如同l -form形式的细胞增殖。相比之下，通常必需的细胞壁合成途径和依赖FtsZ的细胞分裂系统对于细菌的生长是可有可无的。许多营养素，包括辅助因子、氨基酸和核苷酸，可以从古代地球上营养丰富的环境中获得.</p><p>​    支原体是一种动物共生体，由于其基因组小且缺乏细胞壁，已被用作构建最简单最小细胞的杰出模型。最近，Gibson和同事们成功地通过将化学合成的基因组(包括ftsZ)移植到M. capricolum受体细胞中，成功地培育出了一种人工的M. mycoides菌株.此外，也有报告成表明一些昆虫共生体的小基因组(144-422 kbp)仅保留处理遗传信息，一些氨基酸合成和维生素合成所需的基因.</p><p>​    这些共生体可能从它们的寄主昆虫那里获得各种营养来源，包括脂肪酸。因此，它们的基因组编码的数量极其有限的基本模块可能足以在营养丰富的环境下维持细胞生命.</p><p>​    L-form菌已经在人类、其他动物或植物中分离或检测到，但在实验室条件下长期培养它们通常非常困难，这说明一些L-form菌可能由于缺少一些仅在宿主环境中才有的因素而无法在宿主环境之外生长(Allan et al.， 2009)。这也可能暗示从亲本有壁细胞到l型的转变是在其宿主环境中<u>自然发生</u>的。例如，研究表明，通过有氧呼吸产生的活性氧类(ROS)对实验室条件下产生的L-form的生长有严重阻碍(Jutras和Jacobs-Wagner, 2015;Kawai等，2015)。因此，古老的地球环境:厌氧和营养丰富的环境(有许多代谢所需的简单化学物质，氨基酸，核苷酸，甚至脂肪酸)，可能是像l -form一样增殖的原始细胞所必需的.</p><p>​    许多研究试图在体外创造合成生命，以更好地理解细胞生命的基本属性。利用重组蛋白表达系统在体外复制DNA复制，该系统由纯化的亚单位组成，支持翻译和转录(即中心教义周期)(Fujiwara et al.， 2013)。膜泡的复制也通过向膜泡外部供应脂肪酸进行人工复制(Budin和Szostak, 2010)。DNA和囊泡复制/分离之间的联系可能是一个难以捉摸的，但在这个领域迷人的问题。</p><p>​    细胞是基本的结构，功能和最小的生命单位，可以复制产生子代。对最小基因集和基本模块的分析，可以重建自主复制的简单细胞，并有助于理解基因组在原始细胞生活</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>L-form</tag>
+      
+      <tag>E.coli</tag>
+      
+      <tag>Essential gene</tag>
+      
+      <tag>bio-paper</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>notes</title>
+    <link href="/2020/06/09/notes/"/>
+    <url>/2020/06/09/notes/</url>
+    
+    <content type="html"><![CDATA[<p>比较基因组学是估计最小基因集合的另一种方法。最初试图确定最小基因集合是由确定保守基因的基因组之间的寄生细菌,支原体genitarium携带468个蛋白编码基因,与小的流感嗜血杆菌基因组,携带1703个蛋白编码基因，结果，两个基因组中有240个同源基因被鉴定为保守基因。尽管Mushegian和Koonin发现在两种细菌中都缺少一些编码基本生化通路成分的同源基因，但两种细菌的<u>基本细胞功能都由非同源基因进行了补充</u>，这种现象被称为非同源基因替代non-orthologous gene displacement (NOGD)，在他们的对比研究中发现了22个NOGDs。此外，从最小基因集中筛选出6个功能冗余基因，确定最小基因集为256（240+22-6）个基因。后来，Gil和同事们通过比较几组基因组信息确定了几种细菌的最小基因集:(1)昆虫细菌内共生体中保存的蛋白质编码基因。(2)实验测定的大肠杆菌和枯草杆菌的Essential gene(3)生殖支原体的最小基因集和实验测定了生殖支原体和生殖支原体的近亲肺炎支原体的必要基因(4)金黄色葡萄球菌必需基因的研究和(5)小Phyroplasma asteris基因组，确定了266个基因是最小基因集。最小的基因集包括复制、转录、翻译、蛋白伴侣、运输、糖酵解、atp酶、磷酸酶途径、脂质代谢(不含脂肪酸合成，和昨日笔记类似)、核苷酸合成、辅助因子合成。Gil和他的同事们也指出,这个重要基因的最小集合是暂时性的并且几乎没有相关生命的起源的研究(Gil et al ., 2004)并且，可能实际上很难精确估计原始细胞的基因的最小基因集合。然而,这些分析基于直系同源分析,因此,每一个最小基因集可能含有的高度保守的基因进化信息</p><p>另一方面，Acevedo-Rocha及其同事指出，实验确定的大肠杆菌必要基因（Baba等，2006）在171个细菌基因组中的存在率非常低，在所有基因组中只发现了42个基因（14%），这说明从必要基因组中估计普遍的必要基因有很大的困难（Acevedo-Rocha等，2013）。如前一节和本节前面所述，由于基因功能的冗余、NOGD以及实验条件的差异，当用于比较的细菌种类数量增加时，必要基因的存在率较低，这并不奇怪。Azuma和Ota使用KEGG通路图直接估计了最小细胞功能。因为他们识别的是保守的通路，而不是保守的基因，所以NOGD的负面影响可能会减弱。他们成功地确定了由20条保守通路和21条生物特异性通路组成的大肠杆菌的最小通路图。</p><p>为了讨论基本细胞功能的保守性,我们基于广泛的细菌基本基因集，在细菌中使用KEGG模块完成比率(MCR) 分析了通路和涉及重要生物反应的功能结构(我们称为:基本模块)的保守程度，(见图1的说明,表S2)。由于每个KEGG模块都由多种通路组成，通过一系列反应产生代谢产物，因此这个分析可以避免由于途径或基因(或蛋白)的替代而产生的负面影响。结果如图1所示。脂肪酸生物合成(KEGG模块编号:M00083和M00082) 、PRPP生物合成(M00005)、辅酶A生物合成(M00120)和糖酵解(M00002)被认为是细菌中最保守的5个基本途径模块(图1B)。糖酵解是将葡萄糖转化为丙酮酸并产生能量化合物(ATP和NADH)的代谢途径。丙酮酸是必要的起始材料的好氧克雷布斯循环和厌氧发酵代谢。丙酮酸也转化为乙酰辅酶A(辅酶A)，用于脂肪酸生物合成途径的初始步骤。脂肪酸合成从乙酰辅酶a和丙二酰辅酶a合成乙酰乙酰基- acp开始，然后通过添加丙二酰辅酶a的乙酰基单位延长酰基链。辅酶A生物合成(M00120)对脂肪酸合成也是必不可少的(Magnuson et al.， 1993)。5-磷酸核糖合成5-磷酸基-1-二磷酸(PRPP)是核苷酸合成的第一步(Gil et al.， 2004)。如图1B所示，排在前10位的其余基本途径模块是核苷酸合成(M00050, M00052)、异戊二烯类生物合成(M00096)和四氢叶酸(THF)生物合成(M00126)。异戊二烯有助于膜稳定性(泰勒，1984)。THF对氨基酸和核苷酸的合成至关重要(Scott和Weir, 1998)</p><p>核糖体(M00178)、dna聚合酶III复合物(M00260)、RNA聚合酶(M00183)、f型atp酶(M00157)和脂蛋白释放系统(M00255)在细菌基本结构模块的保守度中排名前五(图1C)。因此，除f -型atp酶外，高度保守的结构模块与遗传信息处理、翻译(核糖体)、复制(dna -聚合酶III)和转录(RNA聚合酶)相关。f -型atp酶可能对产生质子动力和维持pH平衡至关重要(Xu et al.， 2011)。其余高度保守的模块在前10位分别是分泌系统(M00335)、细胞分裂转运系统(M00256)、ABC型转运系统(M00254)、脂多糖出口系统(M00320)和RNA降解系统(M00394)。M00335、M00256、M00254和M00320模块与膜转运有关，M00394参与遗传信息处理(Kanehisa et al.， 2016)。保守的KEGG<u>基本模组</u>与Gil及其同事确定的最小基因集所编码的通路重叠(Gil et al.， 2004)，表明最小基因集在进化中被保存为编码<u>基本模组</u>的基因。</p><p>有趣的是，E-cell项目表明，代谢途径包括:糖酵解生成ATP、利用外源性脂肪酸生物合成磷脂，转录和翻译机制可以支持代谢的平衡，但不能支持细胞分裂和基因组复制(Tomita et al.， 1999;吉尔等，2004)。E-cell项目估算的最小基因集与Gil及其同事的发现有很大的重叠，Gil及其同事排除了编码脂肪酸合成通路的基因，因为脂肪酸可以从环境中获得(Gil et al.， 2004)。然而，脂肪酸合成在原始细胞分裂中可能是重要的，因为脂肪酸合成的激活导致的过量膜合成会刺激原始细胞的增殖(见下一节)。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>L-form</tag>
+      
+      <tag>E.coli</tag>
+      
+      <tag>Essential gene</tag>
+      
+      <tag>bio-paper</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>notes</title>
+    <link href="/2020/06/08/notes/"/>
+    <url>/2020/06/08/notes/</url>
+    
+    <content type="html"><![CDATA[<p>大肠杆菌是革兰氏阴性菌，它有细胞壁，细胞膜。细胞壁有三层，一层外膜，一层肽聚糖(PG)，一层内膜。Essential genes是能够支持细菌生命的最小规模的基因集合，从计算和实验上识别出来了。但因为，我们并不知道原始细胞是如何生存增殖的，所以还是很难对出现在原始细胞里的远古基因和现在细胞内的Essential genes进行对比，因此也不能直接对对远古细胞内的基因重要性进行评价。<br>细胞壁通常对细菌的增殖很重要，有壁细菌细胞的分裂通常由必需的FtsZ细胞分裂机制高度控制。但细菌也可以转变成细胞壁缺失的远古形态: L-form。</p><a id="more"></a><p>与“正常”细胞不同的是，L-form细胞通过一种简单的基于膜动力学的物理机制分裂，表明在细胞壁出现之前，细胞就已经有了原始的增殖模式。在这篇综述中，我们总结了关于最小基因集的实验和计算研究，并讨论了支持原始细胞增殖所需的最小细胞模块，以L-form增殖为基础。</p><p>鉴定细菌的最小基因集将有助于我们理解细胞生命的原理。现在。多种细菌中细胞生存的Essential Genes都已经知道。遍布细菌区域的普遍必需基因可能代表了细菌生命所需的最小基因集。</p><p>Mushegian和Koonin估计了存在于生殖道支原体和流感嗜血杆菌中的最小基因集，因为这两种细菌至少在15亿年前就从它们的共同祖先种分离了，所以它们的基因都保存了下来，最小的基因集，就是祖先的基因，这些功能与转录、翻译、复制、DNA重组和修复、伴侣样蛋白、部分辅助因子合成、蛋白质输出和代谢产物转运系统(如atp酶)有关，而与氨基酸合成和脂肪酸生物合成无关。因为后两者可以从营养丰富的环境中获得。有趣的是，通过计算确定的最小基因集与实验确定的相似。因此，即使在实验或计算确定的最小基因集之间可能存在差异，每个最小基因集可能，至少部分，代表祖先的生命形式。</p><p>肽聚糖(PG)细胞壁是细菌界的一个决定性的结构特征。虽然细胞壁生物合成途径通常是细菌增殖所必需的，但我们已经知道许多细菌能够转换成无细胞壁的L-form状态。几乎所有处于正常壁态的细菌细胞都通过依赖ftsz的细胞分裂机制进行二分裂。然而在L-form细胞里，这种必要的细胞分裂机制连同细胞壁合成酶变得完全可有可无。相反反，L-form细胞的增殖是由一个简单的生物物理过程驱动的，这个过程的基础是表面积与<em>细胞体积合成</em>的比例增加，从而导致细胞形状变形，导致细胞分裂。这种简单的L-form增殖机制符合原始细胞可能的复制机制，这是几项体外和理论研究的结果，表明L-form可能类似于几十亿年前细胞壁出现之前的早期细胞生命。</p><p>在这篇综述中，我们总结了迄今为止在计算和实验上鉴定最小基因集的努力，并讨论了可能的最小细胞功能，以支持原始细胞增殖的l型观察。我们设想从实验中鉴定的最小基因集估计的保守的Essential模块可以支持原始细胞的l型增殖模式。</p><p>随机转座子诱变已被用作细菌基因组中必需区域全基因组鉴定的首选方法。转座子是可移动的遗传元件，可随机整合到基因组DNA中。当转座子整合到细菌基因组的一个必要区域，包括必要蛋白质/rna 的编码区域或非编码必要区域，如复制起点或必要基因的转录调节元件;由此产生的突变体是不可活的，因此不应该从转座子库中分离出来。多项研究通过高通量测序或芯片技术鉴定了10^3到10^6个整合位点，并将转座子游离基因组区确定为必需基因组区。许多必需基因在各种细菌中广泛分布，炭疽芽孢杆菌的最佳生长、产孢和萌发需要253个基因，而在营养丰富的培养基中生长霍乱弧菌需要789个基因。Christen和他的同事最近报道了一项利用超饱和转座子诱变策略对菜花杆菌的必要编码和非编码染色体元件进行的详尽分析，在此研究中，转座子被整合到花椰菜杆菌的基因组中;转座子插入在突变体库中的饱和程度非常高，理论上每8个bp就插入一个转座子，并且有12.19%的基因组区域被确定为必需的。这些区域包括480个蛋白编码区和130个非编码区。此外，402个区域被认为是控制基因表达的关键。</p><p>另一种系统鉴定必需基因的方法是直接灭活基因，在这种策略中，目标基因直接被标记基因(通常是耐药性基因)取代，或者被插入带有标记基因的DNA片段打断。如果突变体没有被分离出来，靶基因被认为是细胞生长所必需的。分别在大肠杆菌和枯草芽孢杆菌中制作了数千个基因敲除突变体，这些敲除实验的结果表明，大肠杆菌的303个基因和枯草芽孢杆菌的271个基因对LB培养基中细胞的生长至关重要。大肠杆菌和枯草芽孢杆菌中的Essential gene最近在不同生长条件下或使用不同的基因敲除方法被重新评估(连续系统删除,见表S1),结果表明，在大肠杆菌和枯草芽孢杆菌中，分别有295和259个基因是必不可少的。Xu和同事使用直接基因灭活策略仔细评估了血链球菌基因的重要性，并在基因组中鉴定出218个必需基因。</p><p>尽管如上所述对鉴定各种细菌的必需基因进行了广泛的研究，但由于缺乏清晰的保存模式，无法对细菌基因组中的普遍最小基因集进行合理的预测。在细菌进化过程中获得的基因重复、多个基因的功能冗余和替代代谢途径补充了某些基因或途径的必要性，并混淆了必要最小基因集的描述。</p><p>Essential Gene定义的差异也可能是由于不同实验室用于评估基因的必要性的实验方法或条件的不同(表S1)。大肠杆菌K-12基因的重要性主要通过两种不同的策略来评估，随机转座子突变和直接基因灭活。Baba等人估计在随机诱变和靶向基因敲除实验中有205个基因是必需的，仅占Gerdes等人确定的必需基因的67%。Baba等人的研究表明，有92个突变体在LB培养基中(培养22小时后OD600 0.52e0.95)生长健康，但在MOPS最低培养基中并不是如此(OD600&lt;0.08，培养48h后)。在MOPS最小培养基中生长所需的基因在氨基酸、核苷酸和维生素代谢或运输中发挥作用，这与这些化学物质在复杂生长培养基(如LB)中的存在和在明确的简单培养基(如MOPS最小培养基)中的缺失是一致的。不同菌种必需基因的差异也可以解释为它们偏好的栖息地的不同。细菌可能需要不同的基因集才能在不同的生态环境中生存。与此相一致的是，肠内大肠杆菌和土壤枯草b菌中与应激反应相关的必要基因并不重叠</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>L-form</tag>
+      
+      <tag>E.coli</tag>
+      
+      <tag>Essential gene</tag>
+      
+      <tag>bio-paper</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Things-to-do in this weekend</title>
+    <link href="/2020/06/08/Things-to-do-in-this-weekend/"/>
+    <url>/2020/06/08/Things-to-do-in-this-weekend/</url>
+    
+    <content type="html"><![CDATA[<ol><li>Python版本管理:anaconda+pycharm</li><li>Java版本管理:eclipse</li><li>代码版本管理:git-github</li><li>文件版本管理:svn</li><li>文件分类控制</li><li>重复文件清理</li><li>程序位置转移</li><li>浏览器收藏夹整理</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>计划</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Master Sketching on Windows 10 18363 x64 &amp; Ubuntu18.04.2 x64</title>
+    <link href="/2020/06/07/Master-Sketching-on-Windows-10-18363-x64-Ubuntu18-04-2-x64/"/>
+    <url>/2020/06/07/Master-Sketching-on-Windows-10-18363-x64-Ubuntu18-04-2-x64/</url>
+    
+    <content type="html"><![CDATA[<p>注意，<code>torch v0.4.1</code>似乎并不支持<code>python3.8</code>,故使用<code>python3.6</code>.<code>Ubuntu18.04.2</code>自带的python3版本就是<code>Python3.6</code><br>个人配置供参考：<code>i5-10210U DDR4-12GB MX250-2GB</code></p><p>需要对<code>Master Sketching</code>文件夹内<code>simplified.py</code>文件进行两处修改。</p><pre><code class="hljs Python"><span class="hljs-comment"># simplified.py</span>use_cuda=<span class="hljs-number">0</span>load_lua(opt.model,long_size=<span class="hljs-number">8</span>)</code></pre><p><code>Ubuntu</code>为虚拟机环境<code>Vmware Workstation Pro 15.5.1</code>, <code>Ubuntu 18.04.2</code>, <code>4GB RAM</code>, <code>40GB Disk</code>, <code>Cpu 2x2</code>核心</p><pre><code class="hljs Bash"><span class="hljs-comment"># Ubuntu18.04.2 X64</span>sudo apt install python3-pippip3 install pippip3 install torch==0.4.1pip3 install torchvision==0.2.1</code></pre><p><code>Windows10</code>需要安装<code>Anaconda</code>，在<code>https://repo.anaconda.com/archive/</code>内下载安装<code>Anaconda3-2020.02-Windows-x86_64.exe</code> ，之后打开<code>Anaconda prompt</code></p><pre><code class="hljs Bash"><span class="hljs-comment"># Conda,Windows10 x64</span>pip install pippip install torch==0.4.1pip install torchvision=0.2.1</code></pre><p>一切就绪后即可在对应目录下使用如下命令输出<code>out.png</code>图片啦</p><pre><code class="hljs Bash"><span class="hljs-comment">#Ubuntu</span>python3 simplified.py</code></pre><pre><code class="hljs Bash"><span class="hljs-comment">#conda,Windows 10</span>python simplified.py</code></pre>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+      <tag>项目</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>hexo Icarus sociallink修改</title>
+    <link href="/2020/06/06/hexo-Icarus-sociallink%E4%BF%AE%E6%94%B9/"/>
+    <url>/2020/06/06/hexo-Icarus-sociallink%E4%BF%AE%E6%94%B9/</url>
+    
+    <content type="html"><![CDATA[<p>本文目的在于修改hexo的主题icarus,version 3.0.0版本下的sociallink图标，弃用icarus本身提供的<a href="fontawesome.com" title="fontawesome">fontawesome</a> 图标。个人原因是该网站图标颜色太单调，想鲜明一点。<br>操作系统:win10 18363 64位,使用git进行<code>hexo clean;hexo g;hexo deploy</code>，具体环境如下。</p><pre><code class="hljs git"># check versions in git$ git --versiongit version 2.27.0.windows.1$ hexo -vhexo: 4.2.1hexo-cli: 3.1.0os: Windows_NT 10.0.18363 win32 x64node: 12.18.0v8: 7.8.279.23-node.37uv: 1.37.0zlib: 1.2.11brotli: 1.0.7ares: 1.16.0modules: 72nghttp2: 1.41.0napi: 6llhttp: 2.0.4http_parser: 2.9.3openssl: 1.1.1gcldr: 37.0icu: 67.1tz: 2019cunicode: 13.0</code></pre><p>首先打开<code>hexo\themes\icarus</code>目录下的_config.yml文件，在前几行里可以找到icarus的版本是3.0.0。<br>用编辑器打开 <code>hexo\themes\icarus\layout\widget\profile.jsx</code>文件，定位到14行，把</p><pre><code class="hljs jsx">&#123;<span class="hljs-string">'icon'</span> <span class="hljs-keyword">in</span> link ? <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&#123;link.icon&#125;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span></span> : link.name&#125;</code></pre><p>修改成</p><pre><code class="hljs jsx">&#123;<span class="hljs-string">'icon'</span> <span class="hljs-keyword">in</span> link ? <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&#123;link.icon&#125;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 20px;width: 20px;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">img</span>&gt;</span></span> : link.name&#125;</code></pre><p>此句的目的在于，将图标的来源改成本地图片，而不是官方钦定的fontawesome格式。其中height和width表示图片的宽度和高度（仅测试长宽都是20px）。<br>修改完之后保存，这样我们就能使用本地的图片了。请注意，不要添加任何别的语句，以双斜杠开头的语句并不是注释！不要用C/Java的想法！我就以为双斜杠是注释，debug了好久。<br>我选择阿里巴巴矢量图标库 <a href="https://www.iconfont.cn/collections/index" target="_blank" rel="noopener" title="iconfont">iconfont</a> 作为我的图标来源。进入后搜索weibo,facebook,github的图标，选择自己喜欢的，下载<code>.svg</code>格式到本地（仅测试<code>.svg</code>格式）。<br>请注意，使用Chromium核心的Edge浏览器下载图标的时候，请一定等他病毒扫描完毕，下载完全结束后再对图标文件进行移动操作，不然可能会导致后续的bug。<br>下载完成后，务必把图标移动到<code>hexo\themes\icarus\source</code>目录下的任意位置，因为在<code>_config.yml</code>里引用的文件都是以source为基目录开始的。可以新建文件夹放图标，也可以放到img文件夹里。<br>我本人把所有图标放置在<code>hexo\themes\icarus\source\icons</code>目录下<br>再次打开<code>hexo\themes\icarus</code>目录下的<code>_config.yml</code>文件<br>首先使用编辑器的查找功能，查找 social ，定位到social_links关键字。此时我们可以把icon: 后面的语句写成自己的刚刚的图片位置了。我的图片放置在<code>hexo\themes\icarus\source\icons</code>下，那么我就需要把原来的<code>icon</code>行写成<code>icon: \icons\github.svg</code> 此处也要注意，icon的冒号后面需要加一个空格，不然会导致错误。<br>保存好之后，就可以在hexo目录下使用<code>hexo clean;hexo g;hexo s</code>三连啦，浏览器打开<code>localhost:4000</code>看看效果吧~</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/05/08</title>
+    <link href="/2020/05/08/2020-05-08/"/>
+    <url>/2020/05/08/2020-05-08/</url>
+    
+    <content type="html"><![CDATA[<p>好久好久没更新了哇。最近开了好多坑，越学越感觉学无止境。Java，MySql，设计模式，深入理解计算机系统，C/C++，Python，似乎就没有好好学习本身的研究方向？听说力扣每个月满打卡有勋章，那么5月打卡题争取全部AC吧。尽量独立完成，实在不行再看。 喝了肥宅快乐水疯狂嗝嗝嗝嗝嗝嗝嗝嗝嗝嗝嗝嗝嗝嗝嗝嗝嗝嗝嗝嗝嗝嗝 &gt;..&lt; (这个表情包是我打英文句号的时候突然发现的哈哈哈，因为按住了shift。之前想的博客风格转换到现在还没有实操，属实弟弟，不过现在这样或许也不错，什么时候魔改一下？（可能永远都不哈哈哈 Update: 新开坑再算上EVE Online，另外LOL基本就这样了吧，技术基本在黄金~白金之间了。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/04/18</title>
+    <link href="/2020/04/18/2020-04-18/"/>
+    <url>/2020/04/18/2020-04-18/</url>
+    
+    <content type="html"><![CDATA[<p>悟出了一些道理，也不用说出来，心中知道就好啦</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/04/13</title>
+    <link href="/2020/04/13/2020-04-13/"/>
+    <url>/2020/04/13/2020-04-13/</url>
+    
+    <content type="html"><![CDATA[<p>Rstudio下，运行<code>install.packages(&quot;BiocManager&quot;)</code>之后遇到问题： <code>Installation path not writeable, unable to update packages: boot, class, foreign, lattice, MASS, nlme, nnet, survival</code> 尝试使用管理员权限运行Rstudio后重新安装。问题得以解决。 R语言获取一个包的帮助目前看到有两种方法： 一种是<code>help(package=&quot;clusterProfiler&quot;)</code>，这个会蹦出一个网页来。 另一种是<code>ls(&quot;package:clusterProfiler&quot;)</code>，这个会在Clis里输出 在上述ls命令之后，会列出一些方法名称。需要用以下命令之一查看具体细节： <code>help(go2term)</code>   #此处方法不加引号，不加前缀 <code>??clusterProfiler::go2term</code> 如果只要<code>??go2term</code> 会列出其他一些相关的方法，它的search方法很迷，网页里会蹦出一些包括go，包括term，或者两者都不包括的内容</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>R</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/04/09</title>
+    <link href="/2020/04/09/2020-04-09/"/>
+    <url>/2020/04/09/2020-04-09/</url>
+    
+    <content type="html"><![CDATA[<p>断舍离大概第二天。移除了一些不需要的物件，让自己更专心于眼前的事情。 今天试着做了一些人机交互课程的分析，真的难受。Octave真的太诡异（无贬义）了。 举例来说： a=[1,1,2,2,3,3];b=[1,2];sum(a==b);居然能出结果，结果是[1 1 1 1 0 0] a=[1,2;3,4];b=[2,2;3,4];sum(a==b);返回[1 2] a=[1,2,4];b=[1;2];sum(a==b);返回[1 1 0]</p><pre><code class="hljs Python"><span class="hljs-comment"># Octave</span>a=[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>];b=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>];sum(a==b);%[<span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>]a=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>;<span class="hljs-number">3</span>,<span class="hljs-number">4</span>];b=[<span class="hljs-number">2</span>,<span class="hljs-number">2</span>;<span class="hljs-number">3</span>,<span class="hljs-number">4</span>];sum(a==b);%[<span class="hljs-number">1</span> <span class="hljs-number">2</span>]a=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>];b=[<span class="hljs-number">1</span>;<span class="hljs-number">2</span>];sum(a==b);%[<span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">0</span>]</code></pre><p>对此爷只能说<div style="text-align:center"> <img src="https://i.loli.net/2020/10/02/Ar4qk9hGClHBXMo.png" srcset="/img/loading.gif" alt="爷晕晕"></div></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/04/07</title>
+    <link href="/2020/04/07/2020-04-07/"/>
+    <url>/2020/04/07/2020-04-07/</url>
+    
+    <content type="html"><![CDATA[<p>一则本来应该是0406的短篇 又想到了思索过很多次的问题，人活着的价值何在。作为一个与社会紧密相连的人，所谓的“存在感”并不是那么强烈。就扮演的诸多角色而言，都是可以被替代的。社会少了谁都一样运转，而“价值”只有在亲密关系中才会得以体现。所有的亲密关系里，体验着的有父子母子中的子，有亲朋的朋。曾体验过的有恋爱中的一方。就经历的人生而言，还失却了夫妻中的夫，父子/父女中的父。体验过的人生还不完整，但又好像干劲不足。动力不知从何而来，源自自我的动力似乎从来都不够充足，而以外界为动力应当不是正途？而又有言，不同人有不同活法，人生有梦各自精彩。还没找到足够令自己舒服的节奏，甚是无奈</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/03/31</title>
+    <link href="/2020/03/31/2020-03-31/"/>
+    <url>/2020/03/31/2020-03-31/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://leetcode.wang/leetcode-142-Linked-List-CycleII.html" target="_blank" rel="noopener">https://leetcode.wang/leetcode-142-Linked-List-CycleII.html</a> 奇妙的快慢指针。第一次从0开始快慢指针找到环内的相遇点，第二次从0，从相遇点开始的双指针可以找到环的入口点</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/03/29</title>
+    <link href="/2020/03/29/2020-03-29/"/>
+    <url>/2020/03/29/2020-03-29/</url>
+    
+    <content type="html"><![CDATA[<p>走高速的感觉真的不一样。之前一次遇到猫躺在路边，今天的道路充溢着高速的车轮带起的水雾，似是人间仙境。但心中确是知道，一旦出事可能就是万劫不复，这种反差给了我一些冲击。 Edge着实是一款好游戏，它让我学会了双陆棋以及the domino两款游戏。 最近的steam有很多免费游戏啊，领了不知道多少个。有一个叫做drawful2,可惜连不上外网服务器没玩成。另外心心念念的Poly bridge又史低了，入手入手。很有意思的一款小游戏。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/03/24</title>
+    <link href="/2020/03/24/2020-03-24/"/>
+    <url>/2020/03/24/2020-03-24/</url>
+    
+    <content type="html"><![CDATA[<p>今天知道为什么Linker被缩写为ld了。 Linkers in Linux were originally called loaders.</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/03/18</title>
+    <link href="/2020/03/18/2020-03-18/"/>
+    <url>/2020/03/18/2020-03-18/</url>
+    
+    <content type="html"><![CDATA[<p>今日看Python看到 <strong>nonlocal 关键字</strong>，不得不说Python乱七八糟的定义还很多，宅摘抄一段描述: 使用 <strong>nonlocal</strong> 的好处是，在为函数添加状态时不用额外地添加全局变量，因此可以大量地调用此函数并同时记录着多个函数状态，每个函数都是独立、独特的。针对此项功能其实还个一个方法，就是使用类，通过定义__call__可实现在一个实例上直接像函数一样调用。比如这句前面就应该加一句 <strong>nonlocal count</strong><div style="text-align:center"><img src="https://i.loli.net/2020/10/02/vDSXbsFc4ra6Azn.png" srcset="/img/loading.gif" alt="nonlocal"></div></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/03/16</title>
+    <link href="/2020/03/16/2020-03-16/"/>
+    <url>/2020/03/16/2020-03-16/</url>
+    
+    <content type="html"><![CDATA[<p>今天学到，为什么python的类下面的直属变量没有self作为开头，因为这些变量是属于python的类的。调用的时候需要用 类名.变量名 的方式调用（包括类内函数对该变量的调用）。而__init__函数下面，以及其他函数下面，都是带self的，因为这是属于类的对象的。调用的时候需要用 对象名.变量名的方式调用。</p><p>如果一个类下面有一个变量为a，一个对象下面也有a，对象下面的a比类优先。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/03/13</title>
+    <link href="/2020/03/13/2020-03-13/"/>
+    <url>/2020/03/13/2020-03-13/</url>
+    
+    <content type="html"><![CDATA[<p>好记性不如烂笔头，先记下。 <code>matrix = map(list, zip(*matrix))</code></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/03/08</title>
+    <link href="/2020/03/08/2020-03-08/"/>
+    <url>/2020/03/08/2020-03-08/</url>
+    
+    <content type="html"><![CDATA[<p>今日见闻：高速上一只黑白花猫躺在路边（估计是死了），无血迹。 Python里，注意迭代，enumerate所创建的enumerate object，每次for循环都会指向下一个，结束的时候如果再次调用，会返回StopIteration 另外学会了初步的状态压缩。此外，成也Python，败也Python。用Python的时候千万千万要仔细。今天的失误在于，函数名里写的全称direction，下面调用的时候写成缩写dir，结果不对，但是没有报错！需要引起重视。另外，python的类里面，函数的调用要写成self.函数名(参数)，类中根目录下的变量在函数里调用的时候应当写成self.变量名的形式</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/03/02</title>
+    <link href="/2020/03/02/2020-03-02/"/>
+    <url>/2020/03/02/2020-03-02/</url>
+    
+    <content type="html"><![CDATA[<p>今日踩坑：<code>np.sum(a[a:b,c:d])</code>，不应是<code>a[a:b][c:d]</code></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/02/29</title>
+    <link href="/2020/02/29/2020-02-29/"/>
+    <url>/2020/02/29/2020-02-29/</url>
+    
+    <content type="html"><![CDATA[<p>已经忘记四年前的今天在做什么了。四年后的今天，因为疫情没有开学，在家做了一个死宅。不值得纪念但也值得纪念。一杯敬过往<img src="/img/2020pic/02/IMG_20200229_233445-scaled.jpg" srcset="/img/loading.gif" alt=""></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/02/28</title>
+    <link href="/2020/02/28/2020-02-28/"/>
+    <url>/2020/02/28/2020-02-28/</url>
+    
+    <content type="html"><![CDATA[<p>今天调试python遇到问题，多线程的东西还是不能在spyder或者VScode或者jupyter里面调试，换成命令行就行了。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/02/23</title>
+    <link href="/2020/02/23/2020-02-23/"/>
+    <url>/2020/02/23/2020-02-23/</url>
+    
+    <content type="html"><![CDATA[<p>今日幸福份额：</p><p><img src="https://i.loli.net/2020/10/02/uGs9dYWz3oVc15I.png" srcset="/img/loading.gif" alt="我画的傻猫！"></p><p>以及： </p><p><img src="https://i.loli.net/2020/10/02/S2VtHlj3D5swKNQ.png" srcset="/img/loading.gif" alt="力扣小纪录.png"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/02/21</title>
+    <link href="/2020/02/21/2020-02-21/"/>
+    <url>/2020/02/21/2020-02-21/</url>
+    
+    <content type="html"><![CDATA[<p>一山更有一山高~多学习 python的奇巧淫技真的多….绝了。矩阵转置等等。。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/02/16</title>
+    <link href="/2020/02/16/2020-02-16/"/>
+    <url>/2020/02/16/2020-02-16/</url>
+    
+    <content type="html"><![CDATA[<p>今天打算做一个今年的煎蛋无聊图+热评合集，年底放出来~有人说目标不要公开比较好，但是我觉得有时候说出来还是很有必要的 今天还回顾了一些氰化欢乐秀，挺有意思。另外<a href="https://www.youtube.com/watch?v=CZlfbep2LdU" target="_blank" rel="noopener">Beep Beep I’m a Sheep</a>真的很好听！ 另外<a href="http://rulesoftheinternet.com/" target="_blank" rel="noopener">Rules of Internet</a> 了解一下~英国古代牧羊犬和缅因猫都很棒✌</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/02/15</title>
+    <link href="/2020/02/15/2020-02-15/"/>
+    <url>/2020/02/15/2020-02-15/</url>
+    
+    <content type="html"><![CDATA[<p>吃鸡很无聊，LOL很无聊，还是听听音乐吧~LZY的歌单挺好的，收藏收藏</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/02/12</title>
+    <link href="/2020/02/12/2020-02-12/"/>
+    <url>/2020/02/12/2020-02-12/</url>
+    
+    <content type="html"><![CDATA[<p>吃到鸡了！日常俯卧撑+背单词</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/02/11</title>
+    <link href="/2020/02/11/2020-02-11/"/>
+    <url>/2020/02/11/2020-02-11/</url>
+    
+    <content type="html"><![CDATA[<p>背单词，俯卧撑~和往常一样。13号和20号的组会取消了，开心</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/02/10</title>
+    <link href="/2020/02/10/2020-02-10/"/>
+    <url>/2020/02/10/2020-02-10/</url>
+    
+    <content type="html"><![CDATA[<p>昨日咕咕咕了。今天真的有学习！为了拿交大的文创产品嘿嘿嘿。具体可关注上海交通大学微博。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/02/08</title>
+    <link href="/2020/02/08/2020-02-08/"/>
+    <url>/2020/02/08/2020-02-08/</url>
+    
+    <content type="html"><![CDATA[<p>每天健身没落下😀，但是又没有学习。好想剪头发啊啊啊啊啊，希望疫情快过去。今天学到个新名词，白月光。他们说如果只有一个前任，那么那个前任就好像白月光！</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/02/07</title>
+    <link href="/2020/02/07/2020-02-07/"/>
+    <url>/2020/02/07/2020-02-07/</url>
+    
+    <content type="html"><![CDATA[<p>终于领到了mirror，噫怎么是这样的游戏啊。sein患病，希望他快点好起来，看到了煎蛋的力量，感动</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>未分类</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/02/06</title>
+    <link href="/2020/02/06/2020-02-06/"/>
+    <url>/2020/02/06/2020-02-06/</url>
+    
+    <content type="html"><![CDATA[<p>今天单词还是没背。。不过有锻炼！有剧本杀！</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>未分类</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/02/05</title>
+    <link href="/2020/02/05/2020-02-05/"/>
+    <url>/2020/02/05/2020-02-05/</url>
+    
+    <content type="html"><![CDATA[<p>今天除了早起。。啥也没干成好像</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/02/04</title>
+    <link href="/2020/02/04/2020-02-04/"/>
+    <url>/2020/02/04/2020-02-04/</url>
+    
+    <content type="html"><![CDATA[<p>今日一觉睡到12点，然后剧本杀狼人杀…</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>未分类</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/02/03</title>
+    <link href="/2020/02/03/2020-02-03/"/>
+    <url>/2020/02/03/2020-02-03/</url>
+    
+    <content type="html"><![CDATA[<p>今天做了很多俯卧撑~</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>未分类</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/02/02</title>
+    <link href="/2020/02/02/2020-02-02/"/>
+    <url>/2020/02/02/2020-02-02/</url>
+    
+    <content type="html"><![CDATA[<p>给师大捐款啦~开心~</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/02/01</title>
+    <link href="/2020/02/01/2020-02-01/"/>
+    <url>/2020/02/01/2020-02-01/</url>
+    
+    <content type="html"><![CDATA[<p>曾想，扫好门前雪，勿管他人瓦上霜。但今天买的双黄连让我实在是无话可说。无论身在何方，总会有不正确的事发生。从之前的口罩不分，到现在的双黄连。越来越觉得读书的目的之一是在于提升自己质疑的能力，探寻真理的能力。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>未分类</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/31</title>
+    <link href="/2020/02/01/2020-01-31/"/>
+    <url>/2020/02/01/2020-01-31/</url>
+    
+    <content type="html"><![CDATA[<p>忘记总结的第二天，今日死宅，晒太阳看小说。学了点日麻，无奈运气实在不行。。实验室又分配任务了，旧任务还没完成呢</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/30</title>
+    <link href="/2020/01/31/2020-01-30/"/>
+    <url>/2020/01/31/2020-01-30/</url>
+    
+    <content type="html"><![CDATA[<p>剧本杀还是有趣哒。世界真小，研究生会的同学居然和之前某家公司的HR是高中室友，绝了····</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>未分类</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/29</title>
+    <link href="/2020/01/29/2020-01-29/"/>
+    <url>/2020/01/29/2020-01-29/</url>
+    
+    <content type="html"><![CDATA[<p>魔镜的激活码没有领到，试玩网页版青蛙分数，居然是flash，好无聊的游戏。围观了一会儿剧本杀，打了一下午斗地主。斗地主还是2v2，一队有个人走了就赢了，神奇</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/28</title>
+    <link href="/2020/01/28/2020-01-28/"/>
+    <url>/2020/01/28/2020-01-28/</url>
+    
+    <content type="html"><![CDATA[<p>下午剧本杀，又是一次杀手，编故事还是太难啊…东京大饭店这部日剧还是不错的。<a href="https://www.waijutv.com/index.php/vod/play/id/19855/sid/1/nid/1/" target="_blank" rel="noopener">https://www.waijutv.com/index.php/vod/play/id/19855/sid/1/nid/1/</a> 每一个投身料理领域的人，刚开始都不知道自己有没有天赋，不过，越是努力，越是磨练自己的本领，越能发觉自己的天赋。用在别的领域也是如此，越努力，越幸运吧。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>未分类</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/27</title>
+    <link href="/2020/01/27/2020-01-27/"/>
+    <url>/2020/01/27/2020-01-27/</url>
+    
+    <content type="html"><![CDATA[<p>都快月底了，回到家之后又陷入了低迷状态，看看电影吧，明天剧本杀？今天看到的婚姻故事还是不错。</p><p>waiting is the hardest part，做自己，让自己有活着的感觉</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/26</title>
+    <link href="/2020/01/26/2020-01-26/"/>
+    <url>/2020/01/26/2020-01-26/</url>
+    
+    <content type="html"><![CDATA[<p>在家无聊，玩玩picross，玩玩炉石，玩玩lol，看看书，真的无聊无聊无聊。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/25</title>
+    <link href="/2020/01/25/2020-01-25/"/>
+    <url>/2020/01/25/2020-01-25/</url>
+    
+    <content type="html"><![CDATA[<p>啊啊啊玩到一款好玩的游戏，叫做Picross。大家快去玩wwww。在助教空间看到，类似数独，但有趣的多。Steam和Google Play上面的都可以玩，前者有个免费的，叫做<a href="https://store.steampowered.com/app/476460/Picross_Touch/" target="_blank" rel="noopener">Picross Touch</a>，非常棒！！！非常棒！！无论配色，难易度，操作手感，成就系统，都是一等一的优秀，感谢作者！！！还是免费的！！！新年第一件开心的事！！！不过真的杀时间。<img src="/img/2020pic/01/picross2.png" srcset="/img/loading.gif" alt="">)<img src="/img/2020pic/01/picross.png" srcset="/img/loading.gif" alt="">)<img src="/img/2020pic/01/picross3.png" srcset="/img/loading.gif" alt=""></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>未分类</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/24</title>
+    <link href="/2020/01/24/2020-01-24/"/>
+    <url>/2020/01/24/2020-01-24/</url>
+    
+    <content type="html"><![CDATA[<p>一年又结束了。今天看了唐探1和幽灵公主。唐探1纯喜剧了，还算有意思，不过很多细节经不起推敲，也无妨，喜剧而已不必较真。幽灵公主算是一部值得思考的动漫了。人与自然相处的度在哪里？霓虹能有这么一位动漫大师真的幸运。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>未分类</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/23</title>
+    <link href="/2020/01/23/2020-01-23/"/>
+    <url>/2020/01/23/2020-01-23/</url>
+    
+    <content type="html"><![CDATA[<p>万物皆有裂隙，那是光照进来的地方。 理发店业已关门，组会倒是正常开。众所周知，病毒会通过网络传播~<img src="https://i.loli.net/2020/10/02/5uZqHESYhBX48Cg.png" srcset="/img/loading.gif" alt="年前照常的组会"> 什么时候发觉自己上了年纪了？当我喜欢酒的味道，喜欢原味瓜子，不喜欢漫长的排位与匹配，喜欢无限火力乱按键盘的时候。 回家感觉真不好，没有接收到什么正能量，没有什么开心的事。@煎蛋网友</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/22</title>
+    <link href="/2020/01/22/2020-01-22/"/>
+    <url>/2020/01/22/2020-01-22/</url>
+    
+    <content type="html"><![CDATA[<p>死宅的一天，（因为下雨？）只走了500步，安装了个cytoscape，随便鼓捣了两下子，也没学习，游戏也没好好打。下回来阴阳师，玩了一会发现还有点意思emm，但估计也是隔几天就删的吧。无聊无聊，又因为肺炎，更是无聊</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/21</title>
+    <link href="/2020/01/21/2020-01-21/"/>
+    <url>/2020/01/21/2020-01-21/</url>
+    
+    <content type="html"><![CDATA[<p>日记是每天的记录，需要反思与沉淀。倘若只是单纯的记录，收获必不会多。今日与旧友聊天散步，又接触到一些基金相关知识。曾哥靠谱，ore gay!</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>未分类</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/20</title>
+    <link href="/2020/01/20/2020-01-20/"/>
+    <url>/2020/01/20/2020-01-20/</url>
+    
+    <content type="html"><![CDATA[<p>今日总算游到了泳，虽然不多，700米，还算快乐。午饭恰了@孟 的蛋炒饭，干了点但是挺好吃。顺手还牵走一只酱鸭和一条鱼干，以后尝尝。晚上逛的超市，居然有麻雀。看了一下午+一晚上的灌篮高手，似乎并没有那么喜欢看。。只是打发一下时间而已。刷漫的意义到底在哪里，不懂。<img src="https://i.loli.net/2020/10/02/m5sVKvkQGw7Rd9S.jpg" srcset="/img/loading.gif" alt="孟大师手作炒饭"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>未分类</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/19 Diary</title>
+    <link href="/2020/01/19/diary/"/>
+    <url>/2020/01/19/diary/</url>
+    
+    <content type="html"><![CDATA[<p>今日睡了个懒觉，不得不说家里的被子比学校里舒服多了。快到中午去了趟健身房，被人说爆发力还行，耐力不行。以前可是完全反过来的人啊。在健身房莫名其妙被分到一个柑橘，出来去游泳馆的路上还被鸟屎淋了袖子，绝了。不过成功把myf叫出来游泳了，淋个鸟屎也不算什么。夜里出门终于穿上了喜欢的ECNU鞋，沿着西湖乱走，闲聊，回家的时候还看到了什么爱国主义专线，绝了。斑马线边上居然有灯，还是很不错的。图的话就乱序放了，随便看看。<br><img src="https://i.loli.net/2020/10/02/Rrbi3sDtTac8uPy.jpg" srcset="/img/loading.gif" alt="爱国教育"><br><img src="https://i.loli.net/2020/10/02/iVTwoP5u1Qkvrcl.jpg" srcset="/img/loading.gif" alt="夜西湖"><br><img src="https://i.loli.net/2020/10/02/CSOH4qeda7s19WJ.jpg" srcset="/img/loading.gif" alt="西湖边斑马线"><br><img src="https://i.loli.net/2020/10/02/Lt7DTqkwijyQAcr.jpg" srcset="/img/loading.gif" alt="鸟屎"><br><img src="https://i.loli.net/2020/10/02/q72OMk6unC5yQ39.jpg" srcset="/img/loading.gif" alt="健身房人送的水果"><br><img src="https://i.loli.net/2020/10/02/ItBr9NekfKzQgSi.jpg" srcset="/img/loading.gif" alt="大运河线"><br><img src="https://i.loli.net/2020/10/02/mtFzACGY7UhTHXN.jpg" srcset="/img/loading.gif" alt="大师"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>未分类</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/18 D</title>
+    <link href="/2020/01/18/d/"/>
+    <url>/2020/01/18/d/</url>
+    
+    <content type="html"><![CDATA[<p>终于回到了杭州，熟悉的地方，见到了熟悉的人。工大朝晖的风景还是很不错的，哪怕冬季还是绿意盎然。杭州的公交车司机似乎更冷漠了一些。公交车上遇到叽里呱啦的一群外地老奶奶，但欣慰的是另一辆车上也遇到杭州老奶奶在教育小孩要尊老，真好。 参加的天池比赛，这次要好好打！寒假虽然不久，但是要好好规划。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>未分类</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/17 D</title>
+    <link href="/2020/01/17/d/"/>
+    <url>/2020/01/17/d/</url>
+    
+    <content type="html"><![CDATA[<p>看学长跟着老师做，遇到论文润色的坑， 下次得注意。不论职场，还是学术场，有人的地方就有江湖。所幸还算了解规律。 晚上想去吃金沙江路的那家烧饼，可惜人太多，态度太差，便作罢，买了边上的一些烘焙。金沙江路倒是大变样，从原来的逼仄到现在的宽敞阔气，挺让人开心的。<img src="https://i.loli.net/2020/10/02/flZ5WwVe1QHm7Ga.jpg" srcset="/img/loading.gif" alt="宽敞的金沙江路"> 回宿舍的时候突然想去食堂看看明早开不开，但发现了意外的惊喜，挺有意思。<img src="https://i.loli.net/2020/10/02/75iYsk3nqUBLdw2.jpg" srcset="/img/loading.gif" alt="宿舍外爱心"> 本学期上海的最后一晚即将结束，准备回家咯～</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/16 Diary</title>
+    <link href="/2020/01/16/diary/"/>
+    <url>/2020/01/16/diary/</url>
+    
+    <content type="html"><![CDATA[<p>上午又去了一次医院，三乙医院还真的不行。 下午又讨论了一下学业相关事宜，徐博是真的厉害…不论改文章还是做科研，简直是个宝。一封邮件经他润色焕然一新。。。 今日补了哪吒的电影，又被煽情到了。国内电影似乎都挺煽情？哪吒，大鱼海棠，宠爱等等。哪吒的剧情在看到申公豹前往龙宫时已经猜到了大概，但这并不影响这部电影的体验。电影里的哪吒确实能激励人，但一直打这种鸡血，打多了亦无用。特别到了现在这个年纪，内在的动力才是前进力量的源头。 上海最近阴雨连绵，似是挽留想要归家的学生。可是这又有什么用呢，挽留留不住人心，大多人的根并不在这片土地上。上海或许也并不想留住我们，亦不必自作多情。 也实在是不知道内心到底想不想回家，想回家具体想的是什么。食欲不振，胃口不好，但是又还没开始收拾行李。每天去实验室，但去了也是看电影看剧。食欲与懒惰或是天气导致，或许是暂时倦了学校生活吧。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/15 Diary</title>
+    <link href="/2020/01/15/diary/"/>
+    <url>/2020/01/15/diary/</url>
+    
+    <content type="html"><![CDATA[<p>本来想去医院复诊，快走出校门了才发现没带病历本…明天早点再去吧。习惯于杭州的无纸病历，在上海还真麻烦了一点。晨间在全家买了一杯拿铁咖啡，味道就是普普通通的咖啡+奶，落肚不久才意识到我乳糖不耐受…胃里现在正发出声音（但今日最后也没拉肚子什么的，或许心理作用？）。</p><p><img src="https://i.loli.net/2020/10/02/NePryQXWxZJF1hV.jpg" srcset="/img/loading.gif" alt="全家的圣诞节遗留杯圈。杯口的扣环被我一用力掰断一部分。"></p><p>全家的小哥哥似乎是新来的，温柔高大帅气，可惜我性取向女。 逛煎蛋看到<a href="http://jandan.net/t/4441294" target="_blank" rel="noopener">一篇树洞</a>，曾经我也算是个有礼貌不爱争抢的孩子吧，得把好习惯捡起来。<a href="http://jandan.net/t/4440977" target="_blank" rel="noopener">另一篇树洞</a>也很值得反思己身。 晚饭吃的徐博从家里带来的包子。这应该算是第二轮的包子了。第一轮的包子里有挺多梅干菜包，甚是喜欢。这次吃了两天萝卜丝肉包也有点腻了，似乎失去了一开始的感觉。餐后以2-4倍速看完了10集风平浪静的闲暇，转眼已经是十一点半余。片中我闻慎二哭的时候我的心脏似乎也在抽搐。其实看这部剧之前并不知道这部是什么类型，什么内容。但看到一半，感觉片中人的人生走向里有一些现实的折射。如果抛去为剧情营造的那么多巧合，片子中发生的故事和我18年的走向还有点相符。锥心的痛现在已经好的差不多了，往者不可谏，来者犹可追。向前吧。 凪和慎二都从往事中走了出来，而凪快刀斩乱麻的水平确实高于慎二。女性比男性成熟或许是其一。自身的经历或许是原因之二。现实又何不是如此呢。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>华师之各种洗澡方式横评</title>
+    <link href="/2020/01/14/e5-8d-8e-e5-b8-88-e4-b9-8b-e5-90-84-e7-a7-8d-e6-b4-97-e6-be-a1-e6-96-b9-e5-bc-8f-e6-a8-aa-e8-af-84/"/>
+    <url>/2020/01/14/e5-8d-8e-e5-b8-88-e4-b9-8b-e5-90-84-e7-a7-8d-e6-b4-97-e6-be-a1-e6-96-b9-e5-bc-8f-e6-a8-aa-e8-af-84/</url>
+    
+    <content type="html"><![CDATA[<p>基本分成以下几种： 1 寝室冷水澡。快乐是快乐的，天气冷起来就有点难，而且容易感冒。但如果持之以恒或许可以强身健体？ 2 寝室打热水兑冷水冲澡。优点在于足不出楼即可享受热水澡。但缺点如下：其一，桶要大，否则热水不够就很尴尬；其二，如果遇到高峰期，打热水得排队。打水本身也需要点时间，尤其是遇到出水很慢的热水器的时候。而且有的热水器水温并不高，不兑冷水的话就需要更大量的热水。 3 去健身房健身完洗澡。缺点：距离远，冬天骑车过去很冷，健身房味道也很大，得在他们营业时间内去。但优点在于热水量充足，时间充足，不用考虑额外费用。 4 河西澡堂。缺点：出水的瞬间水温不稳定，而且会受到边上阀门开关的影响。基本上是边上一开热水阀，你所在位置出水水温基本会降低到“冷”的程度，而当别人关闭阀门，你位置的水温会升高，烫你一下。但优点在于离五舍很近，从下午2/3点开到晚上11点，热水量比较充足。分两个阀门，左边的热水，右边冷水。河西的更衣柜是物理钥匙，有的钥匙可以互开，这是一个缺点，但在校内，或许还是可以信任大家的吧。整体浴室保温比较好，冬天不会冷。 5 丽娃澡堂。缺点，距离五舍很远，冬天过去真的冷。热水量也不充足，10点多去得开到最热的那边才够洗。因为算是半敞开式的浴室结构，水雾散去的很快，但也留不住温度，会比河西冷一下。单阀门，和普通家用热水器一样。钥匙是RFID，比较方便和安全。而且在丽娃路上似乎能多遇到一些女生？ 0 河东女浴室。等待谁能来写一下哈哈哈，我此生估计写不出这篇评价。 PS：河西和丽娃的收费都是2毛一分钟，而且都是只要卡在，不管水阀开了还是关了都计费。 PPS：或许有人可以开房洗澡？？？</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>杂文</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/14 Diary</title>
+    <link href="/2020/01/14/diary/"/>
+    <url>/2020/01/14/diary/</url>
+    
+    <content type="html"><![CDATA[<p>不知不觉一月份已经过去快一半了，过的还行。过得还算开心。这几天虽然说没有太忙，也在稳步前进。下午查了一下发现酒精是一级致癌物，每天喝大约50克酒精(约5.3个酒精单位)的人患上述癌症的风险比不饮酒的人高两至三倍。um但是快乐和健康孰轻孰重呢？烧烤也致癌。为了快乐故，俗事可以抛，适度就好。 </p><p>本学期算是圆满，赶在回家前体验了我校两个澡堂。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/13 Diary</title>
+    <link href="/2020/01/13/diary/"/>
+    <url>/2020/01/13/diary/</url>
+    
+    <content type="html"><![CDATA[<p>他们说，鸽只有一次和无数次。那今天就不鸽了吧，感觉今天的早起缺乏了动力，终日浑浑噩噩不知所措。普陀中心医院：一所三甲医院，态度和条件真的不行。 晚上看了部Joker，也学习了一点多分类和回归的内容。又在硬盘里下了完整的Slam Dunk（含剧场版），一共100G+，回家看吧~ 歇了歇了，差点今天就鸽了，还好回寝室想起来…</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>技术性Blog（伪</title>
+    <link href="/2020/01/12/e6-8a-80-e6-9c-af-e6-80-a7blog-ef-bc-88-e4-bc-aa/"/>
+    <url>/2020/01/12/e6-8a-80-e6-9c-af-e6-80-a7blog-ef-bc-88-e4-bc-aa/</url>
+    
+    <content type="html"><![CDATA[<p>荐书《Python深度学习》，人民邮电出版社，张亮译。此书非常易懂！！ Environment: Python 3.7.4 Backend: TensorFlow Python技巧: </p><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np re=np.zeros((<span class="hljs-number">8</span>,<span class="hljs-number">16</span>))<span class="hljs-comment">#8行16列的矩阵，所有元素为0</span>re[[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">4</span>,<span class="hljs-number">8</span>]]=<span class="hljs-number">4</span><span class="hljs-comment">#可行，前后数量相等，等价于re[1,4]=re[2,8]=5</span>re[[<span class="hljs-number">2</span>],[<span class="hljs-number">4</span>,<span class="hljs-number">8</span>]]=<span class="hljs-number">5</span><span class="hljs-comment">#可行，有一个维度数量为1，怎么都可行，[x]和x等价</span>re[:,]=<span class="hljs-number">5</span><span class="hljs-comment">#可行，全部置为5 re[,]=5#不可行</span>re[<span class="hljs-number">1</span>:<span class="hljs-number">3</span>,[<span class="hljs-number">4</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>]]=<span class="hljs-number">5</span> <span class="hljs-comment">#可行，第1，2行的4678列置为5</span>a=list([<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>])<span class="hljs-keyword">for</span> index,sequence <span class="hljs-keyword">in</span> enumerate(a):<span class="hljs-comment">#枚举下标和元素值</span>    print(index,sequence)stu=&#123;‘wang’:’ba’&#125;<span class="hljs-comment">#等价于stu=dict([(‘wang’,’ ba’)])</span>stu[‘wang’]<span class="hljs-comment">#输出’ba’</span>reverse_index=dict([(value,key)<span class="hljs-keyword">for</span> (key,value) <span class="hljs-keyword">in</span> stu.items()])range(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>)<span class="hljs-comment">#取到1，2，不取3</span>A = numpy.matrix(numpy.ones((<span class="hljs-number">3</span>,<span class="hljs-number">3</span>)))numpy.array(A)[<span class="hljs-number">2</span>]=<span class="hljs-number">2</span> <span class="hljs-comment">#不改变A</span>numpy.asarray(A)[<span class="hljs-number">2</span>]=<span class="hljs-number">2</span> <span class="hljs-comment">#改变A</span></code></pre><p>Keras工作流程： </p><p>(1) 定义训练数据：输入张量和目标张量。<br>(2) 定义层组成的网络（或模型），将输入映射到目标。<br>(3) 配置学习过程：选择损失函数、优化器和需要监控的指标。<br>(4) 调用模型的 fit 方法在训练数据上进行迭代。 定义模型有两种方法：一种是使用 Sequential 类（仅用于层的线性堆叠），另一种是函数式 API（ 用于层组成的有向无环图，可以构建任意形式的架构）。</p><p>写到一半发现还是暂时鸽了吧2333，后面画一个思维导图会更好讲明白一点。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Machine Learning</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/12 Diary</title>
+    <link href="/2020/01/12/diary/"/>
+    <url>/2020/01/12/diary/</url>
+    
+    <content type="html"><![CDATA[<p>今日早早醒来睡不着，反复想入睡，随之惊觉要去医院hh。骑车过去，手是真冷，早知道不把那个皮手套送人了…本以为自己用不上，结果说不定还是会用上的。普中心医院果然符合三乙之名，楼层设置不合理。医生状态也很差。还给我开了一个无用的检查，折返后取消之…为了查肝功能特意没吃早饭去的，结果说今日没人，还真是鲜见。 </p><p><img src="https://i.loli.net/2020/10/02/iTlFRHpwE6o2v3N.jpg" srcset="/img/loading.gif" alt="大闸蟹"><br><img src="https://i.loli.net/2020/10/02/k7cf8OCqEpXeVLm.jpg" srcset="/img/loading.gif" alt="分层红茶"></p><p>天空之城与守望先锋，一样的竖式指示灯，故事里都有鸟，而花朵变成了树枝。</p><p><img src="https://i.loli.net/2020/10/02/duvh9gbFtVMCTJU.png" srcset="/img/loading.gif" alt="天空之城"><br><img src="https://i.loli.net/2020/10/02/49qbQo2I1l3ngTM.png" srcset="/img/loading.gif" alt="守望先锋"></p><p>乱逛byr，这什么沙雕漫啊哈哈哈哈，下载下来看看。真就沙雕漫哈哈哈哈。 <div style="text-align:center"> <img src="https://i.loli.net/2020/10/02/kAXIxPDlCu68EJo.png" srcset="/img/loading.gif" alt="理科生"></div></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/11 Diary</title>
+    <link href="/2020/01/11/diary/"/>
+    <url>/2020/01/11/diary/</url>
+    
+    <content type="html"><![CDATA[<p>今天醒的还不算晚，早上庸庸碌碌过去了，Leetcode上写了几道题，和朋友玩了几局游戏，转眼已是下午。 下午来到实验室，别人在打游戏而我在学习。我发现我还是喜欢和别人反着来…该玩的时候学，该学的时候玩… 回顾了一下几年前看的<a href="https://www.bilibili.com/video/av850938" target="_blank" rel="noopener">地球OL</a>，当时看的可是热血沸腾，想要去做这里面的一些事情，而现在看到，心情却没有什么太大的波动了。无论是视频画质，视频内容，弹幕，都不太能打动我。以前爱看的纪录片，现在下到硬盘里，连快进都懒得按了，直接删之而后快。这也是我的改变吧。 晚上查一个名词有感。在中文世界里皓首穷经不可得的东西，换Google之后前几个就是。而前几日在Google下寻不到的结果却在百度的前几个链接里出现…搜不到的东西最好还是多换搜索引擎吧，兼听则明偏听则暗，还是很有道理的。 实验室曾有人吐槽饮水机下面的水槽每次倒完水不久就又满了，不知谁想出来的鬼才方案，直接移除水槽！学到！好一手斩草除根，断子绝孙哈哈哈哈 <img src="https://i.loli.net/2020/10/02/le7FxA6LQbUM4um.jpg" srcset="/img/loading.gif" alt="新的一年不要花过多的时间和精力去讨厌一个人.jpg">上面这个话是微博里昨天看到转的，今天就用上了。我做到了！另外，也要找到自己所爱，不要附庸风雅而去做一些自己本身没兴趣的事情。“风雅”只是让你见识到了新的东西而已，并不是一定要去做~</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/10 流水账</title>
+    <link href="/2020/01/10/e6-b5-81-e6-b0-b4-e8-b4-a6/"/>
+    <url>/2020/01/10/e6-b5-81-e6-b0-b4-e8-b4-a6/</url>
+    
+    <content type="html"><![CDATA[<p>今天炉石很开心！今天唱歌也很开心！！难得有人唱mj的歌！！开开心心!~</p><p><img src="https://i.loli.net/2020/10/02/jK4vZbAmLIWnRYo.jpg" srcset="/img/loading.gif" alt="和图形图像课的诸位开心KTV.jpg"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/09 Diary</title>
+    <link href="/2020/01/09/diary/"/>
+    <url>/2020/01/09/diary/</url>
+    
+    <content type="html"><![CDATA[<p>莫名其妙组了一场KTV，尴尬是有点尴尬…..不过薯片真好吃啊…… 当日记变成了每天的任务，记录变得无聊与乏味。日子也何尝不是这样，或许应该适应这种平淡？还是要创造不一样的新鲜感呢？不得而知。 赶回实验室交完之前的算法作业，顺便又看了一部羞羞的铁拳，有趣。这样的爱情或许也是挺有意思的。我期盼什么样的爱情呢哈哈哈</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/08 Diary</title>
+    <link href="/2020/01/08/diary/"/>
+    <url>/2020/01/08/diary/</url>
+    
+    <content type="html"><![CDATA[<p>今日断断续续看完了大鱼海棠，着实是一部不错的电影。之前没去看太可惜了，但看完1080P版本也算满足。湫有意，椿无心，动画也是现实。 无论是剧情的设计，动画效果的呈现，都堪称一流。没有椿的意外，就也不会有后面的故事。缘分这东西说不清道不明，该来的就是会来。椿真的太可爱了，喜欢！ 今明后三天连着3个KTV也真的是绝了，这叫啥生活啊。。。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2019/01/07 Diary</title>
+    <link href="/2020/01/07/diary/"/>
+    <url>/2020/01/07/diary/</url>
+    
+    <content type="html"><![CDATA[<p>今天上午考了算法，考的emm，不咋样，最后一题还是不会，啥已知3着色问题是NPC，求证7着色问题也是NPC问题。 似乎在中午或下午还是得补觉，不然晚上可能会困。 下了一本曼昆的微观经济学(<a href="http://staff.ustc.edu.cn/~lilz/stpc/caoqian%20mankiw%20e6.pdf" target="_blank" rel="noopener">中文</a>)(<a href="https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxjcHNzaXNvZGlhbWVtb3JpYWx0cnVzdHxneDo1YTcwMmMwNDRkNjNjNTky" target="_blank" rel="noopener">English</a>)，感觉还不错，十大经济学原理。等下看完来背一下。 1 How People Make Decisions 1 People face trade-offs 2 The cost of something is what you give up to get it 3 Rational people think at the margin (边际收益，边际成本) 4 People respond to incentives 2 How People Interact With Each Other 5 Trade can make everyone better off 6 Markets are usually a good way to organize economic activity 7 Governments can sometimes improve market outcomes 3 How The Economy as a Whole Works 8 A country’s standard of living depends on its ability to product goods and services 9 Prices rise when the government prints too much money 10 Society faces a short-term trade-off between inflation and unemployment 说是要背…其实就是抄了一遍… 打道回府~希望能给室友和部门里的朋友牵上红线。</p><p><a href="http://dict.youdao.com/search?q=with%20each%20other&keyfrom=chrome.extension" target="_blank" rel="noopener" title="查看完整释义">with each other</a> <a href="http://dict.youdao.com/search?q=with%20each%20other&keyfrom=chrome.extension" target="_blank" rel="noopener">详细</a>X</p><p>基本翻译</p><p>互相</p><p>网络释义</p><p><a href="http://dict.youdao.com/search?q=agree%20with%20each%20other&keyfrom=chrome.extension&le=eng" target="_blank" rel="noopener">agree with each other:</a> 彼此同意</p><p><a href="http://dict.youdao.com/search?q=help%20with%20each%20other&keyfrom=chrome.extension&le=eng" target="_blank" rel="noopener">help with each other:</a> 互相帮助</p><p><a href="http://dict.youdao.com/search?q=coordinate%20with%20each%20other&keyfrom=chrome.extension&le=eng" target="_blank" rel="noopener">coordinate with each other:</a> 互相配合</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/06 Diary</title>
+    <link href="/2020/01/06/diary/"/>
+    <url>/2020/01/06/diary/</url>
+    
+    <content type="html"><![CDATA[<p>晨起的时候突然梦到很难受的事情，又睡下。一小时回笼觉之后，天气正好，心情阴转晴啦。</p><p>@12:49 下午的组会ppt做的实在差不多了…不想改了，开始摸鱼搓炉石。明天的考试在得知是助教批改之后也不想看了，真是废。桌面上摆了一堆书，硬盘里存了好多影视和电子书，也懒得翻阅。丧。</p><p>下午的组会真的糟糕透顶…烦躁。日子没有新鲜感了。</p><p>明天考试好运~</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/05</title>
+    <link href="/2020/01/05/diary/"/>
+    <url>/2020/01/05/diary/</url>
+    
+    <content type="html"><![CDATA[<p>越到期末越懒是怎么回事。今天迟迟不肯起床，难得让室友帮忙带了早饭。饭后赶往实验室摸了一早上的鱼，下午又磨磨蹭蹭改ppt，转眼又快到了锻炼时间了…乏味的期末。双力臂有突破，3个半，悬垂举腿还是很累…哎</p><p>晚饭吃的食堂，一碗水果沙拉，并不好吃。加了什么乱七八糟的颗粒，橘子的籽也还在，水果本身味道也一般，白瞎了10元。</p><p>晚上又看了NP、P、NPC问题，感觉还是云里雾里，咋办啊…0-1背包相对简单一些，拓扑排序和迪杰斯特拉算法算是复习好了。明天的组会准备的也差不多了，日子真是越来越无聊啊。</p><p>今日运气其实害行，昨天聚餐时忘在河西三楼的伞成功找回。提醒了别人却忘了自己，可笑可笑。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/04 Diary</title>
+    <link href="/2020/01/04/diary/"/>
+    <url>/2020/01/04/diary/</url>
+    
+    <content type="html"><![CDATA[<p>嗨呀，本来今天说好好复习好好准备组会的，早上去做实验被鸽了一个，但收获20红包，另一个实验的人也迟到了，但迟到不久。善恶到头终有报，之前因一些事情没准时赴别人的约，今天也被人爽约了。 午餐又去河西三楼聚餐，不知徐博这次又掏了多少，也不知是徐博他自己出钱还是实验室经费，看起来是前者… 聚餐之后又去环球港蹭了实验室大佬的免费电影票，10人大团体…又蹭了徐博的可乐…《宠爱》不错，实验室也很棒！晚上回来还玩UNO和狼人杀。玩的倒是挺开心的，可能因为比以前多了个学妹？害，感觉算法都没时间复习，组会虽然之前准备好了，但也得再花点时间重新看看，打磨一下…明天要抓紧。 晚上回来，听到室友在哼唱<a href="https://music.163.com/#/song?id=443860" target="_blank" rel="noopener">いつも何度でも</a>这首歌，觉得很耳熟。原来是前几日在B站听过周深唱。然后去搜了一下原曲，发现还是周深唱的更好一些欸。而且这首歌居然是千与千寻里的！好听！可是19年去看千与千寻电影的时候似乎并没有太注意这首歌。闲下来补一补宫崎骏的电影和电影里的曲子吧。害，还得学英语，书买来都没怎么动过，要做的事情好多啊。 今儿也重新买了火车票，18号早上同一班车走~还是稍微早点回去吧。洗漱睡觉，明天加油。过几天再加一个归档功能吧…这几天实在是无力搞。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/03 Diary</title>
+    <link href="/2020/01/03/diary/"/>
+    <url>/2020/01/03/diary/</url>
+    
+    <content type="html"><![CDATA[<p>早上悠悠醒转，明明看着是10点，惊坐起之后一看手机才7点52，真的是头疼…出门看到白茫茫一片，PM2.5爆了。</p><p>今日复习了<a href="https://www.cnblogs.com/StartoverX/p/4608412.html" target="_blank" rel="noopener">区间图着色问题</a>，算是了解了。另外下午看了0-1背包问题和最大二分匹配的问题（二分图）。背包问题可以用<a href="https://www.kancloud.cn/kancloud/pack/70125" target="_blank" rel="noopener">状态转移方程</a>求解。二分图问题可以归约（Reduction）为最大流问题，加入一个源点和一个汇点，链接源点和汇点的每条边容量设置为正无穷，原始图里的边容量设置为1即可。再用Ford-Fulkerson方法确定最大流就可以，方便快捷。</p><p>锻炼去咯~还是依旧40余个臂屈伸+1个半双力臂+一些单杠。本来做了几个单杠看天气不太好，身体状态也一般，想走的。转念又回头，一念天堂，一念地狱吗哈哈哈。锻炼完去做了一个实验，主试小姐姐是真可爱。澡后去食堂，常见的那位阿姨并不在，便随便找了个窗口打饭。明明没有点虾，菜里却多了红色触须。定睛一看居然是一只虾！靴靴阿姨赠虾之恩，好吃！</p><p>晚上读了一下分治求逆序对。算法如下，还是比较直观的。</p><p><img src="https://i.loli.net/2020/10/02/wuPLgfEAvVb5CFl.png" srcset="/img/loading.gif" alt="分治总述.png"></p><p><img src="https://i.loli.net/2020/10/02/oOzHfeMsGlnPyN3.png" srcset="/img/loading.gif" alt="分治.png"></p><p>Merge and count 步骤如下。<br><img src="https://i.loli.net/2020/10/02/59MUCyKHnjdLXuk.png" srcset="/img/loading.gif" alt="Merge-and-count.png"></p><p>感觉这复习就像…翻书：马冬梅。合书：马什么梅。再翻书：马冬梅。合书：什么冬梅…</p><p>本来感觉1月7组会还有好几天呢，结果说改到1月6了，突然发现没有几天了。明天和实验室的人去看电影，后天周日，再一天就要组会了。组会完还得算法考试…还是得合理规划呀。One period one thing，很重要！</p><p>@22：45 打道回府咯~</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/02 Diary</title>
+    <link href="/2020/01/02/diary/"/>
+    <url>/2020/01/02/diary/</url>
+    
+    <content type="html"><![CDATA[<p>瞅了眼日期，发现有好多0哈哈哈。今日比较无聊。昨日某室友说要起床学习，而等我快9点出门的时候他还在床上哈哈哈哈。</p><p>今日把昨天没看完的网络流看了一下，最大流的手推是没问题了，每次增加流量的时候记得改反向路径，当所有增广路径都遍历完的时候要划掉之前增加的反向路径，残余网络就是最小割了。也看了一下最小生成树的Krustal算法</p><p><img src="https://i.loli.net/2020/10/02/oViREQfw3Yabumt.png" srcset="/img/loading.gif" alt="最小生成树Krustal.png"><br><img src="https://i.loli.net/2020/10/02/2T6iymujJcrsAzF.png" srcset="/img/loading.gif" alt="最小生成树Krustal2.png"></p><p>讲的不可谓不细…但我也不深究了…应付考试我觉得足够了。</p><p>大致意思就是，先定义一个空集A，每次取最小边（贪心，但在这个问题里，局部最优就是全局最优），检查这条边两端是否属于集合A中的同一棵树，如果是，该边不能加入最后的结果集合A ，如果不是，则可以加入最后的结果集合A。上图中的fhjlmn，不能成立，因为形成了环路，即这些图中不能加入的边的两端的点属于同一棵树。</p><p>考完自然辩证法啦，5点50到，7点走。回去的路上遇到室友，他和我说书上都有啊。我懵逼了，我全编的…2道题编了2页纸…编故事功夫见长，但似乎编的逐渐偏题…</p><p>回到实验室，徐博在和AC聊天，说是要Push夏阳哈哈哈，Let him focus. Focus确实是一件很重要的事儿。</p><p>今晚随便看，看到了函数式编程，racket有空可以看看。看了堆排序。算导里写着，快排性能一般会优于堆排。搜了一下原因，是<a href="https://www.zhihu.com/question/23873747" target="_blank" rel="noopener">堆排序下，数据读取的开销变大</a>。堆中，所有优先队列的操作都可以在大O(n)时间内完成。</p><p>晚上和某人聊天，提到为啥那么晚回家，陪女朋友吗？我愣了，哪来的女朋友啊哈哈哈哈。</p><p>@22：34分想到，我的很多行为是符合互联网分享精神的。回首过去一年，多少为实验室做了一些事情，搭梯子，教机场，一人吃饱实验室不愁，偶尔会带一些吃的什么来。有什么资料，有什么消息，觉得重要的就主动share。 而似乎实验室的同学并不是这样。也罢，不记。新年新开始。</p><p>想起一个道理，见人说人话，见鬼说鬼话。手机上有一款博弈游戏，叫做<a href="https://play.google.com/store/apps/details?id=com.xuangames.xrdjh" target="_blank" rel="noopener">信任的进化</a>（Google Play）。这个APP里面有两个名词很有意思，叫做复读机和复读鸭。复读机，开场合作，然后模仿对手上一轮的动作。复读鸭和复读机类似，不过会在对方连续欺骗两次后才反击，容许对方犯错。 游戏里复读鸭会活到最后。在接触这个游戏后不久，就觉得人应该做一只复读鸭（不是做鸭子哈哈哈）。去年的经历又一次加深了这个体会。好啦就安心做一只复读鸭吧。确实，我依照这样的行为准则，得到了实验室大部分人的认可。至于某些人，就随他去吧。</p><p><img src="https://i.loli.net/2020/10/02/bfaz8xHekKCFQgt.png" srcset="/img/loading.gif" alt="信任.png"></p><p>时间不早了，动身回宿舍睡觉咯~</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020/01/01 Diary 流水账</title>
+    <link href="/2020/01/01/diary-e6-b5-81-e6-b0-b4-e8-b4-a6/"/>
+    <url>/2020/01/01/diary-e6-b5-81-e6-b0-b4-e8-b4-a6/</url>
+    
+    <content type="html"><![CDATA[<p>早上拍了个日出~图书馆却没有开门，可惜可惜。在丽娃河边的长凳上沐浴了会儿阳光，又在毛像前枯黄的草坪上散了步，鞋底沾上了许许多多草叶却浑然不知，等到准备吃午饭才发现桌下都是hhh。一时间我还在疑惑这是什么，我是谁我在哪我干了什么这什么东西居然找上我了。</p><p>整个上午，一直在搓炉石，果然我还是喜欢海盗战这种卡组，还被本科朋友说太功利。但海盗战打脸真的快乐啊，我选择follow my heart！看着星星一个个多起来是真的快乐。新的一年的年初居然登上了去年年底费神费力都没有达到的等级，运气不错。</p><p>昨日（看了一下其实是1日凌晨了…）和张小7（怀疑是夜猫）随便聊了聊，今日关注了她的微博和B站，发现她居然有个Blog。进去瞄了一下，发现她拍过一些Vlog ，记录了一些影像，写了一些 Diary ，确实是个很有趣的人。也是接触到她的一些世界，让我想起来我还有这么一个服务器。明明记得之前的时候，被 GFW ban 掉了呀，当时也是因为被 ban 才换的机场。今天尝试 ping 了一下，居然能 ping 通！！！看来2020年真的是一个新的年代，开年就有好事发生！！！</p><p>去年在GoDaddy上花钱买了个域名，但怎么设置都用不了的样子。但今天在谷歌上面搜了一个中文站点，在这个站点的指导下先购买了12个月的免费域名，然后链接到服务器 ip。数分钟后域名居然成功被解析！而去年的花钱的反而完全不能欸！然后尝试安装了LNMP，成功访问。但觉得不够好，又搜索了一下WordPress，又找到一份不错的教程，也成功安装了。 发现和方丈的界面极其相近。调包侠，成了！今年是个幸运年！！！</p><p>下午的时候，按惯例登录北邮人。寻思了一番，下载剧集，观看剧集，似乎并不是我喜欢的。去年刚拿到账号不久，有点迷茫不知道要下一些什么东西，如何利用。就暂时当了一下实验室的工具人，帮几个人下了点片。今日思虑过后，选择抛弃了一些去年的习惯。北邮人Free至20：00，下载了一些书籍与资料，先存着吧，有空再看（也不知何时有空，什么叫有空。<br>对了，赠我北邮人账号的那个小伙伴似乎今日脱单了，和她在某次联谊上遇到的男生聊得很开心。据她说，那个男生很暖。她聚餐吃的胃不舒服了，会给她买各种药啊，还有热牛奶。又比如她有忌口，没有明说，却被那个男生发现，之后避开（和她8年同学的我都不知道）。替她高兴。</p><p>约3点的时候实在熬不住困，在实验室小憩。一觉醒来大概5点了，去操场锻炼了一下<del>43个臂屈伸+1个双力臂+10</del>20个单杠。发觉昨日千米左右的游泳甚是令人疲惫，手臂还会抽筋，歇着吧┑(￣Д ￣)┍<br>粗略定了一个锻炼计划，可真的是很粗略呢…但有总比没有好，不是吗？</p><p>晚上学学网络流的东西，网上搜索了半天，发现还不如看书呢~远在天边近在眼前，不要焦躁呀还是！踏实很重要。</p><p>今年也是算跨出了不一样的一步：晚睡早起看日出；一个在从前觉得什么时候都懒得动手的人，新时代居然肯动手写博客。挺好挺好，新时代就该欣欣向荣，好好保持。</p><p>上述提到的几个网站见下！简单易懂！<br><a href="http://www.freenom.com/zh/index.html?lang=zh" target="_blank" rel="noopener">http://www.freenom.com/zh/index.html?lang=zh</a><br><a href="https://www.bandwagonhost.net/3311.html" target="_blank" rel="noopener">https://www.bandwagonhost.net/3311.html</a><br><a href="https://zhuanlan.zhihu.com/p/41113434" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/41113434</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日志</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
