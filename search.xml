@@ -4,6 +4,65 @@
   
     
     <entry>
+      <title>用户态和内核态</title>
+      <link href="/2021/04/05/%E7%94%A8%E6%88%B7%E6%80%81%E5%92%8C%E5%86%85%E6%A0%B8%E6%80%81/"/>
+      <url>/2021/04/05/%E7%94%A8%E6%88%B7%E6%80%81%E5%92%8C%E5%86%85%E6%A0%B8%E6%80%81/</url>
+      
+        <content type="html"><![CDATA[<h1 id="用户态和内核态是什么"><a href="#用户态和内核态是什么" class="headerlink" title="用户态和内核态是什么"></a>用户态和内核态是什么</h1><h2 id="用户态"><a href="#用户态" class="headerlink" title="用户态"></a>用户态</h2><p>CPU只能受限的访问内存，不能访问外围设备。占用CPU的能力低，能被抢占。Ring3</p><h2 id="内核态"><a href="#内核态" class="headerlink" title="内核态"></a>内核态</h2><p>CPU可以访问内存的所有数据。Ring0</p><h1 id="为什么要有内核态和用户态"><a href="#为什么要有内核态和用户态" class="headerlink" title="为什么要有内核态和用户态"></a>为什么要有内核态和用户态</h1><p>需要限制不同应用程序的访问能力。</p><h1 id="为什么要切换"><a href="#为什么要切换" class="headerlink" title="为什么要切换"></a>为什么要切换</h1><p>用户程序一般都运行在用户态。但是从硬盘读取数据，键盘输入等时候，用户态不能完成，需要请求操作系统内核，让操作系统内核替自己去执行。所以用户程序不能控制操作系统内核<strong>具体执行的指令</strong>。</p><h1 id="如何切换到内核态"><a href="#如何切换到内核态" class="headerlink" title="如何切换到内核态"></a>如何切换到内核态</h1><h2 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h2><p>用户程序主动发起的。</p><p>流程：</p><ol><li>用户态程序把数据放到寄存器中，或者用参数创建一个堆栈，告诉操作系统需要服务。</li><li>用户态程序执行陷阱指令。</li><li>CPU切换到内核态，进入内核地址空间，跳到指定指令。这些指令被保护，不能被用户态程序访问。</li><li>读取指令并执行。</li><li>返回用户态。</li></ol><h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>用户程序被动接收的。比如缺页异常。</p><h2 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h2><p>用户程序被动接收的。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 操作系统 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>二叉树/二叉搜索树的最近公共祖先</title>
+      <link href="/2021/04/05/%E4%BA%8C%E5%8F%89%E6%A0%91-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
+      <url>/2021/04/05/%E4%BA%8C%E5%8F%89%E6%A0%91-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</url>
+      
+        <content type="html"><![CDATA[<pre><code class="hljs python"><span class="hljs-comment"># Definition for a binary tree node.</span><span class="hljs-comment"># class TreeNode:</span><span class="hljs-comment">#     def __init__(self, x):</span><span class="hljs-comment">#         self.val = x</span><span class="hljs-comment">#         self.left = None</span><span class="hljs-comment">#         self.right = None</span></code></pre><p>若 root 是 p, q 的 最近公共祖先 ，则只可能为以下情况之一：</p><ol><li>p 和 q 在 root 的子树中，且分列 root 的 异侧（即分别在左、右子树中）；</li><li>p=root ，且 q 在 root 的左或右子树中；</li><li>q=root ，且 p 在 root 的左或右子树中；</li></ol><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">lowestCommonAncestor</span><span class="hljs-params">(self, root: <span class="hljs-string">'TreeNode'</span>, p: <span class="hljs-string">'TreeNode'</span>, q: <span class="hljs-string">'TreeNode'</span>)</span> -&gt; 'TreeNode':</span>    <span class="hljs-comment"># 二叉树，</span>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> root:        <span class="hljs-keyword">return</span> root    <span class="hljs-keyword">if</span> root==q <span class="hljs-keyword">or</span> root==p:        <span class="hljs-keyword">return</span> root    l=lowestCommonAncestor(root.left,p,q)    r=lowestCommonAncestor(root.right,p,q)    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> l:        <span class="hljs-keyword">return</span> r    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> r:        <span class="hljs-keyword">return</span> l    <span class="hljs-keyword">return</span> root</code></pre><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">lowestCommonAncestor</span><span class="hljs-params">(self, root: <span class="hljs-string">'TreeNode'</span>, p: <span class="hljs-string">'TreeNode'</span>, q: <span class="hljs-string">'TreeNode'</span>)</span> -&gt; 'TreeNode':</span>    <span class="hljs-comment"># 二叉搜索树</span>    <span class="hljs-keyword">if</span> p.val&lt;root.val <span class="hljs-keyword">and</span> q.val&lt;root.val:        <span class="hljs-keyword">return</span> lowestCommonAncestor(root.left,p,q)    <span class="hljs-keyword">elif</span> p.val&gt;root.val <span class="hljs-keyword">and</span> q.val&gt;root.val:        <span class="hljs-keyword">return</span> lowestCommonAncestor(root.right,p,q)    <span class="hljs-comment">#只在(p.val-root.val)*(q.val-root.val)&lt;0 即两者异号的时候返回root，同号归边。</span>    <span class="hljs-keyword">return</span> root</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 树 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Session &amp; Cookie</title>
+      <link href="/2021/04/05/Session-Cookie/"/>
+      <url>/2021/04/05/Session-Cookie/</url>
+      
+        <content type="html"><![CDATA[<p>Session：用来存放用户数据，浏览器<strong>第一次</strong>发送请求的时候，服务器生成了Session和Session ID来唯一标识这个Session。<strong>第二次</strong>发送请求的时候带上Session ID，就能对应上。</p><p>Session的实现方法：</p><ol><li>使用Cookie。如果不设置过期时间，就不放在硬盘上，浏览器关闭就消失。如果设置为几天后过期，那么就会在硬盘上保存。</li><li>使用URL附加信息。比如<code>?JSESSIONID=</code>不设置过期时间，浏览器关闭就过期。</li></ol><p>Session放在服务端，Cookie放在客户端。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java笔记</title>
       <link href="/2020/10/26/Java%E7%AC%94%E8%AE%B0/"/>
       <url>/2020/10/26/Java%E7%AC%94%E8%AE%B0/</url>
