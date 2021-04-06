@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Old Wind">
   <meta name="keywords" content="">
-  <title>用户态和内核态 - Wind&#39;s blog</title>
+  <title>引用和指针的区别 - Wind&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -176,8 +176,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-04-05 15:10" pubdate>
-        2021年4月5日 下午
+      <time datetime="2021-04-06 20:16" pubdate>
+        2021年4月6日 晚上
       </time>
     </span>
   
@@ -198,7 +198,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      4
        分钟
     </span>
   
@@ -228,25 +228,49 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">用户态和内核态</h1>
+            <h1 style="display: none">引用和指针的区别</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="用户态和内核态是什么"><a href="#用户态和内核态是什么" class="headerlink" title="用户态和内核态是什么"></a>用户态和内核态是什么</h1><h2 id="用户态"><a href="#用户态" class="headerlink" title="用户态"></a>用户态</h2><p>CPU只能受限的访问内存，不能访问外围设备。占用CPU的能力低，能被抢占。Ring3</p>
-<h2 id="内核态"><a href="#内核态" class="headerlink" title="内核态"></a>内核态</h2><p>CPU可以访问内存的所有数据。Ring0</p>
-<h1 id="为什么要有内核态和用户态"><a href="#为什么要有内核态和用户态" class="headerlink" title="为什么要有内核态和用户态"></a>为什么要有内核态和用户态</h1><p>需要限制不同应用程序的访问能力。</p>
-<h1 id="为什么要切换"><a href="#为什么要切换" class="headerlink" title="为什么要切换"></a>为什么要切换</h1><p>用户程序一般都运行在用户态。但是从硬盘读取数据，键盘输入等时候，用户态不能完成，需要请求操作系统内核，让操作系统内核替自己去执行。所以用户程序不能控制操作系统内核<strong>具体执行的指令</strong>。</p>
-<h1 id="如何切换到内核态"><a href="#如何切换到内核态" class="headerlink" title="如何切换到内核态"></a>如何切换到内核态</h1><h2 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h2><p>用户程序主动发起的。</p>
-<p>流程：</p>
-<ol>
-<li>用户态程序把数据放到寄存器中，或者用参数创建一个堆栈，告诉操作系统需要服务。</li>
-<li>用户态程序执行陷阱指令。</li>
-<li>CPU切换到内核态，进入内核地址空间，跳到指定指令。这些指令被保护，不能被用户态程序访问。</li>
-<li>读取指令并执行。</li>
-<li>返回用户态。</li>
+              <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>引用是别名。</p>
+<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ol>
+<li>引用被创建的时候必须<strong>立刻初始化</strong>；</li>
+<li><strong>不能有NULL引用</strong>；</li>
+<li>被初始化后就<strong>不能改变</strong>引用关系。对n的操作就是对m的操作。不是拷贝，不是指针，n就是m。</li>
 </ol>
-<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>用户程序被动接收的。比如缺页异常。</p>
-<h2 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h2><p>用户程序被动接收的。</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">int</span> m; 
+<span class="hljs-keyword">int</span> &amp;n = m;</code></pre>
 
+<h1 id="值传递-指针传递-引用传递-的异同"><a href="#值传递-指针传递-引用传递-的异同" class="headerlink" title="值传递/指针传递/引用传递 的异同"></a>值传递/指针传递/引用传递 的异同</h1><p>由于 Func1 函数体内的 x 是外部变量 n 的一份拷贝，改变 x 的值不会影响 n, 所以 n 的值仍然是 0。</p>
+<pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Func1</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>
+<span class="hljs-function"></span>&#123; 
+    x = x + <span class="hljs-number">10</span>; 
+&#125; 
+<span class="hljs-keyword">int</span> n = <span class="hljs-number">0</span>; 
+Func1(n); 
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"n = "</span> &lt;&lt; n &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// n = 0</span></code></pre>
+
+<p>以下是”指针传递”的示例程序。</p>
+<p>由于 Func2 函数体内的 x 是指向外部变量 n 的指针，改变该指针的内容将导致 n 的值改变，所以 n 的值成为 10。</p>
+<pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Func2</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *x)</span> </span>
+<span class="hljs-function"></span>&#123; 
+    (* x) = (* x) + <span class="hljs-number">10</span>; 
+&#125; 
+<span class="hljs-keyword">int</span> n = <span class="hljs-number">0</span>; 
+Func2(&amp;n);<span class="hljs-comment">// 取指针</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"n = "</span> &lt;&lt; n &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// n = 10</span></code></pre>
+
+
+
+<p>以下是”引用传递”的示例程序。</p>
+<p>由于 Func3 函数体内的 x 是外部变量 n 的引用，x 和 n 是同一个东西，改变 x 等于改变 n，所以 n 的值成为 10。</p>
+<pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Func3</span><span class="hljs-params">(<span class="hljs-keyword">int</span> &amp;x)</span> </span>
+<span class="hljs-function"></span>&#123; 
+    x = x + <span class="hljs-number">10</span>; 
+&#125; 
+
+<span class="hljs-keyword">int</span> n = <span class="hljs-number">0</span>; 
+Func3(n); 
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"n = "</span> &lt;&lt; n &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// n = 10</span></code></pre>
             </div>
             <hr>
             <div>
@@ -256,7 +280,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+                      <a class="hover-with-bg" href="/tags/c/">c++</a>
                     
                   </div>
                 
@@ -269,9 +293,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/04/06/C-static/">
+                      <a href="/2021/04/06/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">C++ static</span>
+                        <span class="hidden-mobile">进程与线程</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -279,8 +303,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/04/05/%E4%BA%8C%E5%8F%89%E6%A0%91-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/">
-                        <span class="hidden-mobile">二叉树/二叉搜索树的最近公共祖先</span>
+                      <a href="/2021/04/06/C-static/">
+                        <span class="hidden-mobile">C++ static</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -461,7 +485,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "用户态和内核态&nbsp;",
+        "引用和指针的区别&nbsp;",
       ],
       cursorChar: "__w(ﾟДﾟ)w",
       typeSpeed: 70,

@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Old Wind">
   <meta name="keywords" content="">
-  <title>用户态和内核态 - Wind&#39;s blog</title>
+  <title>剑指 Offer 35. 复杂链表的复制 - Wind&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -176,8 +176,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-04-05 15:10" pubdate>
-        2021年4月5日 下午
+      <time datetime="2021-04-06 21:39" pubdate>
+        2021年4月6日 晚上
       </time>
     </span>
   
@@ -188,7 +188,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      321 字
+      84 字
     </span>
   
 
@@ -198,7 +198,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      1
        分钟
     </span>
   
@@ -228,24 +228,30 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">用户态和内核态</h1>
+            <h1 style="display: none">剑指 Offer 35. 复杂链表的复制</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="用户态和内核态是什么"><a href="#用户态和内核态是什么" class="headerlink" title="用户态和内核态是什么"></a>用户态和内核态是什么</h1><h2 id="用户态"><a href="#用户态" class="headerlink" title="用户态"></a>用户态</h2><p>CPU只能受限的访问内存，不能访问外围设备。占用CPU的能力低，能被抢占。Ring3</p>
-<h2 id="内核态"><a href="#内核态" class="headerlink" title="内核态"></a>内核态</h2><p>CPU可以访问内存的所有数据。Ring0</p>
-<h1 id="为什么要有内核态和用户态"><a href="#为什么要有内核态和用户态" class="headerlink" title="为什么要有内核态和用户态"></a>为什么要有内核态和用户态</h1><p>需要限制不同应用程序的访问能力。</p>
-<h1 id="为什么要切换"><a href="#为什么要切换" class="headerlink" title="为什么要切换"></a>为什么要切换</h1><p>用户程序一般都运行在用户态。但是从硬盘读取数据，键盘输入等时候，用户态不能完成，需要请求操作系统内核，让操作系统内核替自己去执行。所以用户程序不能控制操作系统内核<strong>具体执行的指令</strong>。</p>
-<h1 id="如何切换到内核态"><a href="#如何切换到内核态" class="headerlink" title="如何切换到内核态"></a>如何切换到内核态</h1><h2 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h2><p>用户程序主动发起的。</p>
-<p>流程：</p>
-<ol>
-<li>用户态程序把数据放到寄存器中，或者用参数创建一个堆栈，告诉操作系统需要服务。</li>
-<li>用户态程序执行陷阱指令。</li>
-<li>CPU切换到内核态，进入内核地址空间，跳到指定指令。这些指令被保护，不能被用户态程序访问。</li>
-<li>读取指令并执行。</li>
-<li>返回用户态。</li>
-</ol>
-<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>用户程序被动接收的。比如缺页异常。</p>
-<h2 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h2><p>用户程序被动接收的。</p>
+              <p>题源 <a href="https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/</a></p>
+<pre><code class="hljs python">Class RandomNode:
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,x:int,next:<span class="hljs-string">'RandomNode'</span>=None,random:<span class="hljs-string">'RandomNode'</span>=None)</span>:</span>
+        self.val=x
+        self.next=next
+        self.random=random
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">copyRandomList</span><span class="hljs-params">(head:<span class="hljs-string">'RandomNode'</span>)</span>:</span>
+    visited=&#123;&#125;
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dfs</span><span class="hljs-params">(root:<span class="hljs-string">'RandomNode'</span>)</span>:</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> root:
+            <span class="hljs-keyword">return</span> root
+       	<span class="hljs-keyword">nonlocal</span> visited
+        <span class="hljs-keyword">if</span> root <span class="hljs-keyword">in</span> visited:
+            <span class="hljs-keyword">return</span> visited[root]
+        copy=RandomNode(root.val)
+        visited[root]=copy
+        copy.next=dfs(root.next)
+        copy.random=dfs(root.random)
+        <span class="hljs-keyword">return</span> copy
+   	<span class="hljs-keyword">return</span> dfs(head)</code></pre>
+
 
             </div>
             <hr>
@@ -256,7 +262,11 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%89%91%E6%8C%87Offer/">剑指Offer</a>
+                    
+                      <a class="hover-with-bg" href="/tags/dfs/">dfs</a>
                     
                   </div>
                 
@@ -269,18 +279,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/04/06/C-static/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">C++ static</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/04/05/%E4%BA%8C%E5%8F%89%E6%A0%91-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/">
-                        <span class="hidden-mobile">二叉树/二叉搜索树的最近公共祖先</span>
+                      <a href="/2021/04/06/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/">
+                        <span class="hidden-mobile">进程与线程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -461,7 +465,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "用户态和内核态&nbsp;",
+        "剑指 Offer 35. 复杂链表的复制&nbsp;",
       ],
       cursorChar: "__w(ﾟДﾟ)w",
       typeSpeed: 70,

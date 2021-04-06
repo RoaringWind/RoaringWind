@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Old Wind">
   <meta name="keywords" content="">
-  <title>用户态和内核态 - Wind&#39;s blog</title>
+  <title>C++ static - Wind&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -176,8 +176,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-04-05 15:10" pubdate>
-        2021年4月5日 下午
+      <time datetime="2021-04-06 18:59" pubdate>
+        2021年4月6日 晚上
       </time>
     </span>
   
@@ -188,7 +188,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      321 字
+      408 字
     </span>
   
 
@@ -198,7 +198,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      4
        分钟
     </span>
   
@@ -228,24 +228,25 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">用户态和内核态</h1>
+            <h1 style="display: none">C++ static</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="用户态和内核态是什么"><a href="#用户态和内核态是什么" class="headerlink" title="用户态和内核态是什么"></a>用户态和内核态是什么</h1><h2 id="用户态"><a href="#用户态" class="headerlink" title="用户态"></a>用户态</h2><p>CPU只能受限的访问内存，不能访问外围设备。占用CPU的能力低，能被抢占。Ring3</p>
-<h2 id="内核态"><a href="#内核态" class="headerlink" title="内核态"></a>内核态</h2><p>CPU可以访问内存的所有数据。Ring0</p>
-<h1 id="为什么要有内核态和用户态"><a href="#为什么要有内核态和用户态" class="headerlink" title="为什么要有内核态和用户态"></a>为什么要有内核态和用户态</h1><p>需要限制不同应用程序的访问能力。</p>
-<h1 id="为什么要切换"><a href="#为什么要切换" class="headerlink" title="为什么要切换"></a>为什么要切换</h1><p>用户程序一般都运行在用户态。但是从硬盘读取数据，键盘输入等时候，用户态不能完成，需要请求操作系统内核，让操作系统内核替自己去执行。所以用户程序不能控制操作系统内核<strong>具体执行的指令</strong>。</p>
-<h1 id="如何切换到内核态"><a href="#如何切换到内核态" class="headerlink" title="如何切换到内核态"></a>如何切换到内核态</h1><h2 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h2><p>用户程序主动发起的。</p>
-<p>流程：</p>
-<ol>
-<li>用户态程序把数据放到寄存器中，或者用参数创建一个堆栈，告诉操作系统需要服务。</li>
-<li>用户态程序执行陷阱指令。</li>
-<li>CPU切换到内核态，进入内核地址空间，跳到指定指令。这些指令被保护，不能被用户态程序访问。</li>
-<li>读取指令并执行。</li>
-<li>返回用户态。</li>
+              <h1 id="什么是static，用来干什么的，解决什么问题"><a href="#什么是static，用来干什么的，解决什么问题" class="headerlink" title="什么是static，用来干什么的，解决什么问题"></a>什么是static，用来干什么的，解决什么问题</h1><p>c/c++的<strong>修饰符</strong>，控制变量的存储方式和可见性。函数内部定义的变量，执行到的时候为它在栈上分配空间，函数结束后释放，如果要保留这个值到下次调用的时候，就需要加static。如果用全局变量，会破坏变量访问范围。</p>
+<h2 id="如何控制存储方式"><a href="#如何控制存储方式" class="headerlink" title="如何控制存储方式"></a>如何控制存储方式</h2><p><img src="https://i.loli.net/2021/04/06/z6a8MjCXl3UVfgK.png" srcset="/img/loading.gif" alt="全局静态存储区"></p>
+<p>全局（静态）存储区：分为DATA和BSS（Block started by symbol）段，DATA段存放初始化的全局变量和静态变量，BSS段存放未初始化的全局变量。</p>
+<p>静态数据成员要在程序一开始运行时就必须存在。因为函数在程序运行中被调用，所以<strong>静态数据成员不能在任何函数内分配空间和初始化。</strong>所以，也不能在类内初始化为一个值，必须在类外初始化。</p>
+<h2 id="如何分配空间"><a href="#如何分配空间" class="headerlink" title="如何分配空间"></a>如何分配空间</h2><p>在类的外部接口的头文件，或者main函数之前。<code>int Point::m_nPointCount;</code>这样就可以。</p>
+<h1 id="static可以用在哪，以及作用"><a href="#static可以用在哪，以及作用" class="headerlink" title="static可以用在哪，以及作用"></a>static可以用在哪，以及作用</h1><ol>
+<li><p>修饰局部变量</p>
+<p>只初始化一次，延长生命周期。</p>
+</li>
+<li><p>修饰全局变量<br>限定只能本文件内访问。</p>
+</li>
+<li><p>修饰函数<br>限定只能本文件内访问。</p>
+</li>
 </ol>
-<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>用户程序被动接收的。比如缺页异常。</p>
-<h2 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h2><p>用户程序被动接收的。</p>
+<h1 id="全局变量和全局静态变量的区别"><a href="#全局变量和全局静态变量的区别" class="headerlink" title="全局变量和全局静态变量的区别"></a>全局变量和全局静态变量的区别</h1><p>不显式用static修饰的变量作用域是整个工程，可以被外部文件用extern访问。</p>
+<h1 id="如何使用static变量和static方法"><a href="#如何使用static变量和static方法" class="headerlink" title="如何使用static变量和static方法"></a>如何使用static变量和static方法</h1><p>通过<code>类名.变量/方法</code>来访问，不需要new一个类。或者<code>类名::静态成员名</code>。</p>
 
             </div>
             <hr>
@@ -256,7 +257,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+                      <a class="hover-with-bg" href="/tags/C/">C++</a>
                     
                   </div>
                 
@@ -269,9 +270,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/04/06/C-static/">
+                      <a href="/2021/04/06/%E5%BC%95%E7%94%A8%E5%92%8C%E6%8C%87%E9%92%88%E7%9A%84%E5%8C%BA%E5%88%AB/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">C++ static</span>
+                        <span class="hidden-mobile">引用和指针的区别</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -279,8 +280,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/04/05/%E4%BA%8C%E5%8F%89%E6%A0%91-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/">
-                        <span class="hidden-mobile">二叉树/二叉搜索树的最近公共祖先</span>
+                      <a href="/2021/04/05/%E7%94%A8%E6%88%B7%E6%80%81%E5%92%8C%E5%86%85%E6%A0%B8%E6%80%81/">
+                        <span class="hidden-mobile">用户态和内核态</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -461,7 +462,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "用户态和内核态&nbsp;",
+        "C++ static&nbsp;",
       ],
       cursorChar: "__w(ﾟДﾟ)w",
       typeSpeed: 70,

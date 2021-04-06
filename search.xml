@@ -4,6 +4,88 @@
   
     
     <entry>
+      <title>剑指 Offer 35. 复杂链表的复制</title>
+      <link href="/2021/04/06/%E5%89%91%E6%8C%87-Offer-35-%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/"/>
+      <url>/2021/04/06/%E5%89%91%E6%8C%87-Offer-35-%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/</url>
+      
+        <content type="html"><![CDATA[<p>题源 <a href="https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/</a></p><pre><code class="hljs python">Class RandomNode:    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,x:int,next:<span class="hljs-string">'RandomNode'</span>=None,random:<span class="hljs-string">'RandomNode'</span>=None)</span>:</span>        self.val=x        self.next=next        self.random=random<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">copyRandomList</span><span class="hljs-params">(head:<span class="hljs-string">'RandomNode'</span>)</span>:</span>    visited=&#123;&#125;    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dfs</span><span class="hljs-params">(root:<span class="hljs-string">'RandomNode'</span>)</span>:</span>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> root:            <span class="hljs-keyword">return</span> root       <span class="hljs-keyword">nonlocal</span> visited        <span class="hljs-keyword">if</span> root <span class="hljs-keyword">in</span> visited:            <span class="hljs-keyword">return</span> visited[root]        copy=RandomNode(root.val)        visited[root]=copy        copy.next=dfs(root.next)        copy.random=dfs(root.random)        <span class="hljs-keyword">return</span> copy   <span class="hljs-keyword">return</span> dfs(head)</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 剑指Offer </tag>
+            
+            <tag> dfs </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>进程与线程</title>
+      <link href="/2021/04/06/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/"/>
+      <url>/2021/04/06/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<p>进程是运行中的一段程序。包括程序的可执行代码和程序计数器，调用堆栈等。</p><p>进程是资源分配的最小单位，线程是程序执行的最小单位。</p><p><img src="https://i.loli.net/2021/04/06/KVLDB4MafjIxpGW.png" srcset="/img/loading.gif" alt="进程"></p><h1 id="进程-线程切换开销"><a href="#进程-线程切换开销" class="headerlink" title="进程/线程切换开销"></a>进程/线程切换开销</h1><h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><ol><li>页表全局目录；</li><li>调用堆栈和堆栈；</li><li>文件描述符；</li><li>处理器硬件上下文，比如栈帧的指针，寄存器内容，高速缓存；</li><li>TLB的刷新，即建立新的映射。</li></ol><h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>局部的程序计数器，程序指针，局部的栈帧，相关寄存器状态（线程的上下文）。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 操作系统 </tag>
+            
+            <tag> c++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>引用和指针的区别</title>
+      <link href="/2021/04/06/%E5%BC%95%E7%94%A8%E5%92%8C%E6%8C%87%E9%92%88%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+      <url>/2021/04/06/%E5%BC%95%E7%94%A8%E5%92%8C%E6%8C%87%E9%92%88%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      
+        <content type="html"><![CDATA[<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>引用是别名。</p><h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ol><li>引用被创建的时候必须<strong>立刻初始化</strong>；</li><li><strong>不能有NULL引用</strong>；</li><li>被初始化后就<strong>不能改变</strong>引用关系。对n的操作就是对m的操作。不是拷贝，不是指针，n就是m。</li></ol><pre><code class="hljs c++"><span class="hljs-keyword">int</span> m; <span class="hljs-keyword">int</span> &amp;n = m;</code></pre><h1 id="值传递-指针传递-引用传递-的异同"><a href="#值传递-指针传递-引用传递-的异同" class="headerlink" title="值传递/指针传递/引用传递 的异同"></a>值传递/指针传递/引用传递 的异同</h1><p>由于 Func1 函数体内的 x 是外部变量 n 的一份拷贝，改变 x 的值不会影响 n, 所以 n 的值仍然是 0。</p><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Func1</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span><span class="hljs-function"></span>&#123;     x = x + <span class="hljs-number">10</span>; &#125; <span class="hljs-keyword">int</span> n = <span class="hljs-number">0</span>; Func1(n); <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"n = "</span> &lt;&lt; n &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// n = 0</span></code></pre><p>以下是”指针传递”的示例程序。</p><p>由于 Func2 函数体内的 x 是指向外部变量 n 的指针，改变该指针的内容将导致 n 的值改变，所以 n 的值成为 10。</p><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Func2</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *x)</span> </span><span class="hljs-function"></span>&#123;     (* x) = (* x) + <span class="hljs-number">10</span>; &#125; <span class="hljs-keyword">int</span> n = <span class="hljs-number">0</span>; Func2(&amp;n);<span class="hljs-comment">// 取指针</span><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"n = "</span> &lt;&lt; n &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// n = 10</span></code></pre><p>以下是”引用传递”的示例程序。</p><p>由于 Func3 函数体内的 x 是外部变量 n 的引用，x 和 n 是同一个东西，改变 x 等于改变 n，所以 n 的值成为 10。</p><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Func3</span><span class="hljs-params">(<span class="hljs-keyword">int</span> &amp;x)</span> </span><span class="hljs-function"></span>&#123;     x = x + <span class="hljs-number">10</span>; &#125; <span class="hljs-keyword">int</span> n = <span class="hljs-number">0</span>; Func3(n); <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"n = "</span> &lt;&lt; n &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// n = 10</span></code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>C++ static</title>
+      <link href="/2021/04/06/C-static/"/>
+      <url>/2021/04/06/C-static/</url>
+      
+        <content type="html"><![CDATA[<h1 id="什么是static，用来干什么的，解决什么问题"><a href="#什么是static，用来干什么的，解决什么问题" class="headerlink" title="什么是static，用来干什么的，解决什么问题"></a>什么是static，用来干什么的，解决什么问题</h1><p>c/c++的<strong>修饰符</strong>，控制变量的存储方式和可见性。函数内部定义的变量，执行到的时候为它在栈上分配空间，函数结束后释放，如果要保留这个值到下次调用的时候，就需要加static。如果用全局变量，会破坏变量访问范围。</p><h2 id="如何控制存储方式"><a href="#如何控制存储方式" class="headerlink" title="如何控制存储方式"></a>如何控制存储方式</h2><p><img src="https://i.loli.net/2021/04/06/z6a8MjCXl3UVfgK.png" srcset="/img/loading.gif" alt="全局静态存储区"></p><p>全局（静态）存储区：分为DATA和BSS（Block started by symbol）段，DATA段存放初始化的全局变量和静态变量，BSS段存放未初始化的全局变量。</p><p>静态数据成员要在程序一开始运行时就必须存在。因为函数在程序运行中被调用，所以<strong>静态数据成员不能在任何函数内分配空间和初始化。</strong>所以，也不能在类内初始化为一个值，必须在类外初始化。</p><h2 id="如何分配空间"><a href="#如何分配空间" class="headerlink" title="如何分配空间"></a>如何分配空间</h2><p>在类的外部接口的头文件，或者main函数之前。<code>int Point::m_nPointCount;</code>这样就可以。</p><h1 id="static可以用在哪，以及作用"><a href="#static可以用在哪，以及作用" class="headerlink" title="static可以用在哪，以及作用"></a>static可以用在哪，以及作用</h1><ol><li><p>修饰局部变量</p><p>只初始化一次，延长生命周期。</p></li><li><p>修饰全局变量<br>限定只能本文件内访问。</p></li><li><p>修饰函数<br>限定只能本文件内访问。</p></li></ol><h1 id="全局变量和全局静态变量的区别"><a href="#全局变量和全局静态变量的区别" class="headerlink" title="全局变量和全局静态变量的区别"></a>全局变量和全局静态变量的区别</h1><p>不显式用static修饰的变量作用域是整个工程，可以被外部文件用extern访问。</p><h1 id="如何使用static变量和static方法"><a href="#如何使用static变量和static方法" class="headerlink" title="如何使用static变量和static方法"></a>如何使用static变量和static方法</h1><p>通过<code>类名.变量/方法</code>来访问，不需要new一个类。或者<code>类名::静态成员名</code>。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>用户态和内核态</title>
       <link href="/2021/04/05/%E7%94%A8%E6%88%B7%E6%80%81%E5%92%8C%E5%86%85%E6%A0%B8%E6%80%81/"/>
       <url>/2021/04/05/%E7%94%A8%E6%88%B7%E6%80%81%E5%92%8C%E5%86%85%E6%A0%B8%E6%80%81/</url>
