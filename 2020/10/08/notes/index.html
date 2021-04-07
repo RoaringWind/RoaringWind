@@ -188,7 +188,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      185 字
+      616 字
     </span>
   
 
@@ -198,7 +198,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      7
        分钟
     </span>
   
@@ -231,7 +231,52 @@
             <h1 style="display: none">notes</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="网际层协议"><a href="#网际层协议" class="headerlink" title="网际层协议"></a>网际层协议</h1><p>IP: Internet Protocol<br>  提供网络结点之间的报文传送服务<br>ARP: Address Resolution Protocol<br>  实现IP地址向物理地址的映射</p>
+              <h1 id="网际层协议"><a href="#网际层协议" class="headerlink" title="网际层协议"></a>网际层协议</h1><p>IP: Internet Protocol<br>  提供网络结点之间的报文传送服务</p>
+<p>A类网络：网络号占1个字节，但只有7位可以使用（因为第一位固定为0）。但可指派的网络号是126个。IP 0.0.0.0表示本网络。网络号127保留作为本地软件环回测试本主机的进程之间的通信之用。每一个A类网络中最大主机数量是2^24-2，全1（255）的主机号字段表示该网络上所有主机。全0表示本主机所在的网络地址。</p>
+<p>B类网络：网络号占2个字节，前两位是10。但B类网络128.0.0.0是不指派。B类可指派的网络数量为2^14-1，可指派的最小值是128.1.0.0（因为网络号有2位）。每个网络的主机数为2^16-2=65534（去掉全0和全1，即255.255）。</p>
+<p>C类网络：网络号占3个字节，110开头。同样不指派192.0.0.0。可指派的最小值是192.0.1.0（因为网络号有3位）。可指派的网络书是2^21-1。每个网络主机数是254。</p>
+<p>一个网络是指具有相同网络号的主机的集合。</p>
+<table>
+<thead>
+<tr>
+<th>网络类别</th>
+<th>第一个网络段的开头位（二进制位）</th>
+<th>最大可指派的网络数</th>
+<th>每个网络最大主机数量</th>
+<th>第一个可指派的网络</th>
+<th>最后一个可指派的网络</th>
+<th>不指派的网络</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A类网络</td>
+<td>0</td>
+<td>2<sup>8-1</sup>-2</td>
+<td>2<sup>21</sup>-2</td>
+<td>1</td>
+<td>126</td>
+<td>0（保留地址，本网络）和127（环回地址，供本地软件测试）</td>
+</tr>
+<tr>
+<td>B类网络</td>
+<td>10</td>
+<td>2<sup>16-2</sup>-1=16383</td>
+<td>2<sup>16</sup>-2=65534</td>
+<td>128.1</td>
+<td>191.255</td>
+<td>128.0</td>
+</tr>
+<tr>
+<td>C类网络</td>
+<td>110</td>
+<td>2<sup>24-3</sup>-1=2097151</td>
+<td>2<sup>8</sup>-2=254</td>
+<td>192.0.1</td>
+<td>223.255.255</td>
+<td>192.0.0</td>
+</tr>
+</tbody></table>
+<p>ARP: Address Resolution Protocol<br>  实现IP地址向物理地址的映射</p>
 <h1 id="运输层协议"><a href="#运输层协议" class="headerlink" title="运输层协议"></a>运输层协议</h1><p>TCP: Transmission Control Protocol<br>  提供用户间面向连接的，可靠的报文传输服务<br>UDP: User Datagram Protocol<br>  提供用户间无连接的，不可靠的报文传输服务</p>
 <h1 id="应用层协议"><a href="#应用层协议" class="headerlink" title="应用层协议"></a>应用层协议</h1><p>SMTP: Simple mail transmission protocol<br>  简单的电子邮件发送服务<br>Telnet: Telcommunication network protocol<br>  远程登录服务（明文传输）<br>DNS: Domain Name System<br>  域名和IP地址映射<br>POP: Post Office Protocol<br>  提供对邮箱服务器进行远程存取邮件的服务，类似的还有IMAP<br>HTTP: HyperText Transfer Protocol<br>  浏览服务<br>SSH: Secure Shell<br>  加密的网络传输协议</p>
 

@@ -3,6 +3,76 @@
 
 
     <url>
+        <loc>http://yoursite.com/tags/const/</loc>
+        <lastmod>2021-04-07T14:52:30.824Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/C/</loc>
+        <lastmod>2021-04-07T14:52:30.824Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/%25E5%25A4%259A%25E6%2580%2581/</loc>
+        <lastmod>2021-04-07T13:37:18.558Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/c/</loc>
+        <lastmod>2021-04-07T04:39:33.358Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/%25E6%2593%258D%25E4%25BD%259C%25E7%25B3%25BB%25E7%25BB%259F/</loc>
+        <lastmod>2021-04-07T04:39:33.358Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/dfs/</loc>
+        <lastmod>2021-04-07T04:39:33.357Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/%25E5%2589%2591%25E6%258C%2587Offer/</loc>
+        <lastmod>2021-04-07T04:39:33.357Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/%25E7%25AE%2597%25E6%25B3%2595/</loc>
+        <lastmod>2021-04-07T04:39:33.357Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/%25E6%25A0%2591/</loc>
+        <lastmod>2021-04-07T04:39:33.356Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/%25E8%25AE%25A1%25E7%25AE%2597%25E6%259C%25BA%25E7%25BD%2591%25E7%25BB%259C/</loc>
+        <lastmod>2021-04-07T04:39:33.347Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yoursite.com/tags/Java/</loc>
         <lastmod>2020-10-27T01:30:06.947Z</lastmod>
         <changefreq>weekly</changefreq>
