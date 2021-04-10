@@ -8,6 +8,22 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2021/04/10/C-%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</loc>
+        <lastmod>2021-04-10T09:51:34.243Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2021/04/08/C-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</loc>
+        <lastmod>2021-04-08T06:57:29.967Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2021/04/07/C-const/</loc>
         <lastmod>2021-04-07T14:52:30.824Z</lastmod>
         <changefreq>weekly</changefreq>
