@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Old Wind">
   <meta name="keywords" content="">
-  <title>C++智能指针 - Wind&#39;s blog</title>
+  <title>提问-操作系统 - Wind&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -176,8 +176,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-04-10 15:07" pubdate>
-        2021年4月10日 下午
+      <time datetime="2021-04-12 14:29" pubdate>
+        2021年4月12日 下午
       </time>
     </span>
   
@@ -188,7 +188,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.2k 字
+      925 字
     </span>
   
 
@@ -198,7 +198,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      14
+      9
        分钟
     </span>
   
@@ -228,102 +228,62 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">C++智能指针</h1>
+            <h1 style="display: none">提问-操作系统</h1>
             
             <div class="markdown-body" id="post-body">
-              <p>参考：<a href="https://www.cnblogs.com/wxquare/p/4759020.html" target="_blank" rel="noopener">https://www.cnblogs.com/wxquare/p/4759020.html</a></p>
-<p><a href="http://c.biancheng.net/view/7898.html" target="_blank" rel="noopener">http://c.biancheng.net/view/7898.html</a></p>
-<h1 id="什么是智能指针"><a href="#什么是智能指针" class="headerlink" title="什么是智能指针"></a>什么是智能指针</h1><p>智能指针是指向动态分配的内存区（堆）里的对象。</p>
-<h1 id="智能指针有什么用"><a href="#智能指针有什么用" class="headerlink" title="智能指针有什么用"></a>智能指针有什么用</h1><p>用于生存期控制，确保正确销毁动态分配的对象。防止内存泄漏。</p>
-<p>理解智能指针需要从下面三个层次：</p>
-<ol>
-<li>从较浅的层面看，智能指针是利用了一种叫做RAII（资源获取即初始化）的技术对普通的指针进行封装，这使得智能指针实质是一个对象，行为表现的却像一个指针。</li>
-<li>智能指针的作用是防止忘记调用delete释放内存和程序异常的进入catch块忘记释放内存。另外指针的释放时机也是非常有考究的，多次释放同一个指针会造成程序崩溃，这些都可以通过智能指针来解决。</li>
-<li>智能指针还有一个作用是把值语义转换成引用语义。C++和Java有一处最大的区别在于语义不同，在Java里面下列代码：<pre><code class="hljs Java">Animal a = <span class="hljs-keyword">new</span> Animal();
-Animal b = a;</code></pre>
-你当然知道，这里其实只生成了一个对象，a和b仅仅是把持对象的引用而已。但在C++中不是这样，<pre><code class="hljs Java">Animal a;
-Animal b = a;</code></pre>
-<h1 id="智能指针里面有什么，怎么设计实现的"><a href="#智能指针里面有什么，怎么设计实现的" class="headerlink" title="智能指针里面有什么，怎么设计实现的"></a>智能指针里面有什么，怎么设计实现的</h1></li>
-</ol>
-<p>利用自动调用的类的析构函数来释放内存。从较浅的层面看，智能指针是利用了一种叫做RAII（资源获取即初始化）的技术对普通的指针进行封装，这使得智能指针实质是一个对象，行为表现的却像一个指针。</p>
-<ol>
-<li>引用计数。</li>
-</ol>
-<h1 id="各个智能指针的异同"><a href="#各个智能指针的异同" class="headerlink" title="各个智能指针的异同"></a>各个智能指针的异同</h1><h2 id="auto-ptr"><a href="#auto-ptr" class="headerlink" title="auto_ptr"></a><del>auto_ptr</del></h2><p>已经在C++11里弃用，C++11开始起用如下3个智能指针。</p>
-<h2 id="shared-ptr"><a href="#shared-ptr" class="headerlink" title="shared_ptr"></a>shared_ptr</h2><p>引用计数，指向相同内存。每析构一次，引用减一，直到为0，删除指向的堆内存。线程安全，读取需要加锁。</p>
-<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><ul>
-<li><p>不能将指针直接赋值给一个智能指针。</p>
+              <h1 id="进程的内存布局中，哪些是线程共享的"><a href="#进程的内存布局中，哪些是线程共享的" class="headerlink" title="进程的内存布局中，哪些是线程共享的"></a>进程的内存布局中，哪些是线程共享的</h1><h1 id="什么是缓存溢出"><a href="#什么是缓存溢出" class="headerlink" title="什么是缓存溢出"></a>什么是缓存溢出</h1><p>程序在申请内存时，没有足够的内存空间供其使用。</p>
+<h1 id="一定要有线程吗？"><a href="#一定要有线程吗？" class="headerlink" title="一定要有线程吗？"></a>一定要有线程吗？</h1><p>可以没有，但是线程可以解决并发，切换开销过大的问题。</p>
+<h1 id="进程与线程的切换开销展开说说"><a href="#进程与线程的切换开销展开说说" class="headerlink" title="进程与线程的切换开销展开说说"></a>进程与线程的切换开销展开说说</h1><h2 id="进程切换"><a href="#进程切换" class="headerlink" title="进程切换"></a>进程切换</h2><ol>
+<li><p>切换页表全局目录</p>
 </li>
-<li><p>避免循环引用。</p>
+<li><p>切换内核态堆栈</p>
 </li>
-<li><p>不要用原始指针初始化多个<code>shared_ptr</code>。否则会多次释放同一块内存。</p>
+<li><p>切换硬件上下文（进程恢复前，必须装入寄存器的数据统称为硬件上下文）</p>
+<ul>
+<li><p>ip(instruction pointer)：指向当前执行指令的下一条指令</p>
+</li>
+<li><p>bp(base pointer): 用于存放执行中的函数对应的栈帧的栈底地址</p>
+</li>
+<li><p>sp(stack poinger): 用于存放执行中的函数对应的栈帧的栈顶地址</p>
+</li>
+<li><p>cr3:页目录基址寄存器，保存页目录表的物理地址</p>
+</li>
+<li><p>……</p>
 </li>
 </ul>
-<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;memory&gt;</span></span>
-
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
-    &#123;
-        <span class="hljs-keyword">int</span> a = <span class="hljs-number">10</span>;
-        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">shared_ptr</span>&lt;<span class="hljs-keyword">int</span>&gt; ptra = <span class="hljs-built_in">std</span>::make_shared&lt;<span class="hljs-keyword">int</span>&gt;(a);
-        <span class="hljs-comment">//std::shared_ptr&lt;int&gt; ptra1 = std::make_shared&lt;int&gt;(a);//不要初始化多个，会出错。</span>
-        <span class="hljs-function"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">shared_ptr</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">ptra2</span><span class="hljs-params">(ptra)</span></span>; <span class="hljs-comment">//copy</span>
-        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; ptra.use_count() &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
-
-        <span class="hljs-keyword">int</span> b = <span class="hljs-number">20</span>;
-        <span class="hljs-keyword">int</span> *pb = &amp;a;
-        <span class="hljs-comment">//std::shared_ptr&lt;int&gt; ptrb = pb;  //error</span>
-        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">shared_ptr</span>&lt;<span class="hljs-keyword">int</span>&gt; ptrb = <span class="hljs-built_in">std</span>::make_shared&lt;<span class="hljs-keyword">int</span>&gt;(b);
-        ptra2 = ptrb; <span class="hljs-comment">//assign</span>
-        pb = ptrb.<span class="hljs-built_in">get</span>(); <span class="hljs-comment">//获取原始指针</span>
-        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; ptra.use_count() &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
-        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; ptrb.use_count() &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
-    &#125;
-&#125;</code></pre>
-
-<h2 id="unique-ptr"><a href="#unique-ptr" class="headerlink" title="unique_ptr"></a>unique_ptr</h2><p>和shared_ptr不一样，不能拷贝。只能移动。同一时间只能有一个unique_ptr指向一个对象。</p>
-<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;memory&gt;</span></span>
-
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
-    &#123;
-        <span class="hljs-function"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">unique_ptr</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">uptr</span><span class="hljs-params">(<span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>(<span class="hljs-number">10</span>))</span></span>;  <span class="hljs-comment">//绑定动态对象</span>
-        <span class="hljs-comment">//std::unique_ptr&lt;int&gt; uptr2 = uptr;  //不能賦值</span>
-        <span class="hljs-comment">//std::unique_ptr&lt;int&gt; uptr2(uptr);  //不能拷貝</span>
-        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">unique_ptr</span>&lt;<span class="hljs-keyword">int</span>&gt; uptr2 = <span class="hljs-built_in">std</span>::<span class="hljs-built_in">move</span>(uptr); <span class="hljs-comment">//轉換所有權</span>
-        uptr2.<span class="hljs-built_in">release</span>(); <span class="hljs-comment">//释放所有权</span>
-    &#125;
-    <span class="hljs-comment">//超過uptr的作用域，內存釋放</span>
-&#125;</code></pre>
-
-<h2 id="weak-ptr"><a href="#weak-ptr" class="headerlink" title="weak_ptr"></a>weak_ptr</h2><p>weak_ptr是为了配合shared_ptr而引入的一种智能指针，因为它不具有普通指针的行为，没有重载operator<em>和-&gt;,*</em>它的最大作用在于协助shared_ptr工作，像旁观者那样观测资源的使用情况<strong>。weak_ptr可以从一个shared_ptr或者另一个weak_ptr对象构造，获得资源的观测权。但weak_ptr没有共享资源，</strong>它的构造不会引起指针引用计数的增加**。使用weak_ptr的成员函数use_count()可以观测资源的引用计数，另一个成员函数expired()的功能等价于use_count()==0,但更快，表示被观测的资源(也就是shared_ptr的管理的资源)已经不复存在。weak_ptr可以使用一个非常重要的成员函数lock()从被观测的shared_ptr获得一个可用的shared_ptr对象， 从而操作资源。但当expired()==true的时候，lock()函数将返回一个存储空指针的shared_ptr。</p>
-<p>使用的时候要检查是否为空。</p>
-<h1 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h1><h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><pre><code class="hljs c++"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">shared_ptr</span>&lt;<span class="hljs-keyword">int</span>&gt; p1;             <span class="hljs-comment">//不传入任何实参</span>
-<span class="hljs-function"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">shared_ptr</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">p2</span><span class="hljs-params">(<span class="hljs-literal">nullptr</span>)</span></span>;    <span class="hljs-comment">//传入空指针 nullptr</span>
-<span class="hljs-function"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">shared_ptr</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">p3</span><span class="hljs-params">(<span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>(<span class="hljs-number">10</span>))</span></span>;
-<span class="hljs-built_in">std</span>::<span class="hljs-built_in">shared_ptr</span>&lt;<span class="hljs-keyword">int</span>&gt; p3 = <span class="hljs-built_in">std</span>::make_shared&lt;<span class="hljs-keyword">int</span>&gt;(<span class="hljs-number">10</span>);
-<span class="hljs-comment">//调用拷贝构造函数</span>
-<span class="hljs-function"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">shared_ptr</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">p4</span><span class="hljs-params">(p3)</span></span>;<span class="hljs-comment">//或者 std::shared_ptr&lt;int&gt; p4 = p3;</span>
-<span class="hljs-comment">//调用移动构造函数，因为move是非原子性的，比拷贝这个原子性的操作更快</span>
-<span class="hljs-function"><span class="hljs-built_in">std</span>::<span class="hljs-built_in">shared_ptr</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">p5</span><span class="hljs-params">(<span class="hljs-built_in">std</span>::<span class="hljs-built_in">move</span>(p4))</span></span>; <span class="hljs-comment">//或者 std::shared_ptr&lt;int&gt; p5 = std::move(p4);</span></code></pre>
-
-
-
-<h1 id="智能指针带来了什么问题"><a href="#智能指针带来了什么问题" class="headerlink" title="智能指针带来了什么问题"></a><del>智能指针带来了什么问题</del></h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a><del>问题</del></h2><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a><del>解决方案</del></h2>
+</li>
+<li><p>刷新TLB</p>
+</li>
+<li><p>系统调度器的代码执行</p>
+</li>
+</ol>
+<h2 id="线程切换"><a href="#线程切换" class="headerlink" title="线程切换"></a>线程切换</h2><p>共享同一内存地址空间、代码段、全局变量、同一打开文件集合。</p>
+<ol>
+<li>切换内核栈</li>
+<li>切换硬件上下文</li>
+</ol>
+<h1 id="形象的说说并发和并行的区别"><a href="#形象的说说并发和并行的区别" class="headerlink" title="形象的说说并发和并行的区别"></a>形象的说说并发和并行的区别</h1><h1 id="单cpu能够实现多任务并行吗"><a href="#单cpu能够实现多任务并行吗" class="headerlink" title="单cpu能够实现多任务并行吗"></a>单cpu能够实现多任务并行吗</h1><p>不能，只能并发</p>
+<h1 id="堆和栈的区别（空间分配、缓存方式）"><a href="#堆和栈的区别（空间分配、缓存方式）" class="headerlink" title="堆和栈的区别（空间分配、缓存方式）"></a>堆和栈的区别（空间分配、缓存方式）</h1><h1 id="ipc中效率最高的是哪种方式"><a href="#ipc中效率最高的是哪种方式" class="headerlink" title="ipc中效率最高的是哪种方式"></a>ipc中效率最高的是哪种方式</h1><p>共享内存允许多个进程直接对同一个内存区域直接操作。</p>
+<h1 id="说说虚拟内存，为什么要这么设计，解决了什么问题"><a href="#说说虚拟内存，为什么要这么设计，解决了什么问题" class="headerlink" title="说说虚拟内存，为什么要这么设计，解决了什么问题"></a>说说虚拟内存，为什么要这么设计，解决了什么问题</h1><ul>
+<li>虚拟内存给进程提供了一个更大的内存空间，只在主存里保留活动区域</li>
+<li>给每个进程提供了一致的、完整的地址空间。</li>
+<li>为程序提供内存管理，内存隔离。</li>
+</ul>
+<h1 id="分页和分段的区别"><a href="#分页和分段的区别" class="headerlink" title="分页和分段的区别"></a>分页和分段的区别</h1><p>分段：粒度大</p>
+<p>分页：粒度小</p>
+<h1 id="中断是如何实现的"><a href="#中断是如何实现的" class="headerlink" title="中断是如何实现的"></a>中断是如何实现的</h1><p>中断是一种电信号，由硬件设备产生，并直接送入中断控制器（如8259A）的输入引脚上，然后再由中断控制器向处理器发送相应的信号。 处理器一经检测到该信号，便中断自己当前正在处理的工作，转而去处理中断。</p>
+<h1 id="交互式系统中常用的进程调度算法有哪些"><a href="#交互式系统中常用的进程调度算法有哪些" class="headerlink" title="交互式系统中常用的进程调度算法有哪些"></a>交互式系统中常用的进程调度算法有哪些</h1><h1 id="操作系统有哪些算法支持高效的内存申请与释放，同时最大化的减少碎片"><a href="#操作系统有哪些算法支持高效的内存申请与释放，同时最大化的减少碎片" class="headerlink" title="操作系统有哪些算法支持高效的内存申请与释放，同时最大化的减少碎片"></a>操作系统有哪些算法支持高效的内存申请与释放，同时最大化的减少碎片</h1><h1 id="说说虚拟内存、物理内存、共享内存"><a href="#说说虚拟内存、物理内存、共享内存" class="headerlink" title="说说虚拟内存、物理内存、共享内存"></a>说说虚拟内存、物理内存、共享内存</h1><h1 id="内存泄漏和内存溢出之间的关系"><a href="#内存泄漏和内存溢出之间的关系" class="headerlink" title="内存泄漏和内存溢出之间的关系"></a>内存泄漏和内存溢出之间的关系</h1><h1 id="直接寻址和间接寻址谁更安全？为什么"><a href="#直接寻址和间接寻址谁更安全？为什么" class="headerlink" title="直接寻址和间接寻址谁更安全？为什么"></a>直接寻址和间接寻址谁更安全？为什么</h1><h1 id="哪三种情况会导致用户态到内核态的切换？"><a href="#哪三种情况会导致用户态到内核态的切换？" class="headerlink" title="哪三种情况会导致用户态到内核态的切换？"></a>哪三种情况会导致用户态到内核态的切换？</h1><ul>
+<li>系统调用。</li>
+<li>异常。</li>
+<li>中断。</li>
+</ul>
+<h1 id="假设手机只有10m内存，想要申请1m的内存是否一定成功？"><a href="#假设手机只有10m内存，想要申请1m的内存是否一定成功？" class="headerlink" title="假设手机只有10m内存，想要申请1m的内存是否一定成功？"></a>假设手机只有10m内存，想要申请1m的内存是否一定成功？</h1><h1 id="锁底层是如何实现的"><a href="#锁底层是如何实现的" class="headerlink" title="锁底层是如何实现的"></a>锁底层是如何实现的</h1><h1 id="了解堆吗，堆是如何维护的"><a href="#了解堆吗，堆是如何维护的" class="headerlink" title="了解堆吗，堆是如何维护的"></a>了解堆吗，堆是如何维护的</h1><h1 id="谈谈你对token的理解"><a href="#谈谈你对token的理解" class="headerlink" title="谈谈你对token的理解"></a>谈谈你对token的理解</h1><h1 id="cpu爆满了，你觉得操作系统会干点啥事"><a href="#cpu爆满了，你觉得操作系统会干点啥事" class="headerlink" title="cpu爆满了，你觉得操作系统会干点啥事"></a>cpu爆满了，你觉得操作系统会干点啥事</h1><h1 id="什么存放在堆内存里？什么存放在栈内存里？"><a href="#什么存放在堆内存里？什么存放在栈内存里？" class="headerlink" title="什么存放在堆内存里？什么存放在栈内存里？"></a>什么存放在堆内存里？什么存放在栈内存里？</h1><h1 id="一个全局变量多线程并发访问可能会有什么问题"><a href="#一个全局变量多线程并发访问可能会有什么问题" class="headerlink" title="一个全局变量多线程并发访问可能会有什么问题"></a>一个全局变量多线程并发访问可能会有什么问题</h1><h1 id="CAS是一种什么锁思想"><a href="#CAS是一种什么锁思想" class="headerlink" title="CAS是一种什么锁思想"></a>CAS是一种什么锁思想</h1><h1 id="缺页错误"><a href="#缺页错误" class="headerlink" title="缺页错误"></a>缺页错误</h1><h1 id="什么场景适合用悲观锁，什么场景适合用乐观锁"><a href="#什么场景适合用悲观锁，什么场景适合用乐观锁" class="headerlink" title="什么场景适合用悲观锁，什么场景适合用乐观锁"></a>什么场景适合用悲观锁，什么场景适合用乐观锁</h1><p>悲观锁：比较适合写入操作比较频繁的场景，如果出现大量的读取操作，每次读取的时候都会进行加锁，这样会增加大量的锁的开销，降低了系统的吞吐量。 … 像乐观锁适用于写比较少的情况下，即冲突真的很少发生的时候，这样可以省去了锁的开销，加大了系统的整个吞吐量。</p>
+<h1 id="信号量和锁的区别"><a href="#信号量和锁的区别" class="headerlink" title="信号量和锁的区别"></a>信号量和锁的区别</h1>
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/C/">C++</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/">智能指针</a>
-                    
-                  </div>
                 
               </div>
               
@@ -334,9 +294,9 @@ Animal b = a;</code></pre>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/04/12/%E6%8F%90%E9%97%AE-%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                      <a href="/2021/04/12/%E6%8F%90%E9%97%AE-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">提问-数据库</span>
+                        <span class="hidden-mobile">提问-计算机网络</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -344,8 +304,8 @@ Animal b = a;</code></pre>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/04/08/C-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/">
-                        <span class="hidden-mobile">C++编译过程</span>
+                      <a href="/2021/04/12/%E6%8F%90%E9%97%AE-%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="hidden-mobile">提问-数据库</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -526,7 +486,7 @@ Animal b = a;</code></pre>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "C++智能指针&nbsp;",
+        "提问-操作系统&nbsp;",
       ],
       cursorChar: "__w(ﾟДﾟ)w",
       typeSpeed: 70,
