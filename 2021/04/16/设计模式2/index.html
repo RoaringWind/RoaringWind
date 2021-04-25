@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Old Wind">
   <meta name="keywords" content="">
-  <title>操作系统知识点总结 - Wind&#39;s blog</title>
+  <title>设计模式研读-2 - Wind&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -176,8 +176,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-04-13 15:18" pubdate>
-        2021年4月13日 下午
+      <time datetime="2021-04-16 19:30" pubdate>
+        2021年4月16日 晚上
       </time>
     </span>
   
@@ -188,7 +188,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      728 字
+      469 字
     </span>
   
 
@@ -198,7 +198,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7
+      4
        分钟
     </span>
   
@@ -228,65 +228,29 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">操作系统知识点总结</h1>
+            <h1 style="display: none">设计模式研读-2</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="进程的内存布局中，哪些是线程共享的"><a href="#进程的内存布局中，哪些是线程共享的" class="headerlink" title="进程的内存布局中，哪些是线程共享的"></a>进程的内存布局中，哪些是线程共享的</h1><h1 id="什么是缓存溢出"><a href="#什么是缓存溢出" class="headerlink" title="什么是缓存溢出"></a>什么是缓存溢出</h1><p>程序在申请内存时，没有足够的内存空间供其使用。</p>
-<h1 id="一定要有线程吗？"><a href="#一定要有线程吗？" class="headerlink" title="一定要有线程吗？"></a>一定要有线程吗？</h1><p>可以没有，但是线程可以解决并发，切换开销过大的问题。</p>
-<h1 id="进程与线程的切换开销？"><a href="#进程与线程的切换开销？" class="headerlink" title="进程与线程的切换开销？"></a>进程与线程的切换开销？</h1><h2 id="进程切换"><a href="#进程切换" class="headerlink" title="进程切换"></a>进程切换</h2><ol>
-<li><p>切换页表全局目录</p>
-</li>
-<li><p>切换内核态堆栈</p>
-</li>
-<li><p>切换硬件上下文（进程恢复前，必须装入寄存器的数据统称为硬件上下文）</p>
-<ul>
-<li><p>ip(instruction pointer)：指向当前执行指令的下一条指令</p>
-</li>
-<li><p>bp(base pointer): 用于存放执行中的函数对应的栈帧的栈底地址</p>
-</li>
-<li><p>sp(stack poinger): 用于存放执行中的函数对应的栈帧的栈顶地址</p>
-</li>
-<li><p>cr3:页目录基址寄存器，保存页目录表的物理地址</p>
-</li>
-<li><p>……</p>
-</li>
-</ul>
-</li>
-<li><p>刷新TLB</p>
-</li>
-<li><p>系统调度器的代码执行</p>
-</li>
-</ol>
-<h2 id="线程切换"><a href="#线程切换" class="headerlink" title="线程切换"></a>线程切换</h2><p>共享同一内存地址空间、代码段、全局变量、同一打开文件集合。</p>
-<ol>
-<li>切换内核栈</li>
-<li>切换硬件上下文</li>
-</ol>
-<h1 id="单cpu能够实现多任务并行吗"><a href="#单cpu能够实现多任务并行吗" class="headerlink" title="单cpu能够实现多任务并行吗"></a>单cpu能够实现多任务并行吗</h1><p>不能，只能并发</p>
-<h1 id="堆和栈的区别（空间分配、缓存方式）"><a href="#堆和栈的区别（空间分配、缓存方式）" class="headerlink" title="堆和栈的区别（空间分配、缓存方式）"></a>堆和栈的区别（空间分配、缓存方式）</h1><h1 id="ipc中效率最高的是哪种方式"><a href="#ipc中效率最高的是哪种方式" class="headerlink" title="ipc中效率最高的是哪种方式"></a>ipc中效率最高的是哪种方式</h1><p>共享内存允许多个进程直接对同一个内存区域直接操作。</p>
-<h1 id="说说虚拟内存，为什么要这么设计，解决了什么问题"><a href="#说说虚拟内存，为什么要这么设计，解决了什么问题" class="headerlink" title="说说虚拟内存，为什么要这么设计，解决了什么问题"></a>说说虚拟内存，为什么要这么设计，解决了什么问题</h1><ul>
-<li>虚拟内存给进程提供了一个更大的内存空间，只在主存里保留活动区域</li>
-<li>给每个进程提供了一致的、完整的地址空间。</li>
-<li>为程序提供内存管理，内存隔离。</li>
-</ul>
-<h1 id="分页和分段的区别"><a href="#分页和分段的区别" class="headerlink" title="分页和分段的区别"></a>分页和分段的区别</h1><p>分段：粒度大</p>
-<p>分页：粒度小</p>
-<h1 id="中断是如何实现的"><a href="#中断是如何实现的" class="headerlink" title="中断是如何实现的"></a>中断是如何实现的</h1><p>中断是一种电信号，由硬件设备产生，并直接送入中断控制器（如8259A）的输入引脚上，然后再由中断控制器向处理器发送相应的信号。 处理器一经检测到该信号，便中断自己当前正在处理的工作，转而去处理中断。</p>
-<h1 id="哪三种情况会导致用户态到内核态的切换？"><a href="#哪三种情况会导致用户态到内核态的切换？" class="headerlink" title="哪三种情况会导致用户态到内核态的切换？"></a>哪三种情况会导致用户态到内核态的切换？</h1><ul>
-<li>系统调用。</li>
-<li>异常。</li>
-<li>中断。</li>
-</ul>
-<h1 id="死锁和活锁"><a href="#死锁和活锁" class="headerlink" title="死锁和活锁"></a>死锁和活锁</h1><h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><h3 id="必要条件"><a href="#必要条件" class="headerlink" title="必要条件"></a>必要条件</h3><ol>
-<li>互斥</li>
-<li>持有并等待</li>
-<li>非抢占</li>
-<li>循环等待</li>
-</ol>
-<h3 id="预防"><a href="#预防" class="headerlink" title="预防"></a>预防</h3><p>提供锁的全序/偏序（部分序列）。</p>
-<p><img src="https://i.loli.net/2021/04/15/BjDMVGIp4CuQPql.png" srcset="/img/loading.gif" alt="非抢占"></p>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="什么场景适合用悲观锁，什么场景适合用乐观锁"><a href="#什么场景适合用悲观锁，什么场景适合用乐观锁" class="headerlink" title="什么场景适合用悲观锁，什么场景适合用乐观锁"></a>什么场景适合用悲观锁，什么场景适合用乐观锁</h1><p>悲观锁：比较适合写入操作比较频繁的场景，如果出现大量的读取操作，每次读取的时候都会进行加锁，这样会增加大量的锁的开销，降低了系统的吞吐量。 … 像乐观锁适用于写比较少的情况下，即冲突真的很少发生的时候，这样可以省去了锁的开销，加大了系统的整个吞吐量。</p>
-<h1 id="-1"><a href="#-1" class="headerlink" title=""></a></h1>
+              <p>推荐书籍：《研磨设计模式》</p>
+<h1 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h1><p>例子：旧硬盘可以直接和电源线相连，而新硬盘需要转接线才能。这就是适配器。数据库第一版和第二版接口不一致，需要用适配器。</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>将一个类的接口转换成客户希望的另外一个接口。适配器模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。</p>
+<h2 id="应用适配器模式来解决问题的思路"><a href="#应用适配器模式来解决问题的思路" class="headerlink" title="应用适配器模式来解决问题的思路"></a>应用适配器模式来解决问题的思路</h2><p>问题的根源在于第一版和第二版接口的不兼容，功能是基本实现了的，也就是说，只要想办法让两边的接口匹配起来，就可以复用第一版的功能了。</p>
+<p>按照适配器模式的实现方式，可以定义一个类来实现第二版的接口，然后在内部实现的时候，转调第一版已经实现了的功能，这样就可以通过对象组合的方式，既复用了第一版已有的功能，同时又在接口上满足了第二版调用的要求。</p>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>复用性好，扩展性好。</p>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>过多使用容易混乱。</p>
+<h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><p>例子：读配置文件只需要创建一个实例就可以到处使用。</p>
+<h2 id="懒汉式"><a href="#懒汉式" class="headerlink" title="懒汉式"></a>懒汉式</h2><p>需要的时候（getInstance的时候发现没有）再创建。加锁可以实现线程安全。加锁可以分为在整个函数上面加锁和二重检查加锁。时间换空间。</p>
+<p><img src="https://i.loli.net/2021/04/25/TgSJ4w2qMAGDVPt.png" srcset="/img/loading.gif" alt="image-20210425194953297"></p>
+<h2 id="饿汉式"><a href="#饿汉式" class="headerlink" title="饿汉式"></a>饿汉式</h2><p>用static实现，类装载的时候就初始化。Python的话因为没有静态变量，所以可以用装饰器实现。空间换时间。</p>
+<blockquote>
+<pre><code class="hljs python">&gt;<span class="hljs-comment"># Python实现static</span>
+&gt;@static_vars(counter = <span class="hljs-number">0</span>)
+&gt;<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span>:</span>
+   foo.counter += <span class="hljs-number">1</span></code></pre>
+</blockquote>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p>单例-&gt;2例，3例。</p>
+<p>用Map控制缓存。</p>
+
             </div>
             <hr>
             <div>
@@ -296,7 +260,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+                      <a class="hover-with-bg" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
                     
                   </div>
                 
@@ -309,9 +273,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/04/15/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F1/">
+                      <a href="/2021/04/22/%E7%BB%88%E7%AB%AF%E4%B8%AD%E6%8C%89%E4%B8%8Bctrl-c%E4%B9%8B%E5%90%8E%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">设计模式研读-1</span>
+                        <span class="hidden-mobile">终端中按下ctrl+c之后发生了什么</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -319,8 +283,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/04/13/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="hidden-mobile">数据库知识点总结</span>
+                      <a href="/2021/04/15/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F1/">
+                        <span class="hidden-mobile">设计模式研读-1</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -501,7 +465,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "操作系统知识点总结&nbsp;",
+        "设计模式研读-2&nbsp;",
       ],
       cursorChar: "__w(ﾟДﾟ)w",
       typeSpeed: 70,
