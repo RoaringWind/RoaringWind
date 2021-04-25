@@ -231,13 +231,13 @@
             <h1 style="display: none">Linear Programming</h1>
             
             <div class="markdown-body" id="post-body">
-              <div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+              <pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
 <span class="hljs-keyword">from</span> scipy.optimize <span class="hljs-keyword">import</span> linprog
 a = np.array([<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>])
 b = np.array([<span class="hljs-number">-7.9</span>])
 c = np.array([[<span class="hljs-number">-3.05</span>, <span class="hljs-number">-4.05</span>, <span class="hljs-number">-6.1</span>]])
 res = linprog(a, A_ub=c, b_ub=b)
-print(res)</code></pre></div>
+print(res)</code></pre>
 
 <p>官方参考:<br><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linprog.html" target="_blank" rel="noopener">https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linprog.html</a></p>
 

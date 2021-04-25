@@ -233,33 +233,33 @@
             <div class="markdown-body" id="post-body">
               <p>注意，<code>torch v0.4.1</code>似乎并不支持<code>python3.8</code>,故使用<code>python3.6</code>.<code>Ubuntu18.04.2</code>自带的python3版本就是<code>Python3.6</code><br>个人配置供参考：<code>i5-10210U DDR4-12GB MX250-2GB</code></p>
 <p>需要对<code>Master Sketching</code>文件夹内<code>simplified.py</code>文件进行两处修改。</p>
-<div class="hljs"><pre><code class="hljs Python"><span class="hljs-comment"># simplified.py</span>
+<pre><code class="hljs Python"><span class="hljs-comment"># simplified.py</span>
 use_cuda=<span class="hljs-number">0</span>
-load_lua(opt.model,long_size=<span class="hljs-number">8</span>)</code></pre></div>
+load_lua(opt.model,long_size=<span class="hljs-number">8</span>)</code></pre>
 
 <p><code>Ubuntu</code>为虚拟机环境<code>Vmware Workstation Pro 15.5.1</code>, <code>Ubuntu 18.04.2</code>, <code>4GB RAM</code>, <code>40GB Disk</code>, <code>Cpu 2x2</code>核心</p>
-<div class="hljs"><pre><code class="hljs Bash"><span class="hljs-comment"># Ubuntu18.04.2 X64</span>
+<pre><code class="hljs Bash"><span class="hljs-comment"># Ubuntu18.04.2 X64</span>
 sudo apt install python3-pip
 pip3 install pip
 pip3 install torch==0.4.1
-pip3 install torchvision==0.2.1</code></pre></div>
+pip3 install torchvision==0.2.1</code></pre>
 
 
 
 <p><code>Windows10</code>需要安装<code>Anaconda</code>，在<code>https://repo.anaconda.com/archive/</code>内下载安装<code>Anaconda3-2020.02-Windows-x86_64.exe</code> ，之后打开<code>Anaconda prompt</code></p>
-<div class="hljs"><pre><code class="hljs Bash"><span class="hljs-comment"># Conda,Windows10 x64</span>
+<pre><code class="hljs Bash"><span class="hljs-comment"># Conda,Windows10 x64</span>
 pip install pip
 pip install torch==0.4.1
-pip install torchvision=0.2.1</code></pre></div>
+pip install torchvision=0.2.1</code></pre>
 
 
 
 <p>一切就绪后即可在对应目录下使用如下命令输出<code>out.png</code>图片啦</p>
-<div class="hljs"><pre><code class="hljs Bash"><span class="hljs-comment">#Ubuntu</span>
-python3 simplified.py</code></pre></div>
+<pre><code class="hljs Bash"><span class="hljs-comment">#Ubuntu</span>
+python3 simplified.py</code></pre>
 
-<div class="hljs"><pre><code class="hljs Bash"><span class="hljs-comment">#conda,Windows 10</span>
-python simplified.py</code></pre></div>
+<pre><code class="hljs Bash"><span class="hljs-comment">#conda,Windows 10</span>
+python simplified.py</code></pre>
 
 
             </div>

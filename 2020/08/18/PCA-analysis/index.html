@@ -232,7 +232,7 @@
             
             <div class="markdown-body" id="post-body">
               <h1 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h1><p>用于数据降维，举例来说，太阳实际是<em>球体<em>，但一般可以说太阳是</em>圆的</em> 。这就是数据降维。</p>
-<h1 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h1><div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<h1 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h1><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
 <span class="hljs-keyword">from</span> sklearn.decomposition <span class="hljs-keyword">import</span> PCA
 X = np.array([[<span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>], [<span class="hljs-number">-2</span>, <span class="hljs-number">-1</span>], [<span class="hljs-number">-3</span>, <span class="hljs-number">-2</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>], [<span class="hljs-number">2</span>, <span class="hljs-number">1</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">2</span>]])
 pca = PCA(n_components=<span class="hljs-number">2</span>) <span class="hljs-comment"># 数据维数，设置为'mle'是自动保留</span>
@@ -245,7 +245,7 @@ print(pca.transform(X)) <span class="hljs-comment"># 做一个每一列到其他
  [ <span class="hljs-number">3.6053038</span> ]
  [<span class="hljs-number">-1.38340578</span>]
  [<span class="hljs-number">-2.22189802</span>]
- [<span class="hljs-number">-3.6053038</span> ]]</code></pre></div>
+ [<span class="hljs-number">-3.6053038</span> ]]</code></pre>
 
 
             </div>

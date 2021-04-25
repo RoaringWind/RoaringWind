@@ -232,7 +232,7 @@
             
             <div class="markdown-body" id="post-body">
               <p>荐书《Python深度学习》，人民邮电出版社，张亮译。此书非常易懂！！ Environment: Python 3.7.4 Backend: TensorFlow Python技巧: </p>
-<div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np re=np.zeros((<span class="hljs-number">8</span>,<span class="hljs-number">16</span>))<span class="hljs-comment">#8行16列的矩阵，所有元素为0</span>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np re=np.zeros((<span class="hljs-number">8</span>,<span class="hljs-number">16</span>))<span class="hljs-comment">#8行16列的矩阵，所有元素为0</span>
 re[[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">4</span>,<span class="hljs-number">8</span>]]=<span class="hljs-number">4</span><span class="hljs-comment">#可行，前后数量相等，等价于re[1,4]=re[2,8]=5</span>
 re[[<span class="hljs-number">2</span>],[<span class="hljs-number">4</span>,<span class="hljs-number">8</span>]]=<span class="hljs-number">5</span><span class="hljs-comment">#可行，有一个维度数量为1，怎么都可行，[x]和x等价</span>
 re[:,]=<span class="hljs-number">5</span><span class="hljs-comment">#可行，全部置为5 re[,]=5#不可行</span>
@@ -246,7 +246,7 @@ reverse_index=dict([(value,key)<span class="hljs-keyword">for</span> (key,value)
 range(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>)<span class="hljs-comment">#取到1，2，不取3</span>
 A = numpy.matrix(numpy.ones((<span class="hljs-number">3</span>,<span class="hljs-number">3</span>)))
 numpy.array(A)[<span class="hljs-number">2</span>]=<span class="hljs-number">2</span> <span class="hljs-comment">#不改变A</span>
-numpy.asarray(A)[<span class="hljs-number">2</span>]=<span class="hljs-number">2</span> <span class="hljs-comment">#改变A</span></code></pre></div>
+numpy.asarray(A)[<span class="hljs-number">2</span>]=<span class="hljs-number">2</span> <span class="hljs-comment">#改变A</span></code></pre>
 
 <p>Keras工作流程： </p>
 <p>(1) 定义训练数据：输入张量和目标张量。<br>(2) 定义层组成的网络（或模型），将输入映射到目标。<br>(3) 配置学习过程：选择损失函数、优化器和需要监控的指标。<br>(4) 调用模型的 fit 方法在训练数据上进行迭代。 定义模型有两种方法：一种是使用 Sequential 类（仅用于层的线性堆叠），另一种是函数式 API（ 用于层组成的有向无环图，可以构建任意形式的架构）。</p>

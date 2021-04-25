@@ -15,14 +15,14 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/%25E6%259D%2582%25E6%2596%2587/</loc>
+        <loc>http://yoursite.com/categories/Machine-Learning/</loc>
         <lastmod>2020-10-05T07:24:29.058Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Machine-Learning/</loc>
+        <loc>http://yoursite.com/categories/%25E6%259D%2582%25E6%2596%2587/</loc>
         <lastmod>2020-10-05T07:24:29.058Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
