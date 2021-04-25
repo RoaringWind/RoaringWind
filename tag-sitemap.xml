@@ -3,6 +3,13 @@
 
 
     <url>
+        <loc>http://yoursite.com/tags/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593/</loc>
+        <lastmod>2021-04-25T14:37:58.788Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yoursite.com/tags/%25E8%25AE%25BE%25E8%25AE%25A1%25E6%25A8%25A1%25E5%25BC%258F/</loc>
         <lastmod>2021-04-25T13:51:17.498Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -11,13 +18,6 @@
 
     <url>
         <loc>http://yoursite.com/tags/redis/</loc>
-        <lastmod>2021-04-25T13:50:09.631Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593/</loc>
         <lastmod>2021-04-25T13:50:09.631Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
