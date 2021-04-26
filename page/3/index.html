@@ -187,6 +187,92 @@
     
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
+        <a href="/2021/04/05/Session-Cookie/">Session &amp; Cookie</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/04/05/Session-Cookie/">
+          
+          
+            
+          
+          Session：用来存放用户数据，浏览器第一次发送请求的时候，服务器生成了Session和Session ID来唯一标识这个Session。第二次发送请求的时候带上Session ID，就能对应上。
+Session的实现方法：
+
+使用Cookie。如果不设置过期时间，就不放在硬盘上，浏览器关闭就消失。如果设置为几天后过期，那么就会在硬盘上保存。
+使用URL附加信息。比如?JSESSIONID=不设
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-05 14:15" pubdate>
+              2021-04-05
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        <a href="/2020/10/26/Java%E7%AC%94%E8%AE%B0/">Java笔记</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/10/26/Java%E7%AC%94%E8%AE%B0/">
+          
+          
+            
+          
+          
+接口可以有default、static方法
+原先的jdk7之类的，它们接口中的方法都是抽象方法，没有具体的实现，就相当于定义好了这个接口有哪些功能，却没有具体定义功能是怎么实现的，通常由接口的实现类来做具体功能实现。那么，如果面向接口编程，大家已经根据自己需要通过继承接口的方式来实现了自己的功能，突然有一天，产品提需求了，你需要给所有接口的实现类都添加一个新的功能即一个新的方法实现，而且这个方法
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-10-26 21:39" pubdate>
+              2020-10-26
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Java/">Java</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
         <a href="/2020/10/10/Diary/">Diary</a>
       </h1>
 
@@ -496,110 +582,11 @@ npm install --save hexo-component-inferno@^0.3.0
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/06/15/JavaConstructor/">JavaConstructor</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/06/15/JavaConstructor/">
-          
-          
-            
-          
-          //SubCat.java
-class Cat  &#123;
-    Cat (int c)  &#123;
-        System.out.print ("cat"+c+" ");  
-    &#125;
- &#125;
-
-class SubCat extends Cat  &#123;
-    SubCat (int c)&#123;
-        super (5); //wor
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-06-15 23:01" pubdate>
-              2020-06-15
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Java/">Java</a>
-            
-              <a href="/tags/constructor/">constructor</a>
-            
-              <a href="/tags/javaClass/">javaClass</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/06/12/how-to-download-ortholog-ID-in-KEGG/">how to download ortholog ID in KEGG</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/06/12/how-to-download-ortholog-ID-in-KEGG/">
-          
-          
-            
-          
-          
-Go to LinkDB Search
-Click eco00001
-Select your species in drop-down list(Manually) &amp; Click the button “go”
-Download “htext”
-
-
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-06-12 18:33" pubdate>
-              2020-06-12
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/KEGG/">KEGG</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/2/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/"><i class="iconfont icon-arrowright"></i></a>
+      <a class="extend prev" rel="prev" href="/page/2/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/4/"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
   

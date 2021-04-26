@@ -8,6 +8,22 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2021/04/19/MySQL%E8%81%94%E5%90%88%E7%B4%A2%E5%BC%95/</loc>
+        <lastmod>2021-04-26T02:41:54.045Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2021/04/21/B-%E6%A0%91%E7%90%86%E8%A7%A3/</loc>
+        <lastmod>2021-04-26T02:32:16.049Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2021/04/13/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
         <lastmod>2021-04-25T14:37:58.788Z</lastmod>
         <changefreq>weekly</changefreq>

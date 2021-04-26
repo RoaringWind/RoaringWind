@@ -44,6 +44,50 @@
   
   
   <entry>
+    <title>B+树理解</title>
+    <link href="/2021/04/21/B-%E6%A0%91%E7%90%86%E8%A7%A3/"/>
+    <url>/2021/04/21/B-%E6%A0%91%E7%90%86%E8%A7%A3/</url>
+    
+    <content type="html"><![CDATA[<p>数据结构可视化网站：<a href="https://www.cs.usfca.edu/~galles/visualization/BPlusTree.html" target="_blank" rel="noopener">B+ Tree Visualization (usfca.edu)</a></p><p>对于MySQL而言，B+树节点大小为<code>1页=16K</code>，因为对于大部分业务，16K足够。通常1-3层B+树就足以应对常见场景。</p><p>为什么足够：</p><ol><li>B+树的叶子节点存的是数据行，非叶子节点是key+指针</li><li><ul><li>叶子节点：如果一行数据大小是1K，那么能存16个数据</li><li>非叶子节点：如果key用的是bigint，那么8字节，MySQL中指针是6字节，那么需要<code>8+6=14</code>字节，一页16K能存放<code>16*1024/14=1170</code>个key+指针。根节点有1170个key+指针，下一层有<code>1170*1170</code>个key+指针，最底层有<code>1170*1170*16=21902400</code>个数据，达到两千万级别了。</li></ul></li></ol><p>近似满的度为3的高为3的B+树。（0000和0001处没满）</p><p><img src="https://i.loli.net/2021/04/26/3ploMSnuBc4YKD2.png" srcset="/img/loading.gif" alt="满B+树"></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>数据库</tag>
+      
+      <tag>数据结构</tag>
+      
+      <tag>MySQL</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>MySQL联合索引</title>
+    <link href="/2021/04/19/MySQL%E8%81%94%E5%90%88%E7%B4%A2%E5%BC%95/"/>
+    <url>/2021/04/19/MySQL%E8%81%94%E5%90%88%E7%B4%A2%E5%BC%95/</url>
+    
+    <content type="html"><![CDATA[<ol><li>有顺序：(A,B,C)和(A,C,B)不一样。</li><li>建立(A,B,C)后相当于建立A,AB,ABC三个索引。</li><li>注意：索引列不要参与计算。尽量把筛选效率高的列放在左边。AC只能命中A的索引。</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>MySQL</tag>
+      
+      <tag>索引</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>设计模式研读-2</title>
     <link href="/2021/04/16/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F2/"/>
     <url>/2021/04/16/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F2/</url>

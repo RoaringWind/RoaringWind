@@ -3,8 +3,29 @@
 
 
     <url>
+        <loc>http://yoursite.com/tags/%25E7%25B4%25A2%25E5%25BC%2595/</loc>
+        <lastmod>2021-04-26T02:41:54.045Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/MySQL/</loc>
+        <lastmod>2021-04-26T02:41:54.045Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/%25E6%2595%25B0%25E6%258D%25AE%25E7%25BB%2593%25E6%259E%2584/</loc>
+        <lastmod>2021-04-26T02:32:16.049Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yoursite.com/tags/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593/</loc>
-        <lastmod>2021-04-25T14:37:58.788Z</lastmod>
+        <lastmod>2021-04-26T02:32:16.049Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
