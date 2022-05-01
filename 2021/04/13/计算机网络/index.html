@@ -1,0 +1,738 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" >
+
+
+
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Old Wind">
+  <meta name="keywords" content="">
+  <title>计算机网络知识点总结 - Wind&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/atelier-estuary-light.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_2116843_0zhqoxodqdxo.css">
+
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Wiiiiiiiiiiiind</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://i.loli.net/2020/10/09/9JQRWjFDfPy3Ssh.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-04-13 15:18" pubdate>
+        2021年4月13日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      21
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">计算机网络知识点总结</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="路由器和交换机位于哪一层"><a href="#路由器和交换机位于哪一层" class="headerlink" title="路由器和交换机位于哪一层"></a>路由器和交换机位于哪一层</h1><p>路由器：网络层</p>
+<p>交换机：数据链路层</p>
+<h1 id="滑动窗口的实现机制"><a href="#滑动窗口的实现机制" class="headerlink" title="滑动窗口的实现机制"></a>滑动窗口的实现机制</h1><h2 id="发送方的四种数据"><a href="#发送方的四种数据" class="headerlink" title="发送方的四种数据"></a>发送方的四种数据</h2><ol>
+<li>Sent and Acknowledged：这些数据表示已经发送成功并已经被确认的数据，比如图中的前31个bytes，这些数据其实的位置是在窗口之外了，因为窗口内顺序最低的被确认之后，要移除窗口，实际上是窗口进行合拢，同时打开接收新的带发送的数据</li>
+<li>Send But Not Yet Acknowledged：这部分数据称为发送但没有被确认，数据被发送出去，没有收到接收端的ACK，认为并没有完成发送，这个属于窗口内的数据。</li>
+<li>Not Sent，Recipient Ready to Receive：这部分是尽快发送的数据，这部分数据已经被加载到缓存中，也就是窗口中了，等待发送，其实这个窗口是完全有接收方告知的，接收方告知还是能够接受这些包，所以发送方需要尽快的发送这些包</li>
+<li>Not Sent，Recipient Not Ready to Receive： 这些数据属于未发送，同时接收端也不允许发送的，因为这些数据已经超出了接受端所接收的范围</li>
+</ol>
+<h2 id="接收方的三种数据"><a href="#接收方的三种数据" class="headerlink" title="接收方的三种数据"></a>接收方的三种数据</h2><ol>
+<li>Received and ACK Not Send to Process：这部分数据属于接收了数据，已经回复了。但是还没有被上层的应用程序接收，也是被缓存在窗口内</li>
+<li>Received  Not ACK: 已经接收并，但是还没有回复ACK，这些包可能输属于Delay ACK的范畴了</li>
+<li>Not Received：有空位，还没有被接收的数据。</li>
+</ol>
+<h1 id="IP和TCP传输的都是些什么数据"><a href="#IP和TCP传输的都是些什么数据" class="headerlink" title="IP和TCP传输的都是些什么数据"></a>IP和TCP传输的都是些什么数据</h1><h2 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h2><h3 id="头部分"><a href="#头部分" class="headerlink" title="头部分"></a>头部分</h3><p>IP版本，长度，服务类型，源/目的IP地址。偏移，校验和，TTL。</p>
+<h3 id="数据部分"><a href="#数据部分" class="headerlink" title="数据部分"></a>数据部分</h3><p>TCP包</p>
+<h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><h3 id="头部分-1"><a href="#头部分-1" class="headerlink" title="头部分"></a>头部分</h3><p>源/目的端口号，序号，确认号，6个标志位，校验和。</p>
+<h3 id="数据部分-1"><a href="#数据部分-1" class="headerlink" title="数据部分"></a>数据部分</h3><p>应用层数据。</p>
+<h1 id="如何将一个长URL转换为一个短URL"><a href="#如何将一个长URL转换为一个短URL" class="headerlink" title="如何将一个长URL转换为一个短URL"></a>如何将一个长URL转换为一个短URL</h1><ol>
+<li>HashMap 短地址长地址一一对应（最烂）</li>
+<li>短转长，但不存在逆运算（比较烂）</li>
+<li>hash后如果碰撞，后面加123；或者碰撞后多次hash（一般烂）</li>
+<li><strong><font color=red>使用发号策略，长地址发号一个短地址</font></strong>。（最好）<ul>
+<li>使用MySQL的自增索引。比如0-9,a-z,A-Z实现62位进制的自增。保存可以用十进制，需要的时候转62位即可。</li>
+<li>高并发可用：n个发号器，每个发号器每次增长n而不是1。</li>
+<li>长查短：保存最近生成的一些对应关系，一定时间或者一定数量后开始淘汰。</li>
+<li>跳转可以用301或者302。301可以减少服务器压力，302的话可以统计次数，原因见下。</li>
+</ul>
+</li>
+</ol>
+<h1 id="分析一个URL各个字段的含义"><a href="#分析一个URL各个字段的含义" class="headerlink" title="分析一个URL各个字段的含义"></a>分析一个URL各个字段的含义</h1><p>协议://IP:端口/具体地址</p>
+<h1 id="如果没有http2-0-如何解决短连接问题"><a href="#如果没有http2-0-如何解决短连接问题" class="headerlink" title="如果没有http2.0 如何解决短连接问题"></a>如果没有http2.0 如何解决短连接问题</h1><h1 id="http状态码301和302的具体区别"><a href="#http状态码301和302的具体区别" class="headerlink" title="http状态码301和302的具体区别"></a>http状态码301和302的具体区别</h1><p>在搜索引擎角度，301的话，前后两个网址的PageRank是不一样的，新网址需要重新累加PageRank。302的话前后网址视作和前面一样的同一个。排名也是。</p>
+<p>对客户端来说，301的话，会永久记住新网址，如果加到书签，下次访问就是新的了。而302的话每次都得重新请求。</p>
+<p>HTTP到HTTPS必须用301。</p>
+<h1 id="抓包工具的原理"><a href="#抓包工具的原理" class="headerlink" title="抓包工具的原理"></a>抓包工具的原理</h1><p><strong>抓包工具会在网络传输的某个层次或节点截获收发的数据</strong></p>
+<p>如http代理，chrome的network。</p>
+<h1 id="HTTP报文格式"><a href="#HTTP报文格式" class="headerlink" title="HTTP报文格式"></a>HTTP报文格式</h1><p><img src="https://i.loli.net/2021/07/12/6hDB8sTzJjKNi2V.png" srcset="/img/loading.gif" alt=""></p>
+<h1 id="http2-0针对http1-1的优化有哪些"><a href="#http2-0针对http1-1的优化有哪些" class="headerlink" title="http2.0针对http1.1的优化有哪些"></a>http2.0针对http1.1的优化有哪些</h1><table>
+<thead>
+<tr>
+<th></th>
+<th>HTTP/2</th>
+<th>HTTP1.1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>传输协议</strong></td>
+<td><font color=red>二进制</font></td>
+<td>文本</td>
+</tr>
+<tr>
+<td><strong>头部信息</strong></td>
+<td><font color=red>压缩</font></td>
+<td>未压缩的文本</td>
+</tr>
+<tr>
+<td><strong>各字段长度</strong></td>
+<td><font color=red>固定</font></td>
+<td>不固定</td>
+</tr>
+<tr>
+<td><strong>多路复用</strong></td>
+<td><font color=red>是</font></td>
+<td>否</td>
+</tr>
+<tr>
+<td><strong>连接与请求的关系</strong></td>
+<td>单个连接可以发送<font color=red>多个请求和响应</font></td>
+<td>只能一个</td>
+</tr>
+<tr>
+<td><strong>服务器推送</strong></td>
+<td><font color=red>支持</font></td>
+<td>否</td>
+</tr>
+</tbody></table>
+<h1 id="http1-1的性能瓶颈"><a href="#http1-1的性能瓶颈" class="headerlink" title="http1.1的性能瓶颈"></a>http1.1的性能瓶颈</h1><ul>
+<li><p>只能逐个顺序响应请求报文，前一个响应未完成就只能一直阻塞等待而无法传输下一个响应报文，这就白白浪费了TCP 连接的带宽资源，同时带来了队头阻塞问题。</p>
+</li>
+<li><p>重复传输臃肿的首部字段，降低了网络资源利用率。</p>
+</li>
+<li><p>各字段长度不固定，解析不容易。</p>
+</li>
+<li><p>只能客户端发起请求。</p>
+</li>
+</ul>
+<h1 id="http1-1相比于http1-0的优化"><a href="#http1-1相比于http1-0的优化" class="headerlink" title="http1.1相比于http1.0的优化"></a>http1.1相比于http1.0的优化</h1><ul>
+<li><strong>持久连接</strong></li>
+<li>请求管道化，即流水线化，可以不用等待回复就发请求。</li>
+<li>增加缓存处理（新的字段如cache-control）</li>
+<li>增加Host字段、支持断点传输等</li>
+</ul>
+<h1 id="对称加密和非对称加密的区别，对称加密是如何保证安全性的"><a href="#对称加密和非对称加密的区别，对称加密是如何保证安全性的" class="headerlink" title="对称加密和非对称加密的区别，对称加密是如何保证安全性的"></a>对称加密和非对称加密的区别，对称加密是如何保证安全性的</h1><h1 id="http1-1新增了哪几种请求方法"><a href="#http1-1新增了哪几种请求方法" class="headerlink" title="http1.1新增了哪几种请求方法"></a>http1.1新增了哪几种请求方法</h1><p>OPTIONS、PUT、PATCH、DELETE、TRACE 和CONNECT 方法</p>
+<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="left">方法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left">GET</td>
+<td align="left">请求指定的页面信息，并返回实体主体。<font color=red>是幂等的方法</font></td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">HEAD</td>
+<td align="left">类似于 GET 请求，只不过返回的响应中没有具体的内容，用于获取报头</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">POST</td>
+<td align="left">向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST 请求可能会导致新的资源的建立和/或已有资源的修改。<font color=red>不是幂等的方法</font></td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">PUT</td>
+<td align="left">从客户端向服务器传送的数据取代指定的文档的内容。<font color=red>是幂等的方法</font></td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">DELETE</td>
+<td align="left">请求服务器删除指定的页面。</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">CONNECT</td>
+<td align="left">HTTP/1.1 协议中预留给能够将连接改为管道方式的代理服务器。</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">OPTIONS</td>
+<td align="left">允许客户端查看服务器的性能。</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">TRACE</td>
+<td align="left">回显服务器收到的请求，主要用于测试或诊断。</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">PATCH</td>
+<td align="left">是对 PUT 方法的补充，用来对已知资源进行局部更新 。</td>
+</tr>
+</tbody></table>
+<h1 id="http有哪些常见的请求方法-创建一篇文章用什么请求方法"><a href="#http有哪些常见的请求方法-创建一篇文章用什么请求方法" class="headerlink" title="http有哪些常见的请求方法 创建一篇文章用什么请求方法"></a>http有哪些常见的请求方法 创建一篇文章用什么请求方法</h1><p>应该用POST，因为文章创建了不能再创建，应该是非幂等的。</p>
+<h1 id="tcp怎么判断丢包"><a href="#tcp怎么判断丢包" class="headerlink" title="tcp怎么判断丢包"></a>tcp怎么判断丢包</h1><p>超时，或者接到对一个seq的包的连续3个ACK。</p>
+<h1 id="http协议中的cookie和session是什么"><a href="#http协议中的cookie和session是什么" class="headerlink" title="http协议中的cookie和session是什么"></a>http协议中的cookie和session是什么</h1><p>参考：<a href="http://www.ityouknow.com/it/2019/05/11/cookie-session.html" target="_blank" rel="noopener">http://www.ityouknow.com/it/2019/05/11/cookie-session.html</a></p>
+<p>参考：<a href="https://segmentfault.com/a/1190000017831088" target="_blank" rel="noopener">https://segmentfault.com/a/1190000017831088</a></p>
+<ul>
+<li>cookie只是实现session的其中一种方案。虽然是最常用的，但并不是唯一的方法。禁用cookie后还有其他方法存储，比如放在url中</li>
+</ul>
+<p><strong>不要混淆 session 和 session 实现。</strong></p>
+<p>本来 session 是一个抽象概念，开发者为了实现中断和继续等操作，将 user agent 和 server 之间一对一的交互，抽象为“会话”，进而衍生出“会话状态”，也就是 session 的概念。</p>
+<p> 而 cookie 是一个实际存在的东西，http 协议中定义在 header 中的字段。可以认为是 session 的一种后端无状态实现。</p>
+<p>而我们今天常说的 “session”，是为了绕开 cookie 的各种限制，通常借助 cookie 本身和后端存储实现的，一种更高级的会话状态实现。</p>
+<p>所以 cookie 和 session，你可以认为是同一层次的概念，也可以认为是不同层次的概念。具体到实现，session 因为 session id 的存在，通常要借助 cookie 实现，但这并非必要，只能说是通用性较好的一种实现方案。</p>
+<h1 id="ping实现的原理"><a href="#ping实现的原理" class="headerlink" title="ping实现的原理"></a>ping实现的原理</h1><p>发送ICMP报文</p>
+<h1 id="什么是ICMP"><a href="#什么是ICMP" class="headerlink" title="什么是ICMP"></a>什么是ICMP</h1><p>ICMP协议的功能主要有：</p>
+<ol>
+<li>确认IP包是否成功到达目标地址</li>
+<li>通知在发送过程中IP包被丢弃的原因</li>
+</ol>
+<p>tracert和ping命令用ICMP</p>
+<h1 id="为什么要三次握手"><a href="#为什么要三次握手" class="headerlink" title="为什么要三次握手"></a>为什么要三次握手</h1><ul>
+<li>三次握手才可以阻止重复历史连接的初始化（主要原因）</li>
+<li>三次握手才可以同步双方的初始序列号</li>
+<li>三次握手才可以避免资源浪费</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/04/13/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">数据库知识点总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/04/13/%E6%95%B0%E5%88%B030/">
+                        <span class="hidden-mobile">数到30</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "P5iMhFR21oUYWIryvGeiUA4g-gzGzoHsz",
+          app_key: "31Vd8tcerlCoEEaJhdKTUsgY",
+          placeholder: "(・ω・)ノ- ( ゜- ゜)つロ",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    }
+    waitElementVisible('vcomments', loadValine);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+    <div class="col-lg-7 mx-auto nopadding-md">
+      <div class="container custom mx-auto">
+        <div style="text-align:center"> <img alt="电你一下" src="https://i.loli.net/2020/10/09/A6lij1bnYOuJtkG.jpg" srcset="/img/loading.gif" height="150" width="150"/></div>
+      </div>
+    </div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://roaringwind.github.io" target="_blank" rel="nofollow noopener"><span>2020</span></a>
+      <i class="iconfont icon-nintendoswitch"></i>
+      <a href="https://roaringwind.github.io/about" target="_blank" rel="nofollow noopener">
+        <span>Wind</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "计算机网络知识点总结&nbsp;",
+      ],
+      cursorChar: "__w(ﾟДﾟ)w",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "❡"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.staticfile.org/mathjax/3.0.5/es5/tex-svg.js" ></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

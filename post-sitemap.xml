@@ -8,6 +8,142 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2021/08/03/Golang-channel/</loc>
+        <lastmod>2021-08-04T05:42:05.294Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2021/08/03/Golang-slice/</loc>
+        <lastmod>2021-08-03T12:12:08.266Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2021/04/22/%E7%BB%88%E7%AB%AF%E4%B8%AD%E6%8C%89%E4%B8%8Bctrl-c%E4%B9%8B%E5%90%8E%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/</loc>
+        <lastmod>2021-08-03T11:41:03.698Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2021/04/21/B-%E6%A0%91%E7%90%86%E8%A7%A3/</loc>
+        <lastmod>2021-08-03T11:41:03.691Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2021/04/19/MySQL%E8%81%94%E5%90%88%E7%B4%A2%E5%BC%95/</loc>
+        <lastmod>2021-08-03T11:41:03.686Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2021/04/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
+        <lastmod>2021-08-03T11:41:03.682Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2021/04/13/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+        <lastmod>2021-08-03T11:41:03.677Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2020/10/10/Diary/</loc>
+        <lastmod>2021-08-03T11:41:03.672Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2021/04/15/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F1/</loc>
+        <lastmod>2021-07-12T14:13:38.097Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2021/04/16/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F2/</loc>
+        <lastmod>2021-07-12T14:13:38.097Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2021/04/23/redis%E7%9B%B8%E5%85%B3%E6%80%BB%E7%BB%93/</loc>
+        <lastmod>2021-07-12T14:13:38.097Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2021/04/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
+        <lastmod>2021-07-12T14:13:38.081Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2021/04/13/%E6%95%B0%E5%88%B030/</loc>
+        <lastmod>2021-07-12T14:13:38.081Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2021/04/10/C-%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</loc>
+        <lastmod>2021-07-12T14:13:38.066Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2021/04/08/C-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</loc>
+        <lastmod>2021-07-12T14:13:38.050Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2021/04/07/C-const/</loc>
+        <lastmod>2021-07-12T14:13:38.034Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2021/04/07/C-%E5%A4%9A%E6%80%81/</loc>
+        <lastmod>2021-07-12T14:13:38.034Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2021/04/06/%E5%89%91%E6%8C%87-Offer-35-%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/</loc>
         <lastmod>2021-04-06T13:45:29.428Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -66,14 +202,6 @@
     <url>
         <loc>http://yoursite.com/2020/10/26/Java%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2021-04-05T05:15:49.635Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2020/10/10/Diary/</loc>
-        <lastmod>2021-04-05T05:15:49.628Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

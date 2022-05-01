@@ -1,0 +1,783 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" >
+
+
+
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Old Wind">
+  <meta name="keywords" content="">
+  <title>数据库知识点总结 - Wind&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/atelier-estuary-light.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_2116843_0zhqoxodqdxo.css">
+
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 4.2.1"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Wiiiiiiiiiiiind</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://i.loli.net/2020/10/09/9JQRWjFDfPy3Ssh.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-04-13 15:18" pubdate>
+        2021年4月13日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.7k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      29
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">数据库知识点总结</h1>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="select-为什么会很慢"><a href="#select-为什么会很慢" class="headerlink" title="select * 为什么会很慢"></a>select * 为什么会很慢</h1><p>网络传输，CPU cost，IO cost。</p>
+<p>如果select * 与你想查询的字段完全一致，单单就查询来说，select * 并没有降低查询效率。但时实际使用中这种情况极少。获取了不必要的列，此时要走全表扫描，会变慢。</p>
+<p>影响自动优化，*的话就不优化。</p>
+<h1 id="MySQL的默认引擎是什么"><a href="#MySQL的默认引擎是什么" class="headerlink" title="MySQL的默认引擎是什么"></a>MySQL的默认引擎是什么</h1><p>MySQL5.5以前是MyISAM，之后默认的事务引擎是InnoDB。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MyISAM</th>
+<th>InnoDB</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>事务</td>
+<td>不支持</td>
+<td><font color=red>支持</font></td>
+</tr>
+<tr>
+<td>行级锁</td>
+<td>不支持</td>
+<td><font color=red>支持</font></td>
+</tr>
+<tr>
+<td>锁的最小粒度</td>
+<td>表级锁</td>
+<td><font color=red>行级锁</font></td>
+</tr>
+<tr>
+<td>外键</td>
+<td>不支持</td>
+<td><font color=red>支持</font></td>
+</tr>
+<tr>
+<td>全文索引</td>
+<td><font color=red>支持</font></td>
+<td>不支持FULLTEXT，但有插件可以支持</td>
+</tr>
+<tr>
+<td>崩溃后安全恢复</td>
+<td>不能</td>
+<td><font color=red>能</font></td>
+</tr>
+<tr>
+<td>适合情况</td>
+<td><font color=red>读</font>密集</td>
+<td><font color=red>写</font>密集</td>
+</tr>
+<tr>
+<td>复杂度</td>
+<td><font color=red>简单</font></td>
+<td>复杂</td>
+</tr>
+</tbody></table>
+<p>在<code>students</code>表中，通过<code>class_id</code>的字段，可以把数据与另一张表关联起来，这种列称为<code>外键</code></p>
+<h1 id="索引的优缺点，什么场景适用"><a href="#索引的优缺点，什么场景适用" class="headerlink" title="索引的优缺点，什么场景适用"></a>索引的优缺点，什么场景适用</h1><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ol>
+<li><p>加快检索速度</p>
+</li>
+<li><p>加速表表连接</p>
+</li>
+<li><p>加快order by, group by</p>
+</li>
+</ol>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ol>
+<li>创建维护需要时间</li>
+<li>数据量少的时候得不偿失</li>
+<li>索引占据物理空间，聚簇索引空间更大</li>
+<li>增删改的时候也要维护索引，数据维护速度变慢</li>
+</ol>
+<h1 id="索引分类"><a href="#索引分类" class="headerlink" title="索引分类"></a>索引分类</h1><h2 id="如何创建索引"><a href="#如何创建索引" class="headerlink" title="如何创建索引"></a>如何创建索引</h2><h3 id="直接创建"><a href="#直接创建" class="headerlink" title="直接创建"></a>直接创建</h3><blockquote>
+<p>CREATE INDEX column_index ON table (column);</p>
+</blockquote>
+<h3 id="间接创建"><a href="#间接创建" class="headerlink" title="间接创建"></a>间接创建</h3><blockquote>
+<p>定义主键约束或者唯一性键约束</p>
+</blockquote>
+<h2 id="普通索引和唯一性索引"><a href="#普通索引和唯一性索引" class="headerlink" title="普通索引和唯一性索引"></a>普通索引和唯一性索引</h2><h3 id="普通索引"><a href="#普通索引" class="headerlink" title="普通索引"></a>普通索引</h3><blockquote>
+<p>CREATE INDEX column_index ON table (column);</p>
+</blockquote>
+<h3 id="唯一性索引"><a href="#唯一性索引" class="headerlink" title="唯一性索引"></a>唯一性索引</h3><p>保证在索引列中的全部数据是唯一的，对聚簇索引和非聚簇索引都可以使用</p>
+<blockquote>
+<p>CREATE UNIQUE COUSTERED INDEX column_index ON table(column)</p>
+</blockquote>
+<h2 id="单个索引和复合索引"><a href="#单个索引和复合索引" class="headerlink" title="单个索引和复合索引"></a>单个索引和复合索引</h2><h3 id="单个索引"><a href="#单个索引" class="headerlink" title="单个索引"></a>单个索引</h3><p>即非复合索引</p>
+<h3 id="复合索引"><a href="#复合索引" class="headerlink" title="复合索引"></a>复合索引</h3><p>又叫组合索引，在索引建立语句中同时包含多个字段名，最多<strong>16</strong>个字段</p>
+<blockquote>
+<p>CREATE INDEX name_index ON username(first_name,last_name)</p>
+</blockquote>
+<h2 id="聚簇索引和非聚簇索引-聚集索引，群集索引"><a href="#聚簇索引和非聚簇索引-聚集索引，群集索引" class="headerlink" title="聚簇索引和非聚簇索引(聚集索引，群集索引)"></a>聚簇索引和非聚簇索引(聚集索引，群集索引)</h2><h3 id="聚簇索引"><a href="#聚簇索引" class="headerlink" title="聚簇索引"></a>聚簇索引</h3><p>物理索引，与基表的物理顺序相同，数据值的顺序总是按照顺序排列</p>
+<blockquote>
+<p>CREATE CLUSTERED INDEX my_column_cindex ON table(column) WITH ALLOW_DUP_ROW;(允许有重复记录的聚簇索引)</p>
+</blockquote>
+<h3 id="非聚簇索引"><a href="#非聚簇索引" class="headerlink" title="非聚簇索引"></a>非聚簇索引</h3><blockquote>
+<p>CREATE UNCLUSTERED INDEX my_column_cindex ON table(column);</p>
+</blockquote>
+<h1 id="什么时候索引会失效"><a href="#什么时候索引会失效" class="headerlink" title="什么时候索引会失效"></a>什么时候索引会失效</h1><ol>
+<li><p>%匹配在前</p>
+</li>
+<li><p>使用!=,&lt;&gt;,not null,is null</p>
+</li>
+<li><p>运算，如substring,+,-</p>
+</li>
+<li><p>字符串不加单引号</p>
+</li>
+<li><p>从取范围的列的后一个关键字开始失效</p>
+</li>
+<li><p>用or会失效，用union和in替换则不会：</p>
+<blockquote>
+<p>select loc_id , loc_desc , region from location where loc_id = 10<br>union<br>select loc_id , loc_desc , region  from location where region = “melbourne”;</p>
+<p>或</p>
+<p>select… from location where loc_in  in (10,20,30);</p>
+<p>取代</p>
+<p>select loc_id , loc desc , region from location where loc_id = 10 or region = “melbourne”;</p>
+</blockquote>
+</li>
+<li><p>复合索引跳过了中间的列，中间索引右边的索引<strong>全部失效</strong>，左边的索引生效。</p>
+</li>
+</ol>
+<h1 id="数据库除了使用索引，想优化查找效率还能怎么做"><a href="#数据库除了使用索引，想优化查找效率还能怎么做" class="headerlink" title="数据库除了使用索引，想优化查找效率还能怎么做"></a>数据库除了使用索引，想优化查找效率还能怎么做</h1><ol>
+<li>优化表结构，根据范式/反范式设计。<ul>
+<li>使用可存下数据的最小的数据类型</li>
+<li>使用简单的数据类型，int要比varchar类型在MySQL处理上更简单</li>
+<li>尽量用not null</li>
+<li>少用text，非用不可最好分表（水平，垂直分表），将text字段存放到另一张表中，<strong>在需要的时候再使用联合查询</strong>，这样可提高查询主表的效率。</li>
+</ul>
+</li>
+<li>硬件优化</li>
+<li>通过慢查询日志发现有效率问题的SQL</li>
+</ol>
+<h1 id="索引优化"><a href="#索引优化" class="headerlink" title="索引优化"></a>索引优化</h1><ol>
+<li><p>选择索引</p>
+<ul>
+<li><p>选择合适的索引列，选择在where，group by，order by，on从句中出现的列作为索引项，对于离散度不大的列没有必要创建索引。</p>
+</li>
+<li><p>索引字段越小越好(因为数据库的存储单位是页，一页中能存下的数据越多越好 )</p>
+</li>
+<li><p>离散度越大的列放在联合索引越前面</p>
+<blockquote>
+<p>select count(distinct ziduan1),count(distinct ziduan2) from table_name;<br>越大越离散</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>索引优化</p>
+<ul>
+<li>联合索引不要加上主键,InnoDB已经默认加了。</li>
+<li>不是越多越好</li>
+</ul>
+</li>
+</ol>
+<h1 id="数据库范式"><a href="#数据库范式" class="headerlink" title="数据库范式"></a>数据库范式</h1><h2 id="1NF"><a href="#1NF" class="headerlink" title="1NF"></a>1NF</h2><p>每个列的属性不能再分</p>
+<h2 id="2NF"><a href="#2NF" class="headerlink" title="2NF"></a>2NF</h2><p>消除了非主属性对码的<strong>部分</strong>函数依赖</p>
+<h2 id="3NF"><a href="#3NF" class="headerlink" title="3NF"></a>3NF</h2><p>消除了非主属性对码的<strong>传递</strong>函数依赖</p>
+<h1 id="事务的四个特性"><a href="#事务的四个特性" class="headerlink" title="事务的四个特性"></a>事务的四个特性</h1><p>ACID，AID服务于C</p>
+<h1 id="详细说说一致性"><a href="#详细说说一致性" class="headerlink" title="详细说说一致性"></a>详细说说一致性</h1><ul>
+<li>一致性（<strong>C</strong>onsistency） （等同于所有节点访问同一份最新的数据副本）</li>
+<li><a href="https://zh.wikipedia.org/wiki/可用性" target="_blank" rel="noopener">可用性</a>（<strong>A</strong>vailability）（每次请求都能获取到非错的响应——但是不保证获取的数据为最新数据）</li>
+<li><a href="https://zh.wikipedia.org/w/index.php?title=网络分区&action=edit&redlink=1" target="_blank" rel="noopener">分区容错性</a>（<strong>P</strong>artition tolerance）</li>
+</ul>
+<p>三者只能得其二。</p>
+<h1 id="MySQL中的锁"><a href="#MySQL中的锁" class="headerlink" title="MySQL中的锁"></a>MySQL中的锁</h1><p>乐观锁：只在更新的时候检查数据完整性。可以使用版本号来实现。</p>
+<p>悲观锁：屏蔽一切可能违反数据完整性的操作。</p>
+<p>行锁：</p>
+<ul>
+<li>共享锁（S）：允许一个事务去读一行，阻止其他事务获得相同数据集的排他锁。</li>
+<li>排他锁（X）：允许获得排他锁的事务更新数据，阻止其他事务取得相同数据集的共享读锁和排他写锁。</li>
+</ul>
+<p>间隙锁：</p>
+<p>防止幻读。</p>
+<h1 id="主键索引和聚簇索引"><a href="#主键索引和聚簇索引" class="headerlink" title="主键索引和聚簇索引"></a>主键索引和聚簇索引</h1><p>一个表只能有一个聚簇索引</p>
+<p>sale 部门 ：3字段 部门名字 员工ID 销售额度</p>
+<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><p>统计每个部门销售额度</p>
+<blockquote>
+<p>select 部门，sum(销售额) from table group by 部门</p>
+</blockquote>
+<p>统计每个部门销售额度&gt;10W的</p>
+<blockquote>
+<p>select 部门，sum(销售额) from table group by 部门 having sum(*)&gt;10W</p>
+</blockquote>
+<h1 id="为什么用B-树作为结构"><a href="#为什么用B-树作为结构" class="headerlink" title="为什么用B+树作为结构"></a>为什么用B+树作为结构</h1><ul>
+<li>哈希虽然能够提供 <code>O(1)</code> 的单数据行操作性能，但是对于范围查询和排序却无法很好地支持，最终导致全表扫描；</li>
+<li>B 树能够在非叶节点中存储数据，但是这也导致在查询连续数据时可能会带来更多的随机 I/O，而 B+ 树的所有叶节点可以通过指针相互连接，能够减少顺序遍历时产生的额外随机 I/O；</li>
+</ul>
+<h1 id="乐观-悲观锁"><a href="#乐观-悲观锁" class="headerlink" title="乐观/悲观锁"></a>乐观/悲观锁</h1><ul>
+<li>乐观锁是一种思想，它其实并不是一种真正的『锁』，它会先尝试对资源进行修改，在写回时判断资源是否进行了改变，如果没有发生改变就会写回，否则就会进行重试，在整个的执行过程中其实都<strong>没有对数据库进行加锁</strong>；</li>
+<li>悲观锁就是一种真正的锁了，它会在获取资源前对资源进行加锁，确保同一时刻只有有限的线程能够访问该资源，其他想要尝试获取资源的操作都会进入等待状态，直到该线程完成了对资源的操作并且释放了锁后，其他线程才能重新操作资源；</li>
+</ul>
+<p>乐观锁不会存在死锁的问题，但是由于更新后验证，所以当<strong>冲突频率</strong>和<strong>重试成本</strong>较高时更推荐使用悲观锁，而需要非常高的<strong>响应速度</strong>并且<strong>并发量</strong>非常大的时候使用乐观锁就能较好的解决问题，在这时使用悲观锁就可能出现严重的性能问题；在选择并发控制机制时，需要综合考虑上面的四个方面（冲突频率、重试成本、响应速度和并发量）进行选择。</p>
+<h1 id="意向锁"><a href="#意向锁" class="headerlink" title="意向锁"></a>意向锁</h1><p><strong>意向锁不会与行级的共享 / 排他锁互斥！！！</strong>意向锁和意向锁之间不互斥。</p>
+<p><a href="https://juejin.cn/post/6844903666332368909" target="_blank" rel="noopener">https://juejin.cn/post/6844903666332368909</a></p>
+<p>获取一个行的X锁之后，会对整个表加一个意向排他锁，不让另一个事务对表加X/S锁。目的就是不用一行行检查了。</p>
+<p>IX，IS是表级锁，不会和行级的X，S锁发生冲突。只会和表级的X，S发生冲突</p>
+<h1 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h1><p>参考：<a href="https://www.cnblogs.com/wy123/p/8365234.html" target="_blank" rel="noopener">https://www.cnblogs.com/wy123/p/8365234.html</a></p>
+<h2 id="Error-log"><a href="#Error-log" class="headerlink" title="Error log"></a>Error log</h2><p>错误日志文件对MySQL的启动、运行、关闭过程进行了记录。MySQL DBA在遇到问题时应该首先查看该文件以便定位问题。该文件不仅记录了所有的<strong>错误信息</strong>，也记录一些<strong>警告信息</strong>或<strong>正确的信息</strong>。用于<strong>数据库优化</strong>。</p>
+<h2 id="Redolog"><a href="#Redolog" class="headerlink" title="Redolog"></a>Redolog</h2><h2 id="slow-log：慢查询日志"><a href="#slow-log：慢查询日志" class="headerlink" title="slow log：慢查询日志"></a>slow log：慢查询日志</h2><p>可以在MySQL启动时设一个阈值，将运行时间大于（不等于）该值的所有SQL语句都记录到慢查询日志文件中。用于<strong>SQL语句优化</strong>。</p>
+<h2 id="log：查询日志"><a href="#log：查询日志" class="headerlink" title="log：查询日志"></a>log：查询日志</h2><p>记录了所有对MySQL数据库请求的信息，<strong>无论</strong>这些请求是否得到了正确的执行。</p>
+<h2 id="Undolog"><a href="#Undolog" class="headerlink" title="Undolog"></a>Undolog</h2><h2 id="Binlog"><a href="#Binlog" class="headerlink" title="Binlog"></a>Binlog</h2><p>不包括select,show等操作。记录UPDATE等操作（哪怕操作本身没有成功）</p>
+<h1 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h1><p><img src="https://i.loli.net/2021/07/12/OoK84PEFXI7wQbp.png" srcset="/img/loading.gif" alt="image-20210329140506273"></p>
+<h1 id="缓存一致性"><a href="#缓存一致性" class="headerlink" title="缓存一致性"></a>缓存一致性</h1><p>应该先更新数据库再删除缓存。更新数据库之后可以让缓存失效。</p>
+<p>如果先删除缓存再更新数据库：</p>
+<ul>
+<li>事务B删除缓存</li>
+<li>事务A查询缓存，没有缓存，从数据库找到旧值</li>
+<li>此时事务B更新数据库</li>
+<li>事务A把旧值写到缓存，造成后面的数据有问题</li>
+</ul>
+<p>那么，是不是一开始这个就不会有并发问题了？不是的，比如，一个是读操作，但是没有命中缓存，然后就到数据库中取数据，此时来了一个写操作，写完数据库后，让缓存失效，然后，之前的那个读操作再把老的数据放进去，所以，会造成脏数据。</p>
+<p>但，这个case理论上会出现，不过，实际上出现的概率可能非常低，因为这个条件需要发生在读缓存时缓存失效，而且并发着有一个写操作。而实际上数据库的写操作会比读操作慢得多，而且还要锁表，而读操作必需在写操作前进入数据库操作，而又要晚于写操作更新缓存，所有的这些条件都具备的概率基本并不大。</p>
+<h1 id="HAVING-子句"><a href="#HAVING-子句" class="headerlink" title="HAVING 子句"></a>HAVING 子句</h1><p>在 SQL 中增加 HAVING 子句原因是，WHERE 关键字无法与聚合函数一起使用。</p>
+<p>HAVING 子句可以让我们筛选分组后的各组数据。</p>
+<h1 id="JOIN-子句"><a href="#JOIN-子句" class="headerlink" title="JOIN 子句"></a>JOIN 子句</h1><p>首先，连接的结果可以在逻辑上看作是由SELECT语句指定的列组成的新表。</p>
+<p>左连接与右连接的左右指的是以两张表中的哪一张为基准，它们都是外连接。</p>
+<p>外连接就好像是为非基准表添加了一行全为空值的万能行，用来与基准表中找不到匹配的行进行匹配。假设两个没有空值的表进行左连接，左表是基准表，左表的所有行都出现在结果中，右表则可能因为无法与基准表匹配而出现是空值的字段。</p>
+<p>这部分主要涉及的是表连接的逻辑问题，教程主讲语法的话这部分确实需要自己再去搜资料</p>
+<blockquote>
+<p>来源：《数据库系统原理教程》，王珊，陈红编著，P86</p>
+</blockquote>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/04/13/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">操作系统知识点总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/04/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="hidden-mobile">计算机网络知识点总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "P5iMhFR21oUYWIryvGeiUA4g-gzGzoHsz",
+          app_key: "31Vd8tcerlCoEEaJhdKTUsgY",
+          placeholder: "(・ω・)ノ- ( ゜- ゜)つロ",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    }
+    waitElementVisible('vcomments', loadValine);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+    <div class="col-lg-7 mx-auto nopadding-md">
+      <div class="container custom mx-auto">
+        <div style="text-align:center"> <img alt="电你一下" src="https://i.loli.net/2020/10/09/A6lij1bnYOuJtkG.jpg" srcset="/img/loading.gif" height="150" width="150"/></div>
+      </div>
+    </div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://roaringwind.github.io" target="_blank" rel="nofollow noopener"><span>2020</span></a>
+      <i class="iconfont icon-nintendoswitch"></i>
+      <a href="https://roaringwind.github.io/about" target="_blank" rel="nofollow noopener">
+        <span>Wind</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "数据库知识点总结&nbsp;",
+      ],
+      cursorChar: "__w(ﾟДﾟ)w",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "❡"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.staticfile.org/mathjax/3.0.5/es5/tex-svg.js" ></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
