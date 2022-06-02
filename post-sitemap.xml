@@ -8,6 +8,38 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2022/05/17/missing-semester-data-wrangling/</loc>
+        <lastmod>2022-05-17T16:25:47.770Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2022/05/13/%E4%B8%AA%E4%BA%BA%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
+        <lastmod>2022-05-14T05:01:46.831Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2022/05/10/missing-semester-vim/</loc>
+        <lastmod>2022-05-14T05:01:43.616Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2022/05/06/missing-semester-shell/</loc>
+        <lastmod>2022-05-10T14:49:51.687Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2021/08/03/Golang-channel/</loc>
         <lastmod>2021-08-04T05:42:05.294Z</lastmod>
         <changefreq>weekly</changefreq>

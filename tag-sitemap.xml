@@ -3,6 +3,48 @@
 
 
     <url>
+        <loc>http://yoursite.com/tags/data-processing/</loc>
+        <lastmod>2022-05-17T16:25:47.770Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/sed/</loc>
+        <lastmod>2022-05-17T16:25:47.770Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/vim/</loc>
+        <lastmod>2022-05-14T05:01:43.616Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/missing-semester/</loc>
+        <lastmod>2022-05-14T05:01:43.616Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/shell/</loc>
+        <lastmod>2022-05-10T14:49:51.687Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/bash/</loc>
+        <lastmod>2022-05-10T14:49:51.687Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yoursite.com/tags/%25E4%25BF%25A1%25E5%258F%25B7/</loc>
         <lastmod>2021-08-04T05:42:05.294Z</lastmod>
         <changefreq>weekly</changefreq>
